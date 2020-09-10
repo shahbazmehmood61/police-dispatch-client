@@ -1,0 +1,661 @@
+{
+  "login": {
+    "title": "Login",
+    "placeholders": {
+      "username": "Nombre de Usuario",
+      "password": "Contraseña",
+      "rememberme": "Recuérdame",
+      "forgotpassword": "Olvidó contraseña?"
+    },
+    "validation": {
+      "username": {
+        "required": "*Nombre de Usuario es requerido"
+      },
+      "password": {
+        "required": "*Contraseña es requerida"
+      }
+    },
+    "loginButton": {
+      "login": "Login",
+      "newuser": "Nuevo Usuario?",
+      "registernow": "Regístrese Ahora "
+    }
+  },
+  "SignUp": {
+    "title": "Signup",
+    "placeholders": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "username": "Nombre de Usuario",
+      "email": "Email ",
+      "password": "Contraseña",
+      "confirm": "Confirmar Contraseña",
+      "doctor": "Doctor",
+      "patient": "Patient",
+      "Register": "Registrar",
+      "or": "O",
+      "checkforAlready": "Ya tiene una cuenta?",
+      "sign": "Signin",
+      "checkemail": " Email ya está registrado"
+    },
+    "validation": {
+      "password": {
+        "confirmpass": "Contraseña tiene que ser igual",
+        "required": "Contraseña es requerida",
+        "passlength": "*Contraseña tiene que tener mínimo de 8 letras, por lo menos ún número, una letra especial (@#$&*()%=) y una letra mayúscula."
+      },
+      "Name": {
+        "FirstName": "*Nombre es requerido",
+        "SeconName": "Apellido es requerido"
+      },
+      "username": {
+        "required": "*Nombre de Usuario es requerido",
+        "alreadyexist": "Nombre de Usuario ya existe!"
+      },
+      "email": {
+        "required": "Email es requerido"
+      }
+    }
+  },
+  "forgotpassword": {
+    "title": "Olvidó contraseña?",
+    "message": "Entre su email para reiniciar su contraseña. Es posible que deba verificar su carpeta de correo spam o desbloquear noreply@monarchss.com.",
+    "placeholders": {
+      "email": "Email",
+      "Submit": "Someter"
+    }
+  },
+  "loginStatus": {
+    "success": "Bienvenido a Monarch Police Dispatch",
+    "invalid": "Username or password is invalid"
+  },
+  "loginAuth": {
+    "inalidUser401": "Usuario inválido",
+    "accountNotActive400": "Cuenta no activa",
+    "invalidusernameorpassword404": "Nombre de usuario o contraseña inválida"
+  },
+  "formErrors": {
+    "invalidFormMsg": "Por favor ingrese los campos requeridos del formulario.",
+    "invalidFormTitle": "Forma inválida"
+  },
+  "commonErrors": {
+    "internalErrorMsg": "Servidor en mantenimiento, disculpe las molestias.",
+    "internalErrorTitle": "Error de Servidor"
+  },
+  "signupStatus": {
+    "activationMailMsg": "Consulte su correo electrónico para obtener instrucciones sobre la activación de la cuenta.",
+    "activationMailTitle": "Correo de activación enviado",
+    "userOrEmailExistMsg": "El nombre de usuario o correo electrónico ya existe",
+    "userOrEmailExistTitle": "Ya existe",
+    "passwordTitle": "Patrón de contraseña",
+    "passwordMsg": "Contraseña tiene que tener mínimo de 8 letras, por lo menos ún número, una letra especial (@#$&*()%=) y una letra mayúscula."
+  },
+  "emailVerify": {
+    "unverifiedEmailMsg": "Verifique su dirección de correo electrónico para iniciar sesión.",
+    "unverifiedEmailTitle": "Correo no verificado",
+    "unregisteredEmailMsg": "Registre su dirección de correo electrónico para iniciar sesión.",
+    "unregisteredEmailTitle": "Correo no registrado"
+  },
+  "forgotPassword": {
+    "invalidEmailTitle": "Usuario no existe",
+    "invalidEmailMsg": "Ingrese una dirección de correo registrada.",
+    "accountNotActiveTitle": "Cuenta no activa",
+    "accountNotActiveMsg": "Verifique su dirección de correo electrónico registrada para la activación de la cuenta.",
+    "accountActiveTitle": "Correo electrónico de restablecimiento de contraseña enviado",
+    "accountActiveMsg": "Verifique su dirección de correo electrónico registrada para obtener instrucciones para restablecer la contraseña."
+  },
+  "accountActivation": {
+    "accountVerified": "Su cuenta está verificada!",
+    "accountAlreadyVerified": "Su cuenta ya ha sido activada!",
+    "invalidAccount": "Su cuenta no es válida"
+  },
+  "logout": {
+    "Title": "Monarch Police Dispatc",
+    "Msg": "Gracias por visitarnos"
+  },
+  "resetPassword": {
+    "title": "Restablecer su contraseña",
+    "newPassword": "Nueva contraseña",
+    "required": "*Se requiere contraseña!",
+    "confirmpass": "Confirmar contraseña",
+    "matchpass": " *Contraseña debe coincidir con.",
+    "confirmpassrequired": "*Confirme la contraseña requerida!",
+    "reset": "Reiniciar"
+  },
+  "pageNotFound": {
+    "OOPS": "Oops!",
+    "Somethingwentwrong": "Algo salió mal.",
+    "notFound": "No podemos encontrar la página que busca.",
+    "Visit": "Visita",
+    "support": "Pagina de soporte",
+    "anyquestions": "para cualquier pregunta."
+  },
+  "registerVictim": {
+    "firstName": "Nombre"
+  },
+  "search-tab": {
+    "Register Victim": "Registrar Denunciante",
+    "Search Victim": "Búsqueda",
+    "Victim Detail": "Detalles del Denunciante",
+    "Incident History": "Historial de Incidentes",
+    "Chat History": "Historial de Chat",
+    "Incident": "Incidente"
+  },
+  "regsiter-placeholder": {
+    "firstName": "Nombre",
+    "middleInitial": "Inicial"
+  },
+  "mynew": {
+    "register": "Registrarse"
+  },
+  "header-tab": {
+    "Language": "Idioma",
+    "search": "Buscar",
+    "Settings": "Configuraciones",
+    "Location": "Ubicación",
+    "inbox": "Bandeja de entrada",
+    "Incident Report": "Reporte de Incidente",
+    "logout": "Cerrar sesión",
+    "Light": "Claro",
+    "Dark": "Oscuro"
+  },
+  "sos-sideabr": {
+    "Calls": "Llamadas",
+    "Chats": "Chats"
+  },
+  "first-search-tab": {
+    "Register Victim": "Registrar Denunciante",
+    "Search Victim": "Búsqueda",
+    "Victim Detail": "Detalles del Denunciante",
+    "Incident History": "Historial de Incidentes",
+    "Chat History": "Historial de Chat",
+    "Incident": "Incidente",
+    "Please select a victim first": "Primero seleccione un Denunciante",
+    "There is no report available": "No hay informe disponible."
+  },
+  "victim-detail-tab": {
+    "Victim Detail": "Detalles del Denunciante",
+    "Incident History": "Historial de Incidentes",
+    "Chat History": "Historial de Chat",
+    "Report Incident": "Informar incidente"
+  },
+  "register-victim": {
+    "Register Victim": "Registrar Denunciante",
+    "First Name": "Nombre",
+    "Middle Initial": "Inicial",
+    "Last Name": "Apellido",
+    "Second Last Name": "Segundo apellido",
+    "Height": "Altura",
+    "Feet": "Pies",
+    "Inches": "Pulgadas",
+    "Cell Number": "Número de celular",
+    "Home Cell Number": "Número de la casa",
+    "Eye Color": "Color de ojos",
+    "Weight": "Peso",
+    "Date of Birth": "Fecha de nacimiento",
+    "Gender": "Sexo",
+    "Address": "Dirección",
+    "Driver License Number": "Número de licencia de conducir",
+    "Email": "Email",
+    "Register": "Registrar"
+  },
+  "search-victim": {
+    "search": "Buscar",
+    "view": "Ver",
+    "Chat History": "Historial de Chat entre Denunciante y Policía",
+    "Inbox": "Bandeja de entrada",
+    "Groups": "Grupos",
+    "Search with email": "Buscar con correo electrónico"
+  },
+  "victim-detail": {
+    "PERSONAL": "PERSONAL",
+    "Title": "Título",
+    "phone": "Teléfono",
+    "Company": "Empresa",
+    "city": "Ciudad",
+    "state": "Estado",
+    "zip code": "Código postal",
+    "country": "País",
+    "others": "otras",
+    "kids": "Niños",
+    "pets": "Mascotas",
+    "ANNIVERSARY": "ANIVERSARIO",
+    "STATUS": "ESTADO",
+    "subsciption status": "Estado de suscripción",
+    "vip status": "Estado vip",
+    "membership": "Afiliación",
+    "notes": "Notas",
+    "age": "Edad"
+  },
+  "register-incident": {
+    "Telephone": "Teléfono",
+    "Incident date": "Fecha del incidente",
+    "Incident time": "Hora del incidente",
+    "Date of Call": "Fecha de llamada",
+    "Time of call": "Hora de la llamada",
+    "Location of incident": "Lugar del incidente",
+    "Level of Aggressiveness": "Nivel de agresividad",
+    "Patrol dispatch time": "Tiempo de despacho de patrulla",
+    "Officer receiving call": "Oficial recibiendo llamada",
+    "Dispatched patrol": "Patrulla enviada",
+    "People involved": "Personas involucradas",
+    "Necessary resources": "Recursos necesarios",
+    "Incident Narrative": "Narrativa del Incidente",
+    "Report time": "Hora del Informe",
+    "Report date": "Fecha del Informe",
+    "Victim Location": "Ubicación del Denunciante"
+  },
+  "close-incident": {
+    "heading": {
+      "CRIME": "CRIMEN",
+      "VICTIM": "VICTIMA",
+      "GOODS": "BIENES",
+      "OFFENDERS": "INFRACTORES",
+      "ARRESTED": "DETENIDO",
+      "WITNESS": "TESTIGO",
+      "STORY": "RELATO",
+      "FIRMS": "FIRMAS"
+    },
+    "row-one": {
+      "THE ORI": "DE ORI",
+      "INCIDENT": "INCIDENTE",
+      "TYPE OF REPORT": " TIPO DE INFORME",
+      "check-boxes": {
+        "INITIAL REPORT": "INFORME INICIAL",
+        "SUPPLEMENT": "SUPLEMENTO"
+      },
+      "COMMONWEALTH OF PUERTO RICO": "ESTADO LIBRE ASOCIADO DE PUERTO RICO",
+      "MUNICIPAL POLICE GUAYNABO": "POLICIA MUNICIPAL DE GUAYNABO",
+      "REPORT INCIDENT": "INFORME DE INCIDENTE",
+      "INCIDENT STATUS": "ESTADO DEL INCIDENTE",
+      "UNFOUNDED": "INFUNDADO",
+      "CLEARED BY": "ESCLARECIDO POR",
+      "ARREST": "ARRESTO",
+      "EXCEPTIONAL": "EXCEPCIONAL",
+      "options": {
+        "OFFENDER'S DEATH": "MUERTE DEL DELINCUENTE",
+        "REFUSAL OF TRIAL": "SE REHUSA ENJUICIAMIENTO",
+        "EXTRADICION IS DENIED": "SE DENIEGA EXTRADICION",
+        "NEGOTIATE TO COLLABORATE": "SE NEGO A COLABORAR",
+        "MINOR, WITHOUT CUSTODY": "MENOR DE EDAD,SIN CUSTODIA",
+        "NO APLICA": "NO APLICA"
+      }
+    },
+    "row-two": {
+      "COMPLAINANT": "DENUNCIANTE",
+      "Surname, Name, Middle Name": "Apellidos, Nombre, Segundo Nombre",
+      "S.S": "S.S.",
+      "TELEPHONE": "TELEFONO",
+      "Home": "Domicilio"
+    },
+    "row-three": {
+      "DIRECTION": "DIRECCION",
+      "TELEPHONE": "TELEFONO",
+      "Job": "Trabajo"
+    },
+    "row-four": {
+      "PLACE OF THE INCIDENT": "LUGAR DEL INCIDENTE",
+      "Exact Direction ": "Dirección Exacta",
+      "CRIME": "DELITO",
+      "Check if you were motivated out of prejudice": "Marcar si fue motivado por prejuicio",
+      "OFFENDER": "DELINCUENTE"
+    },
+    "row-five": {
+      "CRIME CODE UCR": "CODIGO DE DELITO UCR",
+      "INCIDENT DATE (S)": "FECHA(S) DEL INCIDENTE",
+      "INCIDENT TIME (S)": "HORA (S) DEL INCIDENTE"
+    },
+    "row-seven": {
+      "MOTION FOR PREJUDICE": " MOTIVACION DE PREJUICIO",
+      "Mark one for crime": " Marcar una para delito",
+      "RACIAL": " RACIAL",
+      "ANTI-WHITE": " ANTI-BLANCO",
+      "ANTI-BLACK": " ANTI-NEGRO",
+      "ANTI-AMERICAN INDIAN / ALASKA NATIVE ": "ANTI-INDIO AMERICANO/NATIVO DE ALASKA",
+      "ANTI-ASIATIC / PACIFIC ISLAND": " ANTI-ASIATICO/ISLEÑO DEL PACIFICO",
+      "ANTI-MULTIRACIAL GROUP": " ANTI-GRUPO MULTIRACIAL",
+      "ETHNIC GROUP / NATIONAL ORIGIN": " GRUPO ETNICO/ORIGEN NACIONAL",
+      "ANTI-ARAB": " ANTI-ARABE",
+      "ANTI-HISPANIC": " ANTI-HISPANO",
+      "ANTI-OTORO ETHNIC GROUP / NATIONAL ORIGIN": " ANTI-OTORO GRUPO ETNICO/ORIGEN NACIONAL",
+      "RELIGIOUS": " RELIGIOSO",
+      "ANTI-JEW": " ANTI-JUDIO",
+      "ANTI-CATHOLIC": " ANTI-CATOLICO",
+      "ANTI-PROTESTANT": " ANTI-PROTESTANTE",
+      "ANTI-ISLAMIC / MUSLIM": " ANTI-ISLAMICO/MUSULMAN",
+      "ANTI-OTHER RELIGION": " ANTI-OTRA RELICION",
+      "MULTI-RELIGIOUS ANTI-GROUP": " ANTI-GRUPO MULTIRELIGIOSO",
+      "ANTI-ATHEISM / AGNOSTICISM": " ANTI-ATEISMO/AGNOSTICISMO",
+      "SEXUAL": "SEXUAL",
+      "HOMOSEXUAL ANTI-MAN": " ANTI-HOMBRE HOMOSEXUAL",
+      "HOMOSEXUAL ANTI-WOMAN": "ANTI-MUJER HOMOSEXUAL",
+      "ANTI-HOMOSEXUAL (Men and Women)": " ANTI-HOMOSEXUAL(Hombres y Mujeres)",
+      "ANTI-HETEROSEXUAL ": "ANTI-HETEROSEXUAL",
+      "ANTI-BISEXUAL": "ANTI-BISEXUAL",
+      "INDICATE THE MOTIVATION CODE IF IT IS DIFFERENT FROM CRIME": "INDICAR EL CODIGO DE MOTIVACION SI ES DISTINTO A DELITO"
+    },
+    "row-eight": {
+      "CRIME SITUATION: (check only one per crime)": " SITUACION DE DELITO: (marcar sólo una por delito)",
+      "TRIED": " INTENTO",
+      "FULL": " COMPLETO",
+      "OFFENDER (S) USE: (Check all that apply)": " DELINCUENTE(S) USO: (Marcar todos las que apliquen)",
+      "ALCOHOL": " ALCOHOL",
+      "DRUGS": " DROGAS",
+      "COMPUTER EQUIPMENT": " EQUIPO DE COMPUTADORA",
+      "DOES NOT APPLY": " NO APLICA",
+      "(Only for robberies) NUM. OF LOCATED ALLANADOS": " (Solo para robos) NUM. DE LOCALES ALLANADOS",
+      "INPUT METHOD": " METODO DE ENTRADA",
+      "BY FORCE": "A LA FUERZA",
+      "WITHOUT FORCE": "SIN FUERZA"
+    },
+    "row-nine": {
+      "PLACE OF CRIME": "LUGAR DEL DELITO",
+      "Check only one": "Marcar solo una",
+      "Indicate code number for crime": " Indicar num. de código para delito",
+      "AIR / BUS / TRAIN TERMINAL": " TERMINAL AEREO/DE AUTOBUS/DE TREN",
+      "BANK / SAVINGS AND LOANS": " BANCO/AHORRO Y PRESTAMO",
+      "CANTINA / NIGHT CLUB": " CANTINA/CLUB NOCTURNO",
+      "CHURCH / SYNAGOGUE / TEMPLE": " IGLESIA/SINAGOGA/TEMPLO",
+      "COMMERCIAL / OFFICE BUILDING": " EDIFICIO COMERCIAL/DE OFICINA",
+      "CONSTRUCTION SITE": " SITIO DE CONSTRUCCION",
+      " HARDWARE STORE": "FERRETERIA",
+      "DEPARTMENT / DISCOUNT STORE": " TIENDA POR DEPARTAMENTO/DE DESCUENTO",
+      "PHARMACY / DOCTOR'S OFFICE / HOSPITAL": " FARMACIA/CONSULTORIO DE MEDICO/HOSPITAL",
+      "FIELD / FOREST": " CAMPO/BOSQUE",
+      "GOVERNMENT / PUBLIC BUILDINGS": "EDIFICIOS DEL GOBIERNO/PUBLICOS",
+      "FOOD STORE / SUPERMARKET": "TIENDA DE COMESTIBLES/SUPERMERCADO",
+      "ROAD / STREET / ALLEY": "CARRETERA/CALLE/CALLEJON",
+      "HOTEL / MOTEL / ETC": "HOTEL/MOTEL/ETC",
+      "JAIL PRISON": "CARCEL/PRISION",
+      "LAKE / WATERWAY": "LAGO/VIA ACUATICA",
+      "LIQUOR STORE": "TIENDA DE LICORES",
+      "PARKING / GARAGE": " ESTACIONAMIENTO/GARAJE",
+      "STORAGE RENTAL CENTER": " CENTRO DE ALQUILER DE ALMACENAMIENTO",
+      "RESIDENCE / HOME": " RESIDENCIA/HOGAR",
+      "RESTAURANT": " RESTAURANTE",
+      "UNIVERSITY": "ESCUELA/UNIVERSIDAD",
+      "FUEL STATION": "GASOLINERA",
+      "SPECIALIZED STORE": "TIENDA ESPECIALIZADA",
+      "OTHER / UNKNOWN": "OTRO/DESCONOCIDO"
+    },
+    "row-ten": {
+      "TYPE OF CRIMINAL ACTIVITY (Mark up to three) ": "TIPO DE ACTIVIDAD CRIMINAL (Marca hasta tres)",
+      "BUY / RECEIVE ": "COMPRA/RECIBIR",
+      "CULTIVATE / MANUFACTURE / PUBLISH ": "CULTIVAR/FABRICAR/PUBLICAR",
+      "DISTRIBUTE / SELL ": "DISTRIBUIR/VENDER",
+      "EXPLOIT CHILDREN ": "EXPLOTAR ANIÑOS",
+      "PROTEST, PROMOTE / ASSIST ": "OPESAR,PROMOVER/ASISTIR",
+      "OWN / HIDE ": "POSEER/OCULTAR",
+      "TRANSPORT / TRANSMIT / IMPORT ": "TRANSPORTAR/TRANSMITIR/IMPORTAR",
+      "USE / CONSUME ": "USAR/CONSUMIR"
+    },
+    "row-eleven": {
+      "TYPE OF WEAPON / FORCE INVOLVED ": "TIPO DE ARMA/FUERZA INVOLUCRADA",
+      "(Check up to three)": "(Marcar hasta tres)",
+      "FIREARM (Unidentified type) ": "ARMA DE FUEGO (Tipo no identificado)",
+      "GUN ": "PISTOLA",
+      "RIFLE ": "RIFLE",
+      "SHOTGUN ": "ESCOPETA",
+      "ANOTHER FIREARM": " OTRA ARMA DE FUEGO",
+      "KNIFE / CUTTING INSTRUMENT": " CUCHILLO/INSTRUMENTO CORTANTE",
+      "SHARPENED OBJECT": " OBJETO DESAFILADO",
+      "MOTOR VEHICLE": " VEHICULO DE MOTOR",
+      "PERSONAL WEAPONS": " ARMAS PERSONALES",
+      "POISON": " VENENO",
+      "EXPLOSIVES": " EXPLOSIVOS",
+      "FIRE / FIRE": " FUEGO/INCENDIARIO",
+      "NARCOTICS / DRUGS": " NARCOTICOS/DROGA",
+      "SUFFOCATION ": "ASFIXIA",
+      "OTHER ": "OTRA",
+      "Unknown ": "DESCONOCIDA",
+      "NONE ": "NINGUNA"
+    },
+    "row-twelve": {
+      "VICTIM (Last name, First name, Middle name)": " VICTIMA (Apellidos, Nombre, Segundo nombre)",
+      "Home phone": "Teléfono de casa"
+    },
+    "row-thirteen": {
+      "ADDRESS: (Street, city, postal code)": " DIRECCION: (Calle, ciudad, código postal)"
+    },
+    "row-fourtheen": {
+      "VICTIM TYPE: (Mark only one)": "TIPO DE VICTIMA: (Marca solo una)",
+      "INDIVIDUAL": "INDIVIDUO",
+      "DEAL": "NEGOCIO",
+      "FINANCIAL": " FINANCIERO",
+      "GOVERNMENT": " GOBIERNO",
+      "RELIGIOUS": " RELIGIOSO",
+      "SOCIETY / PUBLIC": " SOCIEDAD/PUBLICO",
+      "OTHER": " OTRO",
+      "UNKNOWN": " DESCONOCIDO",
+      "RACE": " RAZA",
+      "WHITE": "BLANCA",
+      "BLACK": " NEGRA",
+      "AMERICAN INDIAN": " INDIO AMERICANO",
+      "ASIAN": " ASIATICA",
+      "HAWAIIANA": " HAWAIIANA",
+      "Unknown": " DESCONOCIDA",
+      "SEX": " SEXO",
+      "MALE": " MASCULINO",
+      "FEMALE": "FEMENINO",
+      "CONDITION OF RESIDENCE": " CONDICION DE RESIDENCIA",
+      "RESIDENT": " RESIDENTE",
+      "NON-RESIDENT": " NO RESIDENTE",
+      "ETHNIC GROUP": " GRUPO ETNICO",
+      "HISPANIC": " HISPANO",
+      "NOT HISPANIC": "NO HISPANO",
+      "AGE": " EDAD",
+      "DATE OF BIRTH": " FECHA DE NAC",
+      "NUM. OF VICTIMS": " NUM. DE VICTIMAS"
+    },
+    "row-fifteen": {
+      "CIRCUMSTANCES OF SERIOUS ASSAULT / HOMICIDE: (Check up to two)": "CIRCUNSTANCIAS DE AGRESION GRAVE/HOMICIDIO: (Marcar hasta dos)",
+      "DISCUSSION": "DISCUSION",
+      "AGGRESSION AGAINST POLICE AGENT": " AGRESION CONTRA AGENTE DE LA POLICIA",
+      "DRUG SALES": "VENTA DE DROGAS",
+      "ORGANIZED CRIME": "CRIMEN ORGANIZADO",
+      "JUVENILE GANGS": "PANDILLAS JUVENILES",
+      "FIGHT BETWEEN LOVERS": "PELEA ENTRE AMANTES",
+      "EUTHANASIA": "EUTANASIA",
+      "ANOTHER CRIME INVOLVED": "OTRO DELITO INVOLUCRADO",
+      "OTHER CIRCUMSTANCES": "OTRAS CIRCUNSTANCIAS",
+      "CIRCUMSTANCES Unknown": "CIRCUNSTANCIAS DESCONOCIDAS",
+      "TYPE OF INJURY: (mark up to five)": "TIPO DE LESION: (marcar hasta cinco)",
+      "NONE": "NINGUNA",
+      "BONES": "HUESOS",
+      "POSSIBLE INJURIES INTERNAL": " POSIBLES LESIONES INTERNAS",
+      "RIP SEVERE": " DESGARRADURA SEVERA",
+      "LESION MENOR": " LESION MENOR",
+      "MAJOR INJURY": "LESION MAYOR",
+      "WASTE OF TEETH ": "PERDIDA DE DIENTES",
+      "WASTE OF KNOWLEDGE": " PERDIDA DE CONOCIMIENTO",
+      "VICTIM RELATED TO NUM. OF CRIME STATED ABOVE": " VICTIMA RELACIONADA CON NUM. DE DELITO INDICADO MAS ARRIBA"
+    },
+    "row-sixteen": {
+      "VICTIM-TO-OFFENDER RELATION: (For multiple offender relationships, enter offender number (s) in the space)": "RELACIÓN DE VÍCTIMA A OFRECEDOR: (Para relaciones múltiples de delincuente, ingrese los números del delincuente en el espacio)",
+      "SPOUSE": "CONYUGE",
+      "SPOUSE BY AGREEMENT Consensual": " CONYUGE POR ACUERDO CONSENSUAL",
+      "FATHER": "PADRE",
+      "BROTHER": "HERMANO",
+      "SON (A)": "HIJO",
+      "GRANDFATHER (A)": "ABUELO",
+      "GRANDCHILD (A)": "NIETO",
+      "POLITICAL RELATIVE": "PARIENTE POLITICO ",
+      "STEPFATHER/STEPMOTHER": "PADRASTRO/MADRASTRA",
+      "STEP-SON (A)": "HIJASTRO",
+      "STEP-BROTHER (A)": "HERMANASTRO",
+      "ANOTHER FAMILY": "OTRO FAMILIAR",
+      "KNOWN (A)": "CONOCIDO",
+      "FRIEND (A)": "AMIGO",
+      "NEIGHBOR (A)": "VECINO",
+      "CHILD CARED FOR BABYSITTER": "NIÑO CUIDADO POR NIÑERA",
+      "BOYFRIEND (A)": "NOVIO",
+      "SON OF BG": "HIJO(A) DE BD",
+      "HOMOSEXUAL RELATIVE": "PARIENTE HOMOSEXUAL",
+      "EX-SPOUSE": "EX-CONYUGE",
+      "EMPLOYEE": "EMPLEADO(A)",
+      "PATRON": "PATRONO",
+      "OTHER KNOWN": "OTRO CONOCIDO(A)",
+      "UNKNOWN": "DESCONOCIDO",
+      "THE VICTIM WAS THE OFFENDER": "LA VICTIMA FUE EL DELINCUENTE",
+      "UNKNOWN RELATIONSHIP": "RELACION DESCONOCIDA"
+    },
+    "row-seventeen": {
+      "TYPE OF LOSS OF ASSETS / ETC.": "TIPO DE PERDIDA DE BIENES/ETC.",
+      "CODE": "CODIGO",
+      "QUANTITY": "CANTIDAD",
+      "PROPERTY DESCRIPTION": "DESCRIPCION DE BIENES",
+      "included": "(Incluir marca, modelo, tamaño, tipo, num. de serie, color, etc.)",
+      "VALUE": "VALOR",
+      "DATE ON WHICH THEY RECOVERED": "FECHA EN QUE SE RECUPERARON",
+      "NONE": "NINGUNA",
+      "BURNED": "QUEMADOS",
+      "Counterfeit": "FALSIFICADOS",
+      "DAMAGED": "DAÑADOS",
+      "RECOVERED": "RECUPERADO",
+      "SEIZED": "DECOMISADOS",
+      "STOLEN": "ROBADOS",
+      "Unknown": "DESCONOCIDA"
+    },
+    "row-eighteen": {
+      "head": "CUADRO DE CODIGOS DE DESCRIPCION DE BIENES: (Ingresar número de código en la columna correspondiente arriba)",
+      "AIRCRAFT": "AERONAVE",
+      "ALCOHOL": "ALCOHOL",
+      "AUTOMOBILES": "AUTOMOVILES",
+      "BIKES": "BICICLETAS",
+      "BUSES": "AUTOBUSES",
+      "CLOTHES": "ROPA",
+      "EQUIPMENT / COMPUTER PROGRAMS": "EQUIPO/PROGRAMAS DE COMPUTADORA",
+      "CONSUMABLE GOODS": "BIENES CONSUMIBLES",
+      "CREDIT / DEBIT CARDS": "TARJETAS DE CREDITO/DEBITO",
+      "DRUGS / NARCOTICS": "DROGAS/NARCOTICOS",
+      "DRUG / NARCOTIC TEAM": "EQUIPO DE DROGAS/NARCOTICOS",
+      "AGRICULTURAL EQUIPMENT": "EQUIPOS AGRICOLAS",
+      "FIREARMS": "ARMAS DE FUEGO",
+      "PLAYING EQUIPMENT": "EQUIPOS DE JUEGO",
+      "HEAVY INDUSTRIAL CONSTRUCTION EQUIPMENT": "EQUIPOS DE CONSTRUCCION PESADO INDUSTRIAL",
+      "HOUSEHOLD GOODS": "BIENES CASEROS",
+      "JEWELS / PRECIOUS METALS": "JOYAS/METALES PRECIOSOS",
+      "WON": "GANADO",
+      "GOODS": "MERCANCIAS",
+      "MONEY": "DINERO",
+      "NEGOTIABLE INSTRUMENTS": "INSTRUMENTOS NEGOCIABLES",
+      "NON-NEGOTIABLE INSTRUMENTS": "INSTRUMENTOS NO NEGOCIABLES",
+      "OFFICE TEAMS": "EQUIPOS DE OFICINA",
+      "OTHER MOTOR VEHICLES": "OTROS VEHICULOS DE MOTOR",
+      "WALLETS / BAGS / WALLETS": "CARTERAS/BOLSOS/BILLETERAS",
+      "RADIOS / TELEVISIONS / VIDEO RECORDERS": "RADIOS/TELEVISORES/GRABADORAS DE VIDEO",
+      "RECORDINGS-AUDIOVISUAL": "GRABACIONES-AUDIOVISUAL",
+      "RECREATION VEHICLES": "VEHICULOS DE RECREACION",
+      "STRUCTURES-SINGLE-FAMILY HOUSING": "ESTRUCTURAS-VIVIENDAS UNIFAMILIAR",
+      "STRUCTURES-OTHER HOUSING": "ESTRUCTURAS-OTRAS VIVIENDAS",
+      "STRUCTURES-COMMERCIAL": "ESTRUCTURAS-COMERCIALES",
+      "STRUCTURES-INDUSTRIAL / MANUFACTURE": "ESTRUCTURAS-INDUSTRIALES/MANUFACTURA",
+      "PUBLIC / COMMUNITY STRUCTURES": "ESTRUCTURAS-PUBLICAS/COMUNITARIAS",
+      "STRUCTURES-STORAGE": "ESTRUCTURAS-ALMACENAMIENTO ",
+      "STRUCTURES-OTHERS": "ESTRUCTURAS-OTRAS",
+      "ELECTRICAL / MANUAL TOOLS": "HERRAMIENTAS ELECTRICAS/MANUALES",
+      "TRUCKS": "CAMIONES",
+      "VEHICLE PARTS / ACCESSORIES": "PIEZAS/ACCESORIOS DE VEHICULOS",
+      "BOATS": "EMBARCACIONES",
+      "OTHERS": "OTROS",
+      "WAITING FOR INVENTORY": "EN ESPERA DE INVENTARIO",
+      "NUMBER OF CRIMINALS": "NUMERO DE DELINCUENTES",
+      "SOCIAL SECURITY": "SEGURO SOCIAL",
+      "ADDRESS: (Street, city, state, zip code)": "DIRECCION: (Calle, ciudad, estado, codigo postal)"
+    },
+    "row-twentyone": {
+      "AGE": "EDAD",
+      "SEX": "SEXO",
+      "MALE": "MASCULINO",
+      "FEMALE": "FEMENINO",
+      "UNKNOWN": "DESCONOCIDO",
+      "RACE": "RAZA",
+      "WHITE": "BLANCA",
+      "BLACK": "NEGRA",
+      "AMERICAN INDIAN": "INDIO AMERICANO",
+      "ASIAN": "ASIATICA",
+      "HAWAIIAN": "HAWAIIANO",
+      "DATE / PLACE OF BIRTH": "FECHA/LUGAR NACIMIENTO",
+      "HEIGHT": "ESTATURA",
+      "WEIGHT": "PESO",
+      "EYES": "OJOS",
+      "HAIR": "CABELLO",
+      "CLOTHES": "ROPA"
+    },
+    "row-twentysix": {
+      "NUMBER OF DETAINEES": "NUMERO DE DETENIDOS",
+      "MULTIPLE CLARIFICATION INDICATOR": "INDICADOR DE ESCLARECIMIENTO MULTIPLE",
+      "MULTIPLE": "MULTIPLE",
+      "COUNT A DETAINEE": "CONTAR A DETENIDO",
+      "DOES NOT APPLY": "NO SE APLICA"
+    },
+    "row-twentynine": {
+      "heading": "EL DETENIDO ESTABA ARMADO CON: (Marcar hasta dos) (Ingresar A en casilla si es automatica)",
+      "NOT ASSEMBLED": "NO ARMADO",
+      "FIREARM (Unidentified type)": "ARMA DE FUEGO (Tipo no identificado)",
+      "PISTOL": "PISTOLA",
+      "RIFLE": "RIFLE",
+      "SHOTGUN": "ESCOPETA",
+      "ANOTHER FIREARM": "OTRA ARMA DE FUEGO",
+      "LETHAL CUTTING INSTRUMENT": "INSTRUMENTO DE CORTE LETAL",
+      "MITTEN (Another blunt object)": "MITTEN (Otro objeto contundente)",
+      "TYPE OF DETENTION": "TIPO DE DETENCION",
+      "IN THE ACT": "EN EL ACTO",
+      "AFOREMENTIONED": "CITADO",
+      "TAKEN UNDER CUSTODY": "LLEVADO BAJO CUSTODIA",
+      "DETAINEE ARRANGEMENT UNDER 18 YEARS OLD": "DISPOSICION DE DETENIDO DE 18 AÑOS",
+      "PROCESSED WITHIN THE DEPARTMENT": "TRAMITADO DENTRO DEL DEPARTAMENTO",
+      "RECOMMENDED TO ANOTHER AUTHORITY": "RECOMENDADO A OTRA AUTORIDAD"
+    },
+    "row-thirty": {
+      "HEIGHT": "ESTATURA",
+      "WEIGHT": "PESO",
+      "EYES": "OJOS",
+      "HAIR": "CABELLO",
+      "NUM. OF DETENTION": "NUM. DE DETENCION",
+      "DATE OF DETENTION": "FECHA DE DETENCION",
+      "UCR DETENTION CRIME CODE": "CODIGO DE DELITO DE DETENCION UCR"
+    },
+    "row-thirtyone": {
+      "NAME: (Surname, first name, middle name)": "NOMBRE: (Apellidos, nombre, segundo nombre)",
+      "ADDRESS: (Street, city, state, zip code)": "DIRECCION: (Calle, ciudad, estado, código postal)",
+      "RESIDENTIAL TELEPHONE": "TELEFONO RESIDENCIAL",
+      "WORK PHONE": "TELEFONO DE TRABAJO"
+    },
+    "row-thirtytwo": {
+      "COMPLAINANT": "DENUNCIANTE",
+      "PREPARED BY": "PREPARADO POR",
+      "DATE": "FECHA",
+      "LICENSE PLATE": "PLACA",
+      "SUPERVISOR": "SUPERVISOR",
+      "Continue in supplement": "Continuar en suplemento"
+    }
+  },
+  "button": {
+    "Close": "Cerrado",
+    "Assign": "Asignar",
+    "Open": "Abierto",
+    "Close Report": "Cerrar Informe",
+    "Next": "Siguiente",
+    "Back": "Atrás",
+    "Export PDF": "Exportar PDF",
+    "Update": "Actualizar"
+  },
+  "Types of incident": "Típos de incidente",
+  "Robbery": "Robo",
+  "Aggression": "Agresión",
+  "Medical emergency": "Emergencia Médica",
+  "Vehicle Robbery": "Robo Vehículo",
+  "Scaling": "Escalamiento",
+  "Rape": "Violación",
+  "Domestic violence / Law 54": "Violencia Doméstica / Ley 54",
+  "Murder / Homicide": "Asesinato / Homicidio",
+  "Vandalismo": "Vandalismo",
+  "Law 22": "Ley 22",
+  "Alarm activated": "Alarma activada",
+  "Controlled substances": "Sustancias controladas",
+  "Surveillance request in an area": "Solicitud de vigilancia en un área",
+  "Suspicious person or vehicle": "Persona o vehículo sospechoso",
+  "Noise": "Ruido",
+  "Other": "Otro"
+}

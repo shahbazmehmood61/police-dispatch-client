@@ -1,0 +1,3578 @@
+<app-popup-modal class="closeModel" [popupModalName]="'incidentCloseModel'" [modalHeading]="'Close Incident'">
+  <div class="body-container">
+    <form [formGroup]="closeReportForm" *ngIf="report">
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step>
+          <div formGroupName="firstPage">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Officer Email</label>
+                    <input type="text" formControlName="email" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Telephone</label>
+                    <input formControlName="telephoneNo" class="form-control" [value]="
+                        closeReportForm.get('firstPage').get('telephoneNo').value | formater
+                      " type="text" maxlength="14" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>First Name</label>
+                    <input formControlName="firstName" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Middle Initial</label>
+                    <input formControlName="middleInitial" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    <input formControlName="lastName" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Second Last Name</label>
+                    <input formControlName="secondLastName" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Incident Date</label>
+                    <input formControlName="incidentDate" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Incident Time</label>
+                    <input formControlName="incidentTime" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>officer Dispatched TIme</label>
+                    <input formControlName="patrolDispatchTime" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Dispatched Patrol</label>
+                    <input formControlName="dispatchedPatrol" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Officer Receiving Call</label>
+                    <input formControlName="officerReceivingCall" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>People Involved</label>
+                    <input formControlName="peopleInvolved" class="form-control" />
+                  </div>
+                </div>
+                <!-- <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Report Status</label>
+                    <input class="form-control" formControlName="status" />
+                  </div>
+                </div> -->
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Incident Location</label>
+                    <input class="form-control" formControlName="locationOfIncident" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Time of Call</label>
+                    <input class="form-control" formControlName="timeOfCall" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Date of Call</label>
+                    <input class="form-control" formControlName="dateOfCall" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Level Of Aggressiveness</label>
+                    <input class="form-control" formControlName="levelsOfAggressiveness" />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Necessary Resources</label>
+                    <textarea matTextareaAutosize class="form-control firstTextArea"
+                      formControlName="necessaryResources" rows="3"></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label>Incident Narrative</label>
+                    <textarea matTextareaAutosize class="form-control firstTextArea" formControlName="incidentNarrative"
+                      rows="3"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button mat-raised-button (click)="addGroup('secondPage',stepper)">{{ "button.Next" | translate }}</button>
+            <button mat-raised-button type="button" data-dismiss="modal" (click)="
+                updateStatus(
+                  closeReportForm,
+                  report.victimId,
+                  report.key,
+                  'close'
+                ); stepper.reset()
+              ">
+              {{ "button.Close Report" | translate }}
+            </button>
+          </div>
+        </mat-step>
+
+        <mat-step *ngIf="closeReportForm.get('secondPage')">
+          <div formGroupName="secondPage">
+            <table>
+              <tbody formGroupName="headingRow">
+                <tr>
+                  <td rowspan="3" colspan="2">
+                    <div class="row">
+                      <div class="col-lg-12 text-center">
+                        <img *ngIf="darkmode.mode" src="../../../../../../assets/images/monarch_horiz.png"
+                          width="140" />
+                        <img *ngIf="!darkmode.mode" src="../../../../../../assets/images/monarch_horiz_dark.png"
+                          width="140" />
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="form-group m-0">
+                      <label class="m-0">{{ "close-incident.row-one.THE ORI" | translate }}#
+                      </label>
+                      <input class="form-control" formControlName="ori" />
+                    </div>
+                  </td>
+                  <td rowspan="3" colspan="2" class="text-center">
+                    <h5>
+                      {{
+                        "close-incident.row-one.COMMONWEALTH OF PUERTO RICO"
+                          | translate
+                      }}
+                    </h5>
+                    <h4>
+                      {{
+                        "close-incident.row-one.MUNICIPAL POLICE GUAYNABO"
+                          | translate
+                      }}
+                    </h4>
+                    <h3>
+                      {{ "close-incident.row-one.REPORT INCIDENT" | translate }}
+                    </h3>
+                  </td>
+                  <td colspan="4" rowspan="3">
+                    <div class="row">
+                      <div class="col-lg-12 ml-2 pt-2">
+                        <h6>
+                          {{
+                            "close-incident.row-one.INCIDENT STATUS" | translate
+                          }}
+                        </h6>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="unfoundedStatus" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-one.UNFOUNDED" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="clearedByStatus" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-one.CLEARED BY" | translate
+                            }}</label>
+                          </div>
+                          <div class="pl-4">
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="arrestStatus" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-one.ARREST" | translate
+                            }}</label>
+                          </div>
+                          <div class="pl-4">
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="exceptionalStatus" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-one.EXCEPTIONAL" | translate
+                            }}</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="offernderDeathStatus" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-one.options.OFFENDER'S DEATH"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="refusalTrailStatus" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-one.options.REFUSAL OF TRIAL"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="extradicionDeniedStatus" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-one.options.EXTRADICION IS DENIED"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="negotiateCollaborateStatus" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-one.options.NEGOTIATE TO COLLABORATE"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="minorStatus" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-one.options.MINOR, WITHOUT CUSTODY"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="noApplicaStatus" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-one.options.NO APLICA"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <div class="form-group m-0">
+                      <label class="m-0">{{
+                        "close-incident.row-one.INCIDENT" | translate
+                      }}</label>
+                      <input class="form-control" formControlName="incident" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="pr-4">
+                    <div class="form-group m-0">
+                      <label class="m-0">{{
+                        "close-incident.row-one.TYPE OF REPORT" | translate
+                      }}</label><br />
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="initialReportType" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-one.check-boxes.INITIAL REPORT"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div class="col-lg-6">
+                          <input type="checkbox" class="form-check-input mln-1"
+                            formControlName="supplementReportType" />
+                          <label class="form-check-label m-0 mln-1">{{
+                            "close-incident.row-one.check-boxes.SUPPLEMENT"
+                              | translate
+                          }}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <tbody formGroupName="crime">
+                <tr>
+                  <td rowspan="7">
+                    <div class="heading p-0 m-0">
+                      <strong>{{
+                        "close-incident.heading.CRIME" | translate
+                      }}</strong>
+                    </div>
+                  </td>
+                  <td colspan="5">
+                    <div class="row">
+                      <div class="col-lg-12 m-0">
+                        <p>
+                          {{
+                            "close-incident.row-two.COMPLAINANT" | translate
+                          }}({{
+                            "close-incident.row-two.Surname, Name, Middle Name"
+                              | translate
+                          }})
+                        </p>
+                      </div>
+                      <div class="col-lg-4 m-0">
+                        <input type="text" class="form-control mt-n3" formControlName="complainantSurName"
+                          placeholder="Sr Name" />
+                      </div>
+                      <div class="col-lg-4 m-0">
+                        <input type="text" formControlName="complainantName" placeholder="Name"
+                          class="form-control mt-n3" />
+                      </div>
+                      <div class="col-lg-4 m-0">
+                        <input type="text" formControlName="complainantmiddleName" placeholder="Middle Name"
+                          class="form-control mt-n3" />
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{ "close-incident.row-two.S.S" | translate }}
+                        </p>
+                      </div>
+                      <div>
+                        <input class="form-control mt-n3" formControlName="ss" type="text" />
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-two.TELEPHONE" | translate
+                          }}({{ "close-incident.row-two.Home" | translate }})
+                        </p>
+                      </div>
+                      <div>
+                        <input class="form-control mt-n3"
+                          [value]="closeReportForm.get('secondPage.crime.homeTelephone').value | formater"
+                          formControlName="homeTelephone" placeholder="Home Phone Number" type="text" maxlength="14" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="7">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{ "close-incident.row-three.DIRECTION" | translate }}
+                        </p>
+                      </div>
+                      <div>
+                        <input class="form-control mt-n3" formControlName="direction" placeholder="Direction"
+                          type="text" />
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-three.TELEPHONE" | translate
+                          }}({{ "close-incident.row-three.Job" | translate }})
+                        </p>
+                      </div>
+                      <div>
+                        <input class="form-control mt-n3" formControlName="jobTelephone" placeholder="Job Phone Number"
+                          type="text" [value]="closeReportForm.get('secondPage.crime.jobTelephone').value | formater"
+                          maxlength="14" />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="5">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-four.PLACE OF THE INCIDENT"
+                              | translate
+                          }}({{
+                            "close-incident.row-four.Exact Direction"
+                              | translate
+                          }})
+                        </p>
+                      </div>
+                      <div>
+                        <input class="form-control mt-n3" formControlName="incidentPlace" placeholder="Incident Place"
+                          type="text" />
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="3" rowspan="2" formArrayName="ifMotivatedOfPrejudice">
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-row">
+                        <div>
+                          <p>
+                            {{ "close-incident.row-four.CRIME" | translate }}
+                          </p>
+                        </div>
+                        <div>
+                          <p>
+                            {{
+                              "close-incident.row-four.Check if you were motivated out of prejudice"
+                                | translate
+                            }}
+                          </p>
+                        </div>
+                        <div>
+                          <p>
+                            {{ "close-incident.row-four.OFFENDER" | translate }}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row"
+                        *ngFor="let motivated of closeReportForm.get('secondPage.crime.ifMotivatedOfPrejudice')?.controls;let j = index"
+                        [formGroupName]="j">
+                        <input class="form-control" formControlName="crimeName" placeholder="Crime Name" type="text" />
+                        <input class="form-control" formControlName="oneMotivatedOfPrejudice"
+                          placeholder="IF Motivated Of Prejudice" type="text" />
+                        <input class="form-control" type="text" formControlName="offenderName"
+                          placeholder="Offender Name" />
+                        <button mat-icon-button class="bg-light ml-1 mt-1" (click)="
+                            incidentReportClose.removeMotivatedPrejudice(j)
+                          ">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <button class="mt-1 bg-light" mat-icon-button
+                      (click)="incidentReportClose.addMotivatedOfPrejudice()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="5" formArrayName="crimeUcr">
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-row">
+                        <p>
+                          {{
+                            "close-incident.row-five.CRIME CODE UCR" | translate
+                          }}
+                        </p>
+                        <p>
+                          {{
+                            "close-incident.row-five.INCIDENT DATE (S)"
+                              | translate
+                          }}
+                        </p>
+                        <p>
+                          {{
+                            "close-incident.row-five.INCIDENT TIME (S)"
+                              | translate
+                          }}
+                        </p>
+                      </div>
+                      <div class="d-flex flex-row"
+                        *ngFor="let crime of closeReportForm.get('secondPage.crime.crimeUcr')?.controls;let i = index"
+                        [formGroupName]="i">
+                        <div>
+                          <input class="form-control" formControlName="crimeCode" placeholder="Crime UCR Code"
+                            type="text" />
+                        </div>
+                        <div>
+                          <input class="form-control" formControlName="incidentDate" placeholder="incident Date"
+                            type="text" bsDatepicker />
+                        </div>
+                        <div>
+                          <input class="form-control" formControlName="incidentTime" placeholder="Incident Time"
+                            type="text" />
+                        </div>
+                        <button mat-icon-button class="bg-light ml-1 mt-1" (click)="incidentReportClose.removeCrime(i)">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <button class="mt-1 bg-light" mat-icon-button (click)="incidentReportClose.addCrime()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="9">
+                    <p>
+                      {{
+                        "close-incident.row-seven.MOTION FOR PREJUDICE"
+                          | translate
+                      }}({{
+                        "close-incident.row-seven.Mark one for crime"
+                          | translate
+                      }})
+                    </p>
+                    <div class="d-flex flex-row">
+                      <div class="d-flex flex-column justify-space-between">
+                        <p>
+                          {{ "close-incident.row-seven.RACIAL" | translate }}
+                        </p>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiWhite" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-WHITE" | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiBlack" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-BLACK" | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiAmerican" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-AMERICAN INDIAN / ALASKA NATIVE"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiAsiatic" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-ASIATIC / PACIFIC ISLAND"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiMultiracial" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-MULTIRACIAL GROUP"
+                              | translate
+                          }}</label>
+                        </div>
+                        <br /><br />
+                        <p>
+                          {{
+                            "close-incident.row-seven.ETHNIC GROUP / NATIONAL ORIGIN"
+                              | translate
+                          }}
+                        </p>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiArab" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-ARAB" | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiHispanic" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-HISPANIC" | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiOtoroEthnic" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-OTORO ETHNIC GROUP / NATIONAL ORIGIN"
+                              | translate
+                          }}</label>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <p>
+                          {{ "close-incident.row-seven.RELIGIOUS" | translate }}
+                        </p>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiJwe" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-JEW" | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiCatholic" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-CATHOLIC" | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiProtestant" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-PROTESTANT"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiMuslim" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-ISLAMIC / MUSLIM"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiOtherReligion" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-OTHER RELITION"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="multiReligion" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.MULTI-RELIGIOUS ANTI-GROUP"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiAtheism" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-ATHEISM / AGNOSTICISM"
+                              | translate
+                          }}</label>
+                        </div>
+                        <br />
+                        <p>
+                          {{ "close-incident.row-seven.SEXUAL" | translate }}
+                        </p>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="homosexualMen" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.HOMOSEXUAL ANTI-MAN"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="homosexualWomen" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.HOMOSEXUAL ANTI-WOMAN"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiHomosexual" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-HOMOSEXUAL (Men and Women)"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiHeterosexual" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-HETEROSEXUAL"
+                              | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="antiBisexual" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-seven.ANTI-BISEXUAL" | translate
+                          }}</label>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column" formArrayName="ifDifferentFromCrime">
+                        <p>
+                          {{
+                            "close-incident.row-seven.INDICATE THE MOTIVATION CODE IF IT IS DIFFERENT FROM CRIME"
+                              | translate
+                          }}
+                        </p>
+                        <div class="d-flex flex-row" *ngFor="let crime of closeReportForm.get('secondPage.crime.ifDifferentFromCrime')?.controls;let i = index">
+                          <div>
+                            <input type="text" [formControlName]="i" placeholder="Crime Code"
+                              class="form-control ml-1" />
+                          </div>
+                          <button mat-icon-button class="bg-light ml-1 mt-1"
+                            (click)="incidentReportClose.removediffFromCrime(i)">
+                            <i class="fas fa-minus"></i>
+                          </button>
+                        </div>
+                        <div>
+                          <button mat-icon-button class="bg-light ml-1" (click)="incidentReportClose.diffFromCrime()">
+                            <i class="fas fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-eight.CRIME SITUATION: (check only one per crime)"
+                              | translate
+                          }}
+                        </p>
+                      </div>
+                      <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="crimeTried1" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eight.TRIED" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="crimeFull1" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eight.FULL" | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="crimeTried2" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eight.TRIED" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="crimeFull2" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eight.FULL" | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="crimeTried3" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eight.TRIED" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="crimeFull3" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eight.FULL" | translate
+                            }}</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{
+                          "close-incident.row-eight.OFFENDER (S) USE: (Check all that apply)"
+                            | translate
+                        }}
+                      </p>
+                      <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="offenderUseAlcohal" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eight.ALCOHOL" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="offenderUseDrugs" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eight.DRUGS" | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="offenderUseComputerEquip" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eight.COMPUTER EQUIPMENT"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="doesNotApply" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eight.DOES NOT APPLY"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-column">
+                        <p>
+                          {{
+                            "close-incident.row-eight.(Only for robberies) NUM. OF LOCATED ALLANADOS"
+                              | translate
+                          }}
+                        </p>
+                        <input class="form-control" formControlName="locatedAllanados" />
+                      </div>
+                      <div class="d-flex flex-row">
+                        <p>
+                          {{
+                            "close-incident.row-eight.INPUT METHOD" | translate
+                          }}
+                        </p>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="robberyByForce" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-eight.BY FORCE" | translate
+                          }}</label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="robberyWithoutForce" />
+                          <label class="form-check-label m-0 ml-4">{{
+                            "close-incident.row-eight.WITHOUT FORCE" | translate
+                          }}</label>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="9">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{
+                          "close-incident.row-nine.PLACE OF CRIME" | translate
+                        }}({{
+                          "close-incident.row-nine.Check only one" | translate
+                        }})
+                      </p>
+                      <div class="d-flex flex-row justify-content-between">
+                        <div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="airBustrainterminal" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.AIR / BUS / TRAIN TERMINAL"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="bank" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.BANK / SAVINGS AND LOANS"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="nightClub" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.CANTINA / NIGHT CLUB"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="churchTemple" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.CHURCH / SYNAGOGUE / TEMPLE"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="commercialOfficeBuilding" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.COMMERCIAL / OFFICE BUILDING"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="constructionSite" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.CONSTRUCTION SITE"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="hardwareStore" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.HARDWARE STORE"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="departmentStore" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.DEPARTMENT / DISCOUNT STORE"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="other" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.OTHER / UNKNOWN"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="pharmacyHospital" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.PHARMACY / DOCTOR'S OFFICE / HOSPITAL"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="fieldForest" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.FIELD / FOREST"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="govtPublicBuilding" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.GOVERNMENT / PUBLIC BUILDINGS"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="superMarketFoodStore" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.FOOD STORE / SUPERMARKET"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="roadStreetAlley" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.ROAD / STREET / ALLEY"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="hotelMotel" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.HOTEL / MOTEL / ETC"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="jailPrison" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.JAIL PRISON" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="lakeWaterway" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.LAKE / WATERWAY"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="liquorStore" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.LIQUOR STORE" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="parkingGarage" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.PARKING / GARAGE"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="storageRentalCenter" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.STORAGE RENTAL CENTER"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="residenceHome" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.RESIDENCE / HOME"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="restaurant" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.RESTAURANT" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="university" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.UNIVERSITY" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="fuelStation" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.FUEL STATION" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="specializedStore" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-nine.SPECIALIZED STORE"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <tbody formGroupName="victim">
+                <tr>
+                  <td rowspan="7">
+                    <div class="heading p-0 m-0 victim">
+                      <strong>{{
+                        "close-incident.heading.VICTIM" | translate
+                      }}</strong>
+                    </div>
+                  </td>
+                  <td colspan="9">
+                    <div class="d-felx flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-ten.TYPE OF CRIMINAL ACTIVITY (Mark up to three)"
+                              | translate
+                          }}
+                        </p>
+                      </div>
+                      <div class="d-flex flex-row justify-content-around">
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="buyReceive" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-ten.BUY / RECEIVE" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="cultivateManufacture" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-ten.CULTIVATE / MANUFACTURE / PUBLISH"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="distributeSell" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-ten.DISTRIBUTE / SELL"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="exploitChildren" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-ten.EXPLOIT CHILDREN"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="protestPromoteAssist" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-ten.PROTEST, PROMOTE / ASSIST"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="ownHide" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-ten.OWN / HIDE" | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="transportImport" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-ten.TRANSPORT / TRANSMIT / IMPORT"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="useConsume" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-ten.USE / CONSUME" | translate
+                            }}</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="9">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-eleven.TYPE OF WEAPON / FORCE INVOLVED"
+                              | translate
+                          }}({{
+                            "close-incident.row-eleven.(Check up to three) (Enter A in box if automatic)"
+                              | translate
+                          }})
+                        </p>
+                      </div>
+                      <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="firearm" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.FIREARM (Unidentified type)"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="gun" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.GUN" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="rifle" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.RIFLE" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="shotGun" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.SHOTGUN" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="anotherFirearm" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.ANOTHER FIREARM"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="knife" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.KNIFE / CUTTING INSTRUMENT"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="shappenedObject" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.SHARPENED OBJECT"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="motorVehicle" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.MOTOR VEHICLE"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="personalWeapon" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.PERSONAL WEAPONS"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="poison" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.POISON" | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="explosives" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.EXPLOSIVES" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="fire" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.FIRE / FIRE"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="narcoticDrug" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.NARCOTICS / DRUGS"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="suffocation" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.SUFFOCATION"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="other" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.OTHER" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="unknown" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.Unknown" | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="none" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-eleven.NONE" | translate
+                            }}</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="7">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{
+                          "close-incident.row-twelve.VICTIM (Last name, First name, Middle name)"
+                            | translate
+                        }}
+                      </p>
+                      <div class="d-flex flex-row">
+                        <input type="text" class="form-control" formControlName="victimFirstName"
+                          placeholder="First Name" />
+                        <input type="text" class="form-control" formControlName="victimLastName"
+                          placeholder="Last Name" />
+                        <input type="text" class="form-control" formControlName="victimMiddleName"
+                          placeholder="Middle Name" />
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{ "close-incident.row-twelve.Home phone" | translate }}
+                      </p>
+                      <input type="text" class="form-control" formControlName="homePhone"
+                        placeholder="Home Phone Number" maxlength="14"
+                        [value]="closeReportForm.get('secondPage.victim.homePhone').value | formater" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="9">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{
+                          "close-incident.row-thirteen.ADDRESS: (Street, city, postal code)"
+                            | translate
+                        }}
+                      </p>
+                      <textarea matTextareaAutosize type="text" class="form-control textArea"
+                        placeholder="Enter Complete Address" formControlName="address" rows="2"></textarea>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{
+                          "close-incident.row-fourtheen.VICTIM TYPE: (Mark only one)"
+                            | translate
+                        }}
+                      </p>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="individual" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.INDIVIDUAL" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="deal" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.DEAL" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="financial" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.FINANCIAL" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="government" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.GOVERNMENT" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="religious" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.RELIGIOUS" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="society" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.SOCIETY / PUBLIC"
+                            | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="otherVictimtype" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.OTHER" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="unknownVictimType" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.UNKNOWN" | translate
+                        }}</label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{ "close-incident.row-fourtheen.RACE" | translate }}
+                      </p>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="white" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.WHITE" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="black" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.BLACK" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="americanIndian" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.AMERICAN INDIAN"
+                            | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="asian" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.ASIAN" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="hawaiiana" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.HAWAIIANA" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="raceUnknown" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.Unknown" | translate
+                        }}</label>
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{ "close-incident.row-fourtheen.SEX" | translate }}
+                      </p>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="male" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.MALE" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="female" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.FEMALE" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="sexOther" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-eleven.OTHER" | translate
+                        }}</label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{
+                          "close-incident.row-fourtheen.CONDITION OF RESIDENCE"
+                            | translate
+                        }}
+                      </p>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="resident" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.RESIDENT" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="nonResident" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.NON-RESIDENT"
+                            | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="residentOther" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-eleven.OTHER" | translate
+                        }}</label>
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{
+                          "close-incident.row-fourtheen.ETHNIC GROUP"
+                            | translate
+                        }}
+                      </p>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="hispanic" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.HISPANIC" | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="notHispanic" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-fourtheen.NOT HISPANIC"
+                            | translate
+                        }}</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="otherGroup" />
+                        <label class="form-check-label m-0 ml-4">{{
+                          "close-incident.row-eleven.OTHER" | translate
+                        }}</label>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex felx-row">
+                      <div class="d-flex flex-column">
+                        <div>
+                          <label class="m-0 ml-1">{{
+                            "close-incident.row-fourtheen.AGE" | translate
+                          }}</label>
+                          <input type="text" class="form-control ml-1" formControlName="age" placeholder="Age" />
+                        </div>
+                        <div>
+                          <label class="m-0 ml-1">{{
+                            "close-incident.row-fourtheen.DATE OF BIRTH"
+                              | translate
+                          }}</label>
+                          <input type="text" class="form-control ml-1" placeholder="Date Of Birth"
+                            formControlName="dateOfBirth" bsDatepicker />
+                        </div>
+                        <div>
+                          <label class="m-0 ml-1">{{
+                            "close-incident.row-fourtheen.NUM. OF VICTIMS"
+                              | translate
+                          }}</label>
+                          <input type="text" class="form-control ml-1" placeholder="Num Of Victims"
+                            formControlName="numOfVictims" />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-fifteen.CIRCUMSTANCES OF SERIOUS ASSAULT / HOMICIDE: (Check up to two)"
+                              | translate
+                          }}
+                        </p>
+                      </div>
+                      <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="discussion" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-fifteen.DISCUSSION"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="aggressionAgaintPolice" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-fifteen.AGGRESSION AGAINST POLICE AGENT"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="drugSales" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-fifteen.DRUG SALES"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="organizedCrime" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-fifteen.ORGANIZED CRIME"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="juvenileGang" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-fifteen.JUVENILE GANGS"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="fightBtwLovers" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-fifteen.FIGHT BETWEEN LOVERS"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="euthanasia" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-fifteen.EUTHANASIA"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="otherCrimeInvolve" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-fifteen.ANOTHER CRIME INVOLVED"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="otherCircumstance" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-fifteen.OTHER CIRCUMSTANCES"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="unknownCircumstance" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-fifteen.CIRCUMSTANCES Unknown"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-fifteen.TYPE OF INJURY: (mark up to five)"
+                              | translate
+                          }}
+                        </p>
+
+                        <div class="d-flex flex-row">
+                          <div class="d-flex flex-column">
+                            <div>
+                              <input type="checkbox" class="form-check-input ml-1" formControlName="injuryNone" />
+                              <label class="form-check-label m-0 ml-4">{{
+                                "close-incident.row-fifteen.NONE" | translate
+                              }}</label>
+                            </div>
+                            <div>
+                              <input type="checkbox" class="form-check-input ml-1" formControlName="bones" />
+                              <label class="form-check-label m-0 ml-4">{{
+                                "close-incident.row-fifteen.BONES" | translate
+                              }}</label>
+                            </div>
+                            <div>
+                              <input type="checkbox" class="form-check-input ml-1"
+                                formControlName="possibleInjuriesInternal" />
+                              <label class="form-check-label m-0 ml-4">{{
+                                "close-incident.row-fifteen.POSSIBLE INJURIES INTERNAL"
+                                  | translate
+                              }}</label>
+                            </div>
+                            <div>
+                              <input type="checkbox" class="form-check-input ml-1" formControlName="ripSevere" />
+                              <label class="form-check-label m-0 ml-4">{{
+                                "close-incident.row-fifteen.RIP SEVERE"
+                                  | translate
+                              }}</label>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div>
+                              <input type="checkbox" class="form-check-input ml-1" formControlName="minorInjury" />
+                              <label class="form-check-label m-0 ml-4">{{
+                                "close-incident.row-fifteen.MINOR INJURY"
+                                  | translate
+                              }}</label>
+                            </div>
+                            <div>
+                              <input type="checkbox" class="form-check-input ml-1" formControlName="majorInjury" />
+                              <label class="form-check-label m-0 ml-4">{{
+                                "close-incident.row-fifteen.MAJOR INJURY"
+                                  | translate
+                              }}</label>
+                            </div>
+                            <div>
+                              <input type="checkbox" class="form-check-input ml-1" formControlName="wasteOfTeeth" />
+                              <label class="form-check-label m-0 ml-4">{{
+                                "close-incident.row-fifteen.WASTE OF TEETH"
+                                  | translate
+                              }}</label>
+                            </div>
+                            <div>
+                              <input type="checkbox" class="form-check-input ml-1" formControlName="wasteOfKnowledge" />
+                              <label class="form-check-label m-0 ml-4">{{
+                                "close-incident.row-fifteen.WASTE OF KNOWLEDGE"
+                                  | translate
+                              }}</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="2" formArrayName="victimRelatedCrimes">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-fifteen.VICTIM RELATED TO NUM. OF CRIME STATED ABOVE"
+                              | translate
+                          }}
+                        </p>
+                      </div>
+                      <div class="d-flex flex-column"
+                        *ngFor="let victim of closeReportForm.get('secondPage.victim.victimRelatedCrimes')?.controls; let i = index">
+                        <div class="d-flex flex-row">
+                          <input class="form-control" [formControlName]="i" placeholder="Victim Name" />
+                          <button mat-icon-button class="bg-light ml-1 mt-1" (click)="
+                              incidentReportClose.removeVictimRealtedCrime(i)
+                            ">
+                            <i class="fas fa-minus"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div>
+                        <button class="mt-1 bg-light" mat-icon-button
+                          (click)="incidentReportClose.victimRealtedCrime()">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="9">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-sixteen.VICTIM-TO-OFFENDER RELATION: (For multiple offender relationships, enter offender number (s) in the space)"
+                              | translate
+                          }}
+                        </p>
+                      </div>
+                      <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="spouse" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.SPOUSE" | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="spouseByAggrement" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.SPOUSE BY AGREEMENT Consensual"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="father" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.FATHER" | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="brother" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.BROTHER" | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="son" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.SON (A)" | translate
+                            }}</label>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="grandfather" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.GRANDFATHER (A)"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="grandchild" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.GRANDCHILD (A)"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="politcalRelative" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.POLITICAL RELATIVE"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="stepFatherMother" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.STEPFATHER/STEPMOTHER"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="stepson" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.STEP-SON (A)"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="stepbrother" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.STEP-BROTHER (A)"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="anotherFamily" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.ANOTHER FAMILY"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="known" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.KNOWN (A)" | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="friend" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.FRIEND (A)"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="neighbor" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.NEIGHBOR (A)"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="babysitter" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.CHILD CARED FOR BABYSITTER"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="boyfriend" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.BOYFRIEND (A)"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="sonOfBG" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.SON OF BG" | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="homosexualRelative" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.HOMOSEXUAL RELATIVE"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="exSpouse" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.EX-SPOUSE" | translate
+                            }}</label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="employee" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.EMPLOYEE" | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="patron" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.PATRON" | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="otherKnown" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.OTHER KNOWN"
+                                | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="unKnown" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.UNKNOWN" | translate
+                            }}</label>
+                          </div>
+
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="victimWasOffender" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.THE VICTIM WAS THE OFFENDER"
+                                | translate
+                            }}</label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="unknownRelationship" />
+                            <label class="form-check-label m-0 ml-4">{{
+                              "close-incident.row-sixteen.UNKNOWN RELATIONSHIP"
+                                | translate
+                            }}</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="btn-group">
+            <button mat-raised-button (click)="addGroup('thirdPage',stepper)">{{ "button.Next" | translate }}</button>
+            <button mat-raised-button type="button" data-dismiss="modal" (click)="
+                updateStatus(
+                  closeReportForm,
+                  report.victimId,
+                  report.key,
+                  'close'
+                ); stepper.reset()
+              ">
+              {{ "button.Close Report" | translate }}
+            </button>
+            <button mat-raised-button
+              (click)="removeGroup('secondPage', stepper)">{{ "button.Back" | translate }}</button>
+          </div>
+        </mat-step>
+
+        <mat-step *ngIf="closeReportForm.get('thirdPage')">
+          <div formGroupName="thirdPage">
+            <table>
+              <tbody formGroupName="goods">
+                <tr>
+                  <td rowspan="10">
+                    <div class="heading p-0 m-0">
+                      <strong>{{
+                        "close-incident.heading.GOODS" | translate
+                      }}</strong>
+                    </div>
+                  </td>
+                  <td>
+                    <p>
+                      {{
+                        "close-incident.row-seventeen.TYPE OF LOSS OF ASSETS / ETC"
+                          | translate
+                      }}
+                    </p>
+                  </td>
+                  <td>
+                    <p>
+                      {{ "close-incident.row-seventeen.CODE" | translate }}
+                    </p>
+                  </td>
+                  <td>
+                    <p>
+                      {{ "close-incident.row-seventeen.QUANTITY" | translate }}
+                    </p>
+                  </td>
+                  <td colspan="3">
+                    <p>
+                      {{
+                        "close-incident.row-seventeen.PROPERTY DESCRIPTION"
+                          | translate
+                      }}<br />{{
+                        "close-incident.row-seventeen.Included" | translate
+                      }}
+                    </p>
+                  </td>
+                  <td>
+                    <p>
+                      {{ "close-incident.row-seventeen.VALUE" | translate }}
+                    </p>
+                  </td>
+                  <td colspan="2">
+                    <p>
+                      {{
+                        "close-incident.row-seventeen.DATE ON WHICH THEY RECOVERED"
+                          | translate
+                      }}
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      {{ "close-incident.row-seventeen.NONE" | translate }}
+                    </p>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="noneCode" placeholder="Code" />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="noneQuantity" placeholder="Qunatity" />
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="noneDescription"
+                        placeholder="Description" rows="2"></textarea>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="noneValue" placeholder="value" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div>
+                      <input class="form-control" formControlName="noneDate" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      {{ "close-incident.row-seventeen.BURNED" | translate }}
+                    </p>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="burnedCode" placeholder="Code" />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="burnedQuantity" placeholder="Quantity" />
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="burnedDescription"
+                        placeholder="Description" rows="2"></textarea>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="burnedValue" placeholder="Value" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div>
+                      <input class="form-control" formControlName="burnedDate" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      {{
+                        "close-incident.row-seventeen.Counterfeit" | translate
+                      }}
+                    </p>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="counterfietCode" placeholder="Code" />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="counterfietQuantity" placeholder="Quantity" />
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div>
+                      <textarea class="form-control textArea" matTextareaAutosize
+                        formControlName="counterfietDescription" placeholder="Description" rows="2"></textarea>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="counterfietValue" placeholder="Value" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div>
+                      <input class="form-control" formControlName="counterfietDate" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      {{ "close-incident.row-seventeen.DAMAGED" | translate }}
+                    </p>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="damagedCode" placeholder="Code" />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="damagedQuantity" placeholder="Quantity" />
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="damagedDescription"
+                        placeholder="Description" rows="2"></textarea>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="damagedValue" placeholder="Value" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div>
+                      <input class="form-control" formControlName="damagedDate" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      {{ "close-incident.row-seventeen.RECOVERED" | translate }}
+                    </p>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="recoveredCode" placeholder="Code" />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="recoveredQuantity" placeholder="Quantity" />
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="recoveredDescription"
+                        placeholder="Description" rows="2"></textarea>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="recoveredValue" placeholder="Value" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div>
+                      <input class="form-control" formControlName="recoveredDate" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      {{ "close-incident.row-seventeen.SEIZED" | translate }}
+                    </p>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="seizedCode" placeholder="Code" />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="seizedQuantity" placeholder="Quantity" />
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="seizedDescription"
+                        placeholder="Description" rows="2"></textarea>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="seizedValue" placeholder="Value" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div>
+                      <input class="form-control" formControlName="seizedDate" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      {{ "close-incident.row-seventeen.STOLEN" | translate }}
+                    </p>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="stoledCode" placeholder="Code" />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="stoledQuantity" placeholder="Quantity" />
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="stoledDescription"
+                        placeholder="Description" rows="2"></textarea>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="stoledValue" placeholder="Value" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div>
+                      <input class="form-control" formControlName="stoledDate" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>
+                      {{ "close-incident.row-seventeen.Unknown" | translate }}
+                    </p>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="unknownCode" placeholder="Code" />
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="unknownQuantity" placeholder="Quantity" />
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="unknownDescription"
+                        placeholder="Description" rows="2"></textarea>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <input class="form-control" formControlName="unknownValue" placeholder="Value" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div>
+                      <input class="form-control" formControlName="unknownDate" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="9">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{ "close-incident.row-eighteen.head" | translate }}
+                        </p>
+                      </div>
+                      <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="aircraft" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.AIRCRAFT"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="alcohal" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.ALCOHOL"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="autoMobiles" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.AUTOMOBILES"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="bikes" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.BIKES" | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="buses" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.BUSES" | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="clothes" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.CLOTHES"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="equipmentsPrograms" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.EQUIPMENT / COMPUTER PROGRAMS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="consumeableGoods" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.CONSUMABLE GOODS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="creditDebitCard" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.CREDIT / DEBIT CARDS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="drugsNarcotics" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.DRUGS / NARCOTICS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="drugNarcoticsTeam" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.DRUG / NARCOTIC TEAM"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="agriculcureEquipment" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.AGRICULTURAL EQUIPMENT"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="firearms" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.FIREARMS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="playingEquipment" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.PLAYING EQUIPMENT"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="structuresCommercial" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.STRUCTURES-COMMERCIAL"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="structuresIndustrial" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.STRUCTURES-INDUSTRIAL / MANUFACTURE"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="heavyEquipments" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.HEAVY INDUSTRIAL CONSTRUCTION EQUIPMENT"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="householdGoods" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.HOUSEHOLD GOODS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="praciousMetals" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.JEWELS / PRECIOUS METALS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="won" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.WON" | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="goods" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.GOODS" | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="money" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.MONEY" | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="negotableInstruments" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.NEGOTIABLE INSTRUMENTS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="nonNegotableInstruments" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.NON-NEGOTIABLE INSTRUMENTS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="officeTeams" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.OFFICE TEAMS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="otherMotorVehical" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.OTHER MOTOR VEHICLES"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="walletBag" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.WALLETS / BAGS / WALLETS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="radioTelevision" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.RADIOS / TELEVISIONS / VIDEO RECORDERS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="recordingAudioVisual" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.RECORDINGS-AUDIOVISUAL"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="recreationVehicel" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.RECREATION VEHICLES"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="structurefamilyHousing" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.STRUCTURES-SINGLE-FAMILY HOUSING"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="structureOtherHousing" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.STRUCTURES-OTHER HOUSING"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1"
+                              formControlName="publicCommunityStructure" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.PUBLIC / COMMUNITY STRUCTURES"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="structureStorage" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.STRUCTURES-STORAGE"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="structureOther" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.STRUCTURES-OTHERS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="electricalTools" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.ELECTRICAL / MANUAL TOOLS"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="trucks" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.TRUCKS" | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="vehicelParts" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.VEHICLE PARTS / ACCESSORIES"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="boats" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.BOATS" | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="other" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-eighteen.OTHERS" | translate
+                              }}
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <tbody formGroupName="offender">
+                <tr>
+                  <td rowspan="9">
+                    <div class="heading p-0 m-0 offenders">
+                      <strong>{{
+                        "close-incident.heading.OFFENDERS" | translate
+                      }}</strong>
+                    </div>
+                  </td>
+                  <td colspan="9">
+                    <div class="d-flex flex-column">
+                      <label class="form-check-label ml-1">
+                        {{
+                          "close-incident.row-eighteen.NUMBER OF CRIMINALS"
+                            | translate
+                        }}
+                      </label>
+                      <input type="text" class="form-control ml-1" formControlName="numOfCriminals"
+                        placeholder="Num Of Criminals" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="9" formArrayName="offendersRecord">
+                    <div
+                      *ngFor="let offenders of closeReportForm.get('thirdPage.offender.offendersRecord')?.controls; let l = index"
+                      [formGroupName]="l">
+                      <div class="d-flex flex-row justify-content-between">
+                        <div class="d-flex flex-column">
+                          <label class="ml-1">
+                            {{ l + 1 }}
+                          </label>
+                          <input type="text" class="form-control ml-1" formControlName="criminalName"
+                            placeholder="Name Of Criminal" />
+                        </div>
+                        <div class="d-flex flex-column">
+                          <label class="ml-1">
+                            {{
+                              "close-incident.row-eighteen.SOCIAL SECURITY"
+                                | translate
+                            }}
+                          </label>
+                          <input type="text" class="form-control ml-1" formControlName="socialSecurity"
+                            placeholder="Social Security" />
+                        </div>
+                        <div class="d-flex flex-column">
+                          <label class="ml-1">
+                            {{
+                              "close-incident.row-eighteen.ADDRESS: (Street, city, state, zip code)"
+                                | translate
+                            }}
+                          </label>
+                          <textarea type="text" class="form-control ml-1" matTextareaAutosize class="textArea"
+                            formControlName="address" placeholder="Complete Address" rows="2"></textarea>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row justify-content-between">
+                        <div class="d-flex flex-column">
+                          <div class="m-0">
+                            <p class="m-0">
+                              {{
+                                "close-incident.row-twentyone.SEX" | translate
+                              }}
+                            </p>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="male" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentyone.MALE" | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="female" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentyone.FEMALE"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="unknown" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentyone.UNKNOWN"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div class="m-0 mt-1">
+                            <p class="m-0 mt-1">
+                              {{
+                                "close-incident.row-twentyone.RACE" | translate
+                              }}
+                            </p>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="white" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentyone.WHITE" | translate
+                              }}
+                            </label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="black" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentyone.BLACK" | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="americanIndian" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentyone.AMERICAN INDIAN"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="asian" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentyone.ASIAN" | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="hawaiiana" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentyone.HAWAIIAN"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="unknownRace" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentyone.UNKNOWN"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <label class="m-0 ml-1">
+                              {{
+                                "close-incident.row-twentyone.AGE" | translate
+                              }}
+                            </label>
+                            <input type="text" class="form-control ml-1" placeholder="Age" formControlName="age" />
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <p class="m-0">
+                            {{
+                              "close-incident.row-twentyone.DATE / PLACE OF BIRTH"
+                                | translate
+                            }}
+                          </p>
+                          <input class="form-control" formControlName="dateOfBirth" placeholder="Date Of Birth"
+                            bsDatepicker />
+                          <p class="m-0">
+                            {{
+                              "close-incident.row-twentyone.HEIGHT" | translate
+                            }}
+                          </p>
+                          <input class="form-control" formControlName="height" placeholder="Height" />
+                          <p class="m-0">
+                            {{
+                              "close-incident.row-twentyone.WEIGHT" | translate
+                            }}
+                          </p>
+                          <input class="form-control" formControlName="weight" placeholder="Weight" />
+                        </div>
+                        <div class="d-flex flex-column">
+                          <p class="m-0">
+                            {{
+                              "close-incident.row-twentyone.EYES" | translate
+                            }}
+                          </p>
+                          <input class="form-control" formControlName="eye" placeholder="Eye Color" />
+                          <p class="m-0">
+                            {{
+                              "close-incident.row-twentyone.CLOTHES" | translate
+                            }}
+                          </p>
+                          <input class="form-control" formControlName="clothes" placeholder="Clothes Color" />
+                          <p class="m-0">
+                            {{
+                              "close-incident.row-twentyone.HAIR" | translate
+                            }}
+                          </p>
+                          <input class="form-control" formControlName="hair" placeholder="Hair Color" />
+                        </div>
+                      </div>
+                      <button mat-icon-button class="bg-light mb-3 ml-3 mt-1"
+                        (click)="incidentReportClose.removeOffender(l)">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <hr class="my-3" />
+                    </div>
+                    <button mat-icon-button class="bg-light mb-3 ml-3" (click)="incidentReportClose.addOffender()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <tbody formGroupName="arrested">
+                <tr>
+                  <td rowspan="5">
+                    <div class="heading p-0 m-0 arrested">
+                      <strong>{{
+                        "close-incident.heading.ARRESTED" | translate
+                      }}</strong>
+                    </div>
+                  </td>
+                  <td colspan="4">
+                    <div class="d-flex flex-column">
+                      <label class="ml-1">
+                        {{
+                          "close-incident.row-twentysix.NUMBER OF DETAINEES"
+                            | translate
+                        }}
+                      </label>
+                      <input type="text" class="form-control ml-1" formControlName="numOfDetainee"
+                        placeholder="Num Of Detainee" />
+                    </div>
+                  </td>
+                  <td colspan="5">
+                    <div class="d-flex flex-column">
+                      <div>
+                        <p>
+                          {{
+                            "close-incident.row-twentysix.MULTIPLE CLARIFICATION INDICATOR"
+                              | translate
+                          }}
+                        </p>
+                      </div>
+                      <div class="d-flex flex-row">
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="indicatorMultiple" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentysix.MULTIPLE"
+                                | translate
+                            }}
+                          </label>
+                        </div>
+
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="countDetainee" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentysix.COUNT A DETAINEE"
+                                | translate
+                            }}
+                          </label>
+                        </div>
+
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="doesNotApply" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentysix.DOES NOT APPLY"
+                                | translate
+                            }}
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="3">
+                    <div class="d-flex flex-column">
+                      <label class="ml-1">
+                        1
+                      </label>
+                      <input type="text" class="form-control ml-1" formControlName="criminalName"
+                        placeholder="Criminal Name" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <label class="ml-1">
+                        {{
+                          "close-incident.row-eighteen.SOCIAL SECURITY"
+                            | translate
+                        }}
+                      </label>
+                      <input type="text" class="form-control ml-1" formControlName="socialSecurity" placeholder="" />
+                    </div>
+                  </td>
+                  <td colspan="4">
+                    <div class="d-flex flex-column">
+                      <label class="ml-1">
+                        {{
+                          "close-incident.row-eighteen.ADDRESS: (Street, city, state, zip code)"
+                            | translate
+                        }}
+                      </label>
+                      <input type="text" class="form-control ml-1" formControlName="address"
+                        placeholder="Conplete Address" />
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td colspan="1">
+                    <div class="d-flex flex-column">
+                      <label class="ml-1">
+                        {{ "close-incident.row-twentyone.AGE" | translate }}
+                      </label>
+                      <input type="text" class="form-control ml-1" placeholder="Age" formControlName="age" />
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <div class="d-flex flex-row">
+                      <div class="d-flex flex-column">
+                        <div class="m-0">
+                          <p class="m-0">
+                            {{ "close-incident.row-twentyone.SEX" | translate }}
+                          </p>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="male" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentyone.MALE" | translate
+                            }}
+                          </label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="female" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentyone.FEMALE" | translate
+                            }}
+                          </label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="unknown" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentyone.UNKNOWN" | translate
+                            }}
+                          </label>
+                        </div>
+                        <div class="m-0 mt-1">
+                          <p class="m-0 mt-1">
+                            {{
+                              "close-incident.row-twentyone.RACE" | translate
+                            }}
+                          </p>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="white" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentyone.WHITE" | translate
+                            }}
+                          </label>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="black" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentyone.BLACK" | translate
+                            }}
+                          </label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="americanIndian" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentyone.AMERICAN INDIAN"
+                                | translate
+                            }}
+                          </label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="asian" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentyone.ASIAN" | translate
+                            }}
+                          </label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="hawaiiana" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentyone.HAWAIIAN"
+                                | translate
+                            }}
+                          </label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="unknownRace" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentyone.UNKNOWN" | translate
+                            }}
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{
+                          "close-incident.row-twentyone.DATE / PLACE OF BIRTH"
+                            | translate
+                        }}
+                      </p>
+                      <input class="form-control" formControlName="dateOfBirth" placeholder="Date of Birth"
+                        bsDatepicker />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{
+                          "close-incident.row-fourtheen.ETHNIC GROUP"
+                            | translate
+                        }}
+                      </p>
+
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="hispanic" />
+                        <label class="form-check-label ml-4">
+                          {{
+                            "close-incident.row-fourtheen.HISPANIC" | translate
+                          }}
+                        </label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="notHispanic" />
+                        <label class="form-check-label ml-4">
+                          {{
+                            "close-incident.row-fourtheen.NOT HISPANIC"
+                              | translate
+                          }}
+                        </label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="unknownGroup" />
+                        <label class="form-check-label ml-4">
+                          {{
+                            "close-incident.row-fourtheen.UNKNOWN" | translate
+                          }}
+                        </label>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td colspan="1">
+                    <div class="d-flex flex-column">
+
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="resident" />
+                        <label class="form-check-label ml-4">
+                          {{
+                            "close-incident.row-fourtheen.RESIDENT" | translate
+                          }}
+                        </label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="nonResident" />
+                        <label class="form-check-label ml-4">
+                          {{
+                            "close-incident.row-fourtheen.NON-RESIDENT"
+                              | translate
+                          }}
+                        </label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="form-check-input ml-1" formControlName="unknownResident" />
+                        <label class="form-check-label ml-4">
+                          {{
+                            "close-incident.row-fourtheen.UNKNOWN" | translate
+                          }}
+                        </label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="5">
+                    <div class="d-flex flex-column">
+                      <p>
+                        {{
+                          "close-incident.row-twentynine.heading" | translate
+                        }}
+                      </p>
+                      <div class="d-flex flex-row">
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="notAssembled" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentynine.NOT ASSEMBLED"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="firearm" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentynine.FIREARM (Unidentified type)"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="pistol" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentynine.PISTOL"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="rifle" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentynine.RIFLE"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="shotGun" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentynine.SHOTGUN"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="anotherFirearm" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentynine.ANOTHER FIREARM"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="cuttingInstrument" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentynine.LETHAL CUTTING INSTRUMENT"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                          <div>
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="mitten" />
+                            <label class="form-check-label ml-4">
+                              {{
+                                "close-incident.row-twentynine.MITTEN (Another blunt object)"
+                                  | translate
+                              }}
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td colspan="4">
+                    <div class="d-flex flex-row">
+                      <div class="d-flex flex-column">
+                        <p>
+                          {{
+                            "close-incident.row-twentynine.TYPE OF DETENTION"
+                              | translate
+                          }}
+                        </p>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="inTheFact" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentynine.IN THE ACT"
+                                | translate
+                            }}
+                          </label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="afforementioned" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentynine.AFOREMENTIONED"
+                                | translate
+                            }}
+                          </label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="takenUnderCustody" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentynine.TAKEN UNDER CUSTODY"
+                                | translate
+                            }}
+                          </label>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column">
+                        <p>
+                          {{
+                            "close-incident.row-twentynine.DETAINEE ARRANGEMENT UNDER 18 YEARS OLD"
+                              | translate
+                          }}
+                        </p>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="processInDepartment" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentynine.PROCESSED WITHIN THE DEPARTMENT"
+                                | translate
+                            }}
+                          </label>
+                        </div>
+                        <div>
+                          <input type="checkbox" class="form-check-input ml-1" formControlName="recommendToAuthority" />
+                          <label class="form-check-label ml-4">
+                            {{
+                              "close-incident.row-twentynine.RECOMMENDED TO ANOTHER AUTHORITY"
+                                | translate
+                            }}
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirty.HEIGHT" | translate
+                      }}</label>
+                      <input type="text" class="form-control" formControlName="height" placeholder="Height" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirty.WEIGHT" | translate
+                      }}</label>
+                      <input type="text" class="form-control" formControlName="weight" placeholder="Weight" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirty.EYES" | translate
+                      }}</label>
+                      <input type="text" class="form-control" formControlName="eye" placeholder="Eye Color" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirty.HAIR" | translate
+                      }}</label>
+                      <input type="text" class="form-control" formControlName="hair" placeholder="Hair Color" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirty.NUM. OF DETENTION"
+                          | translate
+                      }}</label>
+                      <input type="text" class="form-control" formControlName="numOfDetention"
+                        placeholder="Num Of Detention" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirty.DATE OF DETENTION"
+                          | translate
+                      }}</label>
+                      <input type="text" class="form-control" formControlName="dateOfDetention" bsDatepicker
+                        placeholder="Date Of Detention" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirty.UCR DETENTION CRIME CODE"
+                          | translate
+                      }}</label>
+                      <input type="text" class="form-control" formControlName="detentionCrimeCode"
+                        placeholder="Detention Crime Code" />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table>
+              <tbody formGroupName="witness">
+                <tr>
+                  <td rowspan="3">
+                    <div class="heading p-0 m-0 witness">
+                      <strong>{{
+                        "close-incident.heading.WITNESS" | translate
+                      }}</strong>
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <p>
+                      {{
+                        "close-incident.row-thirtyone.NAME: (Surname, first name, middle name)"
+                          | translate
+                      }}
+                    </p>
+                  </td>
+                  <td colspan="3">
+                    <p>
+                      {{
+                        "close-incident.row-thirtyone.ADDRESS: (Street, city, state, zip code)"
+                          | translate
+                      }}
+                    </p>
+                  </td>
+                  <td colspan="2">
+                    <p>
+                      {{
+                        "close-incident.row-thirtyone.RESIDENTIAL TELEPHONE"
+                          | translate
+                      }}
+                    </p>
+                  </td>
+                  <td colspan="2">
+                    <p>
+                      {{
+                        "close-incident.row-thirtyone.RESIDENTIAL TELEPHONE"
+                          | translate
+                      }}
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <input class="form-control" formControlName="surName" placeholder="SurName" />
+                      <input class="form-control" formControlName="firstName" placeholder="First Name" />
+                      <input class="form-control" formControlName="middleName" placeholder="Middle Name" />
+                    </div>
+                  </td>
+                  <td colspan="3">
+                    <textarea class="form-control textArea" matTextareaAutosize rows="2" formControlName="address"
+                      placeholder="Complete Address"></textarea>
+                  </td>
+                  <td colspan="2">
+                    <input class="form-control" formControlName="residentialTelephone" placeholder="Residential Number"
+                      maxlength="14" [value]="
+                        closeReportForm.get('thirdPage.witness.residentialTelephone').value | formater
+                      " />
+                  </td>
+                  <td colspan="2">
+                    <input class="form-control" formControlName="workTelephone" placeholder="Work Phone Number"
+                      maxlength="14"
+                      [value]="closeReportForm.get('thirdPage.witness.workTelephone').value | formater" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table>
+              <tbody formGroupName="firms">
+                <tr>
+                  <td rowspan="4">
+                    <div class="heading p-0 m-0 firms">
+                      <strong>{{
+                        "close-incident.heading.FIRMS" | translate
+                      }}</strong>
+                    </div>
+                  </td>
+                  <td colspan="9">
+                    <textarea matTextareaAutosize class="form-control textArea" rows="5"
+                      formControlName="completeDescription" placeholder="Complete Report Description"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="7">
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirtytwo.COMPLAINANT" | translate
+                      }}</label>
+                      <input class="form-control" formControlName="complainant" placeholder="Complainant Name" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirtytwo.DATE" | translate
+                      }}</label>
+                      <input class="form-control" formControlName="date" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="5">
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirtytwo.PREPARED BY" | translate
+                      }}</label>
+                      <input class="form-control" formControlName="preparedBy" placeholder="Prepared By" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirtytwo.LICENSE PLATE" | translate
+                      }}</label>
+                      <input class="form-control" formControlName="licensePlate" placeholder="" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirtytwo.DATE" | translate
+                      }}</label>
+                      <input class="form-control" formControlName="preparedDate" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="5">
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirtytwo.SUPERVISOR" | translate
+                      }}</label>
+                      <input class="form-control" formControlName="supervisor" placeholder="Supervisor" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirtytwo.LICENSE PLATE" | translate
+                      }}</label>
+                      <input class="form-control" formControlName="supervisorLicensePlate" placeholder="" />
+                    </div>
+                  </td>
+                  <td colspan="2">
+                    <div class="d-flex flex-column">
+                      <label>{{
+                        "close-incident.row-thirtytwo.DATE" | translate
+                      }}</label>
+                      <input class="form-control" formControlName="supervisorDate" placeholder="Date" bsDatepicker />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td colspan="9">
+                    <div>
+                      <input type="checkbox" class="form-check-input ml-1" formControlName="continueSupplement" />
+                      <label class="form-check-label ml-4">
+                        {{
+                          "close-incident.row-thirtytwo.Continue in supplement"
+                            | translate
+                        }}
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="btn-group">
+            <button mat-raised-button type="button" data-dismiss="modal" (click)="
+                updateStatus(
+                  closeReportForm,
+                  report.victimId,
+                  report.key,
+                  'close'
+                ); stepper.reset()
+              ">
+              {{ "button.Close Report" | translate }}
+            </button>
+            <button mat-raised-button
+              (click)="removeGroup('thirdPage', stepper)">{{ "button.Back" | translate }}</button>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </form>
+  </div>
+</app-popup-modal>

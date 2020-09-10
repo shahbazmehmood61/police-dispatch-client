@@ -1,0 +1,160 @@
+<div class="container mb-3" *ngIf="searchService.victimDetails">
+  <form class="forms text-center" [formGroup]="incidentReportForm" (ngSubmit)="register()">
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="inputs mt-1">
+          <mat-form-field>
+            <input matInput #telephoneNo="matInput" (keyup)="transform(telephoneNo)" type="text" maxlength="14"
+              placeholder="{{ 'register-incident.Telephone' | translate }}#" formControlName="telephoneNo" />
+          </mat-form-field>
+          <div *ngIf="incidentReportForm.get('telephoneNo').invalid">
+            <p class="error" *ngIf="incidentReportForm.get('telephoneNo').errors.maxlength">
+              your field should contain less numbers
+            </p>
+            <p class="error" *ngIf="incidentReportForm.get('telephoneNo').errors.minlength">
+              phone number requires more numbers
+            </p>
+          </div>
+        </div>
+
+        <!-- names -->
+        <div class="row">
+          <div class="col-md-6 inputs mt-1">
+            <mat-form-field>
+              <input matInput type="text" formControlName="firstName" placeholder="{{ 'register-victim.First Name' | translate }}" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 inputs mt-1">
+            <mat-form-field>
+              <input matInput type="text" formControlName="middleInitial" placeholder="{{ 'register-victim.Middle Initial' | translate }}" />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Auto Fetching -->
+        <div class="row">
+          <div class="col-md-6 inputs mt-1">
+            <mat-form-field>
+              <input matInput type="text" formControlName="dateOfCall" placeholder="{{ 'register-incident.Date of Call' | translate }}" readonly />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 inputs mt-1">
+            <mat-form-field>
+              <input matInput type="text" formControlName="timeOfCall" placeholder="{{ 'register-incident.Time of call' | translate }}" readonly />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="inputs mt-1">
+          <mat-form-field>
+            <mat-label>{{ "Types of incident" | translate }}</mat-label>
+            <mat-select formControlName="typeOfReport" (selectionChange)="selectType($event)">
+              <mat-option *ngFor="let type of reportType;let i=index" [value]="type.typeValue">{{ type.type | translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="inputs mt-1">
+          <mat-form-field>
+            <input matInput type="text" placeholder="{{
+                'register-incident.Level of Aggressiveness' | translate
+              }}" formControlName="levelsOfAggressiveness" />
+          </mat-form-field>
+        </div>
+        <div class="inputs mt-1">
+          <mat-form-field>
+            <input matInput type="text" placeholder="{{
+                'register-incident.Officer receiving call' | translate
+              }}" formControlName="officerReceivingCall" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6 inputs mt-1">
+            <mat-form-field>
+              <mat-label>{{
+                "register-incident.Incident date" | translate
+              }}</mat-label>
+              <input matInput [matDatepicker]="incidentDate" formControlName="incidentDate" />
+              <mat-datepicker-toggle matSuffix [for]="incidentDate"></mat-datepicker-toggle>
+              <mat-datepicker #incidentDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 inputs mt-1">
+            <mat-form-field>
+              <input matInput type="text" placeholder="{{
+                  'register-incident.Incident time' | translate
+                }}" formControlName="incidentTime" />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- names -->
+        <div class="row">
+          <div class="col-md-6 inputs mt-1">
+            <mat-form-field>
+              <input matInput type="text" formControlName="lastName" placeholder="{{ 'register-victim.Last Name' | translate }}" />
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 inputs mt-1">
+            <mat-form-field>
+              <input matInput type="text" formControlName="secondLastName" placeholder="{{
+                  'register-victim.Second Last Name' | translate
+                }}" />
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="inputs mt-1">
+          <mat-form-field>
+            <input matInput type="text" placeholder="{{
+                'register-incident.Location of incident' | translate
+              }}" formControlName="locationOfIncident" />
+          </mat-form-field>
+        </div>
+        <div class="inputs mt-1">
+          <mat-form-field>
+            <input matInput type="text" placeholder="{{
+                'register-incident.Patrol dispatch time' | translate
+              }}" formControlName="patrolDispatchTime" />
+          </mat-form-field>
+        </div>
+        <div class="inputs mt-1">
+          <mat-form-field>
+            <input matInput type="text" placeholder="{{
+                'register-incident.Dispatched patrol' | translate
+              }}" formControlName="dispatchedPatrol" />
+          </mat-form-field>
+        </div>
+        <div class="inputs mt-1 w-100">
+          <mat-form-field>
+            <input matInput placeholder="{{ 'register-incident.People involved' | translate }}" formControlName="peopleInvolved" />
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <div class="inputs mt-1 w-100">
+        <mat-form-field>
+          <textarea class="textArea" matInput matTextareaAutosize matInput placeholder="{{
+              'register-incident.Necessary resources' | translate
+            }}" formControlName="necessaryResources"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="inputs mt-1 w-100">
+        <mat-form-field>
+          <textarea class="textArea" matInput matTextareaAutosize placeholder="{{
+              'register-incident.Incident Narrative' | translate
+            }}" formControlName="incidentNarrative"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" type="submit">
+      {{ "register-victim.Register" | translate }}
+    </button>
+  </form>
+</div>
+
+<div class="text-center not-found pt-5" *ngIf="!searchService.victimDetails">
+  <h3>{{ "first-search-tab.Please select a victim first" | translate }}</h3>
+</div>

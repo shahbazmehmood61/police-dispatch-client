@@ -1,0 +1,157 @@
+.messaging {
+  height: 600px;
+  margin: 0 0 50px 0;
+}
+
+.inbox_people {
+  width: 30%;
+  float: left;
+  height: inherit;
+  overflow: hidden;
+  border-right: 1px solid #c4c4c4;
+  background: #f8f8f8 none repeat scroll 0 0;
+}
+
+.inbox_msg {
+  height: inherit;
+  border: 1px solid #c4c4c4;
+  clear: both;
+  overflow: hidden;
+}
+
+.chat_list {
+  border-bottom: 1px solid #c4c4c4;
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.inbox_chat {
+  max-height: 474px;
+  overflow-y: scroll;
+}
+
+.chat_ib {
+  float: left;
+  padding: 0 0 0 5px;
+  width: 100%;
+}
+
+.chat_people {
+  overflow: hidden;
+  clear: both;
+}
+
+.chat_img {
+  display: inline-block;
+  width: 10%;
+  vertical-align: top;
+}
+
+.msg-head {
+  display: inline-block;
+  width: 85%;
+  margin-left: 10px !important;
+}
+
+.time-stamp {
+  font-size: 12px;
+}
+
+.msg-head .contact-name,
+.msg-head {
+  font-size: 15px;
+  color: #000;
+  margin: 0;
+}
+
+.msg {
+  color: #7f7f7f;
+}
+
+.mesgs {
+  float: left;
+  padding: 5px;
+  width: 70%;
+  height: inherit;
+}
+
+.msg_history {
+  height: 553px;
+  overflow-y: auto;
+}
+
+.received_withd_msg p {
+  margin: 0;
+}
+
+.received_withd_msg {
+  max-width: 57%;
+  width: fit-content;
+}
+
+.time_date {
+  color: #7f7f7f;
+  display: block;
+  font-size: 10px;
+}
+
+.nochat-container {
+  text-align: center;
+  padding: 16%;
+}
+
+.nochat-container .img img {
+  padding: 60px 40px;
+}
+
+.nochat-container .img {
+  margin-bottom: 15px;
+  width: 200px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #efefef;
+}
+
+img {
+  max-width: 100%;
+}
+
+.sent_msg,
+.received_msg {
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 0;
+  padding: 5px 10px;
+}
+
+.sent_msg .time_date {
+  text-align: right;
+}
+
+.sent_msg {
+  /* background-image: linear-gradient(#00afff, #006dfc);*/
+  background: #dcf8c6;
+  border-bottom-right-radius: 0;
+  color: #000;
+}
+
+.received_withd_msg p {
+  margin: 0;
+}
+
+.received_withd_msg {
+  max-width: 57%;
+  width: fit-content;
+}
+
+.sender {
+  font-weight: 600;
+  color: #7f7f7f;
+}
+
+.incoming_msg,
+.outgoing_msg {
+  overflow: hidden;
+  margin: 10px 0;
+}

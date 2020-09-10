@@ -1,0 +1,116 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-12 text-center header">
+      <img
+        *ngIf="darkmode.mode"
+        src="../../../../../../assets/images/monarch_horiz.png"
+        alt="logo"
+        width="110px"
+        class="float-left"
+      />
+      <img
+        *ngIf="!darkmode.mode"
+        src="../../../../../../assets/images/monarch_horiz_dark.png"
+        alt="logo"
+        width="110px"
+        class="float-left"
+      />
+      <h1 class="d-inline-block">
+        {{ "header-tab.Incident report" | translate }}
+      </h1>
+    </div>
+    <span
+      routerLink="/search/register-victim"
+      class="btn-back badge badge-primary"
+      ><i class="fas fa-arrow-left"></i
+    ></span>
+    <table class="incident-detail-table mt-3 mb-3" border="1">
+      <tr>
+        <td>
+          {{ "register-incident.Telephone" | translate }} # :
+          <span class="data">{{ report.telephoneNo | formater }}</span>
+        </td>
+        <td colspan="2">
+          {{ "register-incident.Officer receiving call" | translate }} :
+          <span class="data">{{ report.officerReceivingCall }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{ "register-incident.Report date" | translate }}:
+          <span class="data">{{ report.dateOfCall }}</span>
+        </td>
+        <td>
+          {{ "register-incident.Incident date" | translate }} :
+          <span class="data">{{ report.incidentDate | date }}</span>
+        </td>
+        <td>
+          {{ "register-incident.Incident time" | translate }} :
+          <span class="data">{{ report.incidentTime }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{ "register-incident.Report time" | translate }} :
+          <span class="data">{{ report.timeOfCall }}</span>
+        </td>
+        <td class="w-75" colspan="2" rowspan="4">
+          {{ "register-incident.Incident Narrative" | translate }} :
+          <span class="data">{{ report.incidentNarrative }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{ "register-incident.Patrol dispatch time" | translate }} :
+          <span class="data">{{ report.patrolDispatchTime }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{ "register-incident.Dispatched patrol" | translate }} :
+          <span class="data">{{ report.dispatchedPatrol }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{ "register-incident.Level of Aggressiveness" | translate }} :
+          <span class="data">{{ report.levelsOfAggressiveness }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          {{ "register-incident.Necessary resources" | translate }} :
+          <span class="data">{{ report.necessaryResources }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          {{ "register-incident.People involved" | translate }} :
+          <span class="data">{{ report.peopleInvolved }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          {{ "register-incident.Location of incident" | translate }} :
+          <span class="data">{{ report.locationOfIncident }}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="updateBtns">
+    <button
+      mat-raised-button
+      [disabled]="updated"
+      (click)="updateStatus(report.victimId, report.id, 'assigned')"
+    >
+      Assign
+    </button>
+    <button
+      mat-raised-button
+      [disabled]="updated"
+      (click)="updateStatus(report.victimId, report.id, 'close')"
+    >
+      Close
+    </button>
+  </div>
+</div>

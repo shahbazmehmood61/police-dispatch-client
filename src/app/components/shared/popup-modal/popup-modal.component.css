@@ -1,0 +1,24 @@
+.modal-header {
+  padding: 5px 10px;
+}
+
+.modal-header {
+  display: table;
+}
+
+.modal-title {
+  display: table-cell;
+  width: 100%;
+  text-align: center;
+}
+
+.close {
+  margin: -15px -10px -1rem auto;
+}
+.model-image {
+  width: 80px;
+  margin-left: 20px;
+}
+.form-control {
+  background-color: transparent;
+}

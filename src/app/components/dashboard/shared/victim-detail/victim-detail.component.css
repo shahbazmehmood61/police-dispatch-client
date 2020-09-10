@@ -1,0 +1,60 @@
+.user-details {
+  color: #565656;
+}
+
+.profile-img {
+  border: 1px solid #ccc;
+  padding: 2px;
+}
+
+h4 {
+  margin: 10px 0;
+}
+
+td {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cell-title {
+  color: #c7c7c7;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+::ng-deep .map-container {
+  width: 400px !important;
+  height: 300px !important;
+}
+
+.user-details {
+  margin: 10px 0;
+}
+
+.btn-back {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+agm-map {
+  height: 300px;
+  width: 400px;
+}
+
+#map {
+  width: 300px;
+  height: 300px;
+}
+
+.radius {
+  padding: 20px;
+  background-color: grey;
+}
+.edit-btn{
+  margin-right: 70px !important;
+}

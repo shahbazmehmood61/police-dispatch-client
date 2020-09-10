@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" routerLink="/">
+    <img *ngIf="this.darkmode.mode" src="../../../../assets/images/monarch_horiz.png" alt="" width="100px" />
+    <img *ngIf="!this.darkmode.mode" src="../../../../assets/images/monarch_horiz_dark.png" alt="" width="100px" />
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="w-100 text-center" id="navbarNavDropdown">
+    <div class="d-inline-block mt-3">
+      <img *ngIf="this.darkmode.mode" src="../../../../assets/images/header-center.png" alt="" width="100px" />
+      <img *ngIf="!this.darkmode.mode" src="../../../../assets/images/header-center-dark.png" alt="" width="100px" />
+    </div>
+
+    <ul class="d-inline-block p-0 m-0">
+      <button class="languagebtn" mat-button [matMenuTriggerFor]="menu">
+        {{ "header-tab.Language" | translate }}
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item on-click="translator.useLanguage('en')">
+          English
+        </button>
+        <button mat-menu-item on-click="translator.useLanguage('es')">
+          Spanish
+        </button>
+      </mat-menu>
+      <button class="mr-4" mat-button><a class="help" target="_blank" href="http://monarchss.com/help/index.html">Help</a></button>
+      <mat-slide-toggle (change)="modeChanged()">
+        <span>{{ "header-tab.Light" | translate }}</span>
+      </mat-slide-toggle>
+      <li class="nav-item dropdown" *ngIf="authService.isLoggedIn()">
+        <a class="nav-link pl-0 pr-0" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user-circle"></i>
+          {{
+            authService.userInfo.displayName
+              ? authService.userInfo.displayName
+              : authService.userInfo.email
+          }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/search"><i class="fas fa-search"></i>
+            {{ "header-tab.search" | translate }}</a>
+          <a class="dropdown-item" routerLink="/incident"><i class="fas fa-edit"></i>{{ "header-tab.Incident Report" | translate }}</a>
+          <a class="dropdown-item" routerLink="/inbox"><i class="fas fa-comments"></i>
+            {{ "header-tab.inbox" | translate }}</a>
+          <a class="dropdown-item" routerLink="/location"><i class="fas fa-map-marker-alt"></i>
+            {{ "header-tab.Location" | translate }}</a>
+          <a class="dropdown-item" routerLink="/setting">
+            <i class="fas fa-cog"></i>
+            {{ "header-tab.Settings" | translate }}</a>
+          <hr class="m-0" />
+          <a class="dropdown-item" (click)="authService.logout()">{{
+            "header-tab.logout" | translate
+          }}</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

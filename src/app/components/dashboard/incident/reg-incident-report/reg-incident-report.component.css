@@ -1,0 +1,6 @@
+.error {
+  color: red;
+}
+.textArea{
+  min-height: 40px !important;
+}

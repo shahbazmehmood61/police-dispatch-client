@@ -1,0 +1,38 @@
+<div class="row h-100 m-0">
+  <div class="col-md-12 my-auto">
+    <div class="card card-block w-25 mx-auto">
+      <form class="forms p-3" [formGroup]="SigninForm" (ngSubmit)="signin()">
+        <h1 class="h3 mb-3 font-weight-normal text-center">Sign In</h1>
+
+        <div class="inputs mt-1">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="email"
+              type="email"
+              placeholder="Email Address"
+            />
+          </mat-form-field>
+          <print-error [control]="SigninForm.get('email')"></print-error>
+        </div>
+        <div class="inputs mt-1">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="password"
+              type="password"
+              placeholder="Password"
+            />
+          </mat-form-field>
+          <print-error [control]="SigninForm.get('password')"></print-error>
+        </div>
+
+        <div class="text-center m-2">
+          <button mat-raised-button color="primary" type="submit">
+            Sign In <i class="fas fa-sign-in-alt"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

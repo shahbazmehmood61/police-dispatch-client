@@ -1,0 +1,661 @@
+{
+  "login": {
+    "title": "Login",
+    "placeholders": {
+      "username": "Username",
+      "password": "Password",
+      "rememberme": "Remember Me",
+      "forgotpassword": "Forgot your Password ?"
+    },
+    "validation": {
+      "username": {
+        "required": "*Username is required"
+      },
+      "password": {
+        "required": "*Password is required"
+      }
+    },
+    "loginButton": {
+      "login": "Login",
+      "newuser": "New User?",
+      "registernow": "Register Now "
+    }
+  },
+  "SignUp": {
+    "title": "Signup",
+    "placeholders": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "username": "Username",
+      "email": "Email ",
+      "password": "Password",
+      "confirm": "Confirm password",
+      "doctor": "Doctor",
+      "patient": "Patient",
+      "Register": "Register",
+      "or": "Or",
+      "checkforAlready": "Already have an account ?",
+      "sign": "Signin",
+      "checkemail": " Email already exist"
+    },
+    "validation": {
+      "password": {
+        "confirmpass": "Password must match",
+        "required": "Password is required",
+        "passlength": "*Password must be at least 8 characters long, have at least one number, one special character and one upper case character."
+      },
+      "Name": {
+        "FirstName": "*First name is required",
+        "SeconName": "Last name is required"
+      },
+      "username": {
+        "required": "*Username is required",
+        "alreadyexist": "Username already exist!"
+      },
+      "email": {
+        "required": "Email is required"
+      }
+    }
+  },
+  "forgotpassword": {
+    "title": "Forgot your password?",
+    "message": "Enter your email address to reset your password. You may need to check your spam folder or unblock no-reply@doctorbox.com.",
+    "placeholders": {
+      "email": "Email",
+      "Submit": "Submit"
+    }
+  },
+  "loginStatus": {
+    "success": "Welcome to MedBox",
+    "invalid": "Username or password is invalid"
+  },
+  "loginAuth": {
+    "inalidUser401": "Invalid user",
+    "accountNotActive400": "Account not active",
+    "invalidusernameorpassword404": "Invalid username or password"
+  },
+  "formErrors": {
+    "invalidFormMsg": "Please enter required form fields.",
+    "invalidFormTitle": "Invalid form"
+  },
+  "commonErrors": {
+    "internalErrorMsg": "Server under maintenance, sorry for inconvenience.",
+    "internalErrorTitle": "Internal Server Error"
+  },
+  "signupStatus": {
+    "activationMailMsg": "Please check your email for account activation instructions.",
+    "activationMailTitle": "Activation mail sent",
+    "userOrEmailExistMsg": "Username or email already exist",
+    "userOrEmailExistTitle": "Already exist",
+    "passwordTitle": "Password pattren",
+    "passwordMsg": "Password must be at least 8 characters long, have at least one number, one special character and one upper case character."
+  },
+  "emailVerify": {
+    "unverifiedEmailMsg": "Please first verify your email address to login.",
+    "unverifiedEmailTitle": "Unverified email",
+    "unregisteredEmailMsg": "Please first register your email address to login.",
+    "unregisteredEmailTitle": "Unregistered email"
+  },
+  "forgotPassword": {
+    "invalidEmailTitle": "User does not exist",
+    "invalidEmailMsg": "Please enter a registered email address.",
+    "accountNotActiveTitle": "Account not active",
+    "accountNotActiveMsg": "Please check your registed email address for account activation.",
+    "accountActiveTitle": "Password reset mail sent",
+    "accountActiveMsg": "Please check your registed email address for password reset instructions."
+  },
+  "accountActivation": {
+    "accountVerified": "Your account is verified!",
+    "accountAlreadyVerified": "Your account has already been activated!",
+    "invalidAccount": "Your account is invalid"
+  },
+  "logout": {
+    "Title": "MedBox",
+    "Msg": "Thanks for visiting us"
+  },
+  "resetPassword": {
+    "title": "Reset your password",
+    "newPassword": "New password",
+    "required": "*Password required!",
+    "confirmpass": "Confirm password",
+    "matchpass": " *Password must match.",
+    "confirmpassrequired": "*Confirm password required!",
+    "reset": "Reset"
+  },
+  "pageNotFound": {
+    "OOPS": "Oops!",
+    "Somethingwentwrong": "Something went wrong.",
+    "notFound": "We can't find the page you're looking for.",
+    "Visit": "Visit our",
+    "support": "Support page",
+    "anyquestions": "for any questions."
+  },
+  "registerVictim": {
+    "firstName": "First name"
+  },
+  "search-tab": {
+    "Register Victim": "Register Victim",
+    "Search Victim": "Search Victim",
+    "Victim Detail": "Victim Detail",
+    "Incident History": "Incident History",
+    "Chat History": "Chat History",
+    "Incident": "Incident"
+  },
+  "regsiter-placeholder": {
+    "firstName": "First Name",
+    "middleInitial": "Initiale"
+  },
+  "mynew": {
+    "register": "Register Victim"
+  },
+  "header-tab": {
+    "Language": "Language",
+    "search": "Search",
+    "Settings": "Settings",
+    "Location": "Location",
+    "inbox": "Inbox",
+    "Incident Report": "Incident Report",
+    "logout": "Logout",
+    "Light": "Light",
+    "Dark": "Dark"
+  },
+  "sos-sideabr": {
+    "Calls": "Calls",
+    "Chats": "Chats"
+  },
+  "first-search-tab": {
+    "Register Victim": "Register Victim",
+    "Search Victim": "Search Victim",
+    "Victim Detail": "Victim Detail",
+    "Incident History": "Incident History",
+    "Chat History": "Chat History",
+    "Incident": "Incident",
+    "Please select a victim first": "Please select a victim first",
+    "There is no report available": "There is no report available"
+  },
+  "victim-detail-tab": {
+    "Victim Detail": "Victim Detail",
+    "Incident History": "Incident History",
+    "Chat History": "Chat History",
+    "Report Incident": "Report Incident"
+  },
+  "register-victim": {
+    "Register Victim": "Register Victim",
+    "First Name": "First Name",
+    "Middle Initial": "Middle Initial",
+    "Last Name": "Last Name",
+    "Second Last Name": "Second Last Name",
+    "Height": "Height",
+    "Feet": "Feet",
+    "Inches": "Inches",
+    "Cell Number": "Cell Number",
+    "Home Cell Number": "Home Cell Number",
+    "Eye Color": "Eye Color",
+    "Weight": "Weight",
+    "Date of Birth": "Date of Birth",
+    "Gender": "Gender",
+    "Address": "Address",
+    "Driver License Number": "Driver License Number",
+    "Email": "Email",
+    "Register": "Register"
+  },
+  "search-victim": {
+    "search": "Search from any field you want",
+    "view": "View",
+    "Chat History": "Chat History between Victim and Officer",
+    "Inbox": "Inbox",
+    "Groups": "Groups",
+    "Search with email": "Search with email"
+  },
+  "victim-detail": {
+    "PERSONAL": "PERSONAL",
+    "Title": "Title",
+    "phone": "Phone",
+    "Company": "Company",
+    "city": "City",
+    "state": "State",
+    "zip code": "Zip code",
+    "country": "Country",
+    "others": "Others",
+    "kids": "Kids",
+    "pets": "Pets",
+    "ANNIVERSARY": "ANNIVERSARY",
+    "STATUS": "Status",
+    "subsciption status": "Subsciption status",
+    "vip status": "Vip status",
+    "membership": "Membership",
+    "notes": "Notes",
+    "age": "Age"
+  },
+  "register-incident": {
+    "Telephone": "Telephone",
+    "Incident date": "Incident Date",
+    "Incident time": "Incident Time",
+    "Date of Call": "Call Date",
+    "Time of call": "Call Time",
+    "Location of incident": "Incident Location",
+    "Level of Aggressiveness": "Level of Aggressiveness",
+    "Patrol dispatch time": "Patrol Dispatch Time",
+    "Officer receiving call": "Officer Receiving Call",
+    "Dispatched patrol": "Dispatched Patrol",
+    "People involved": "People involved",
+    "Necessary resources": "Necessary Resources",
+    "Incident Narrative": "Incident Narrative",
+    "Report time": "Report Time",
+    "Report date": "Report Date",
+    "Victim Location": "Victim Location"
+  },
+  "close-incident": {
+    "heading": {
+      "CRIME": "CRIME",
+      "VICTIM": "VICTIM",
+      "GOODS": "GOODS",
+      "OFFENDERS": "OFFENDERS",
+      "ARRESTED": "ARRESTED",
+      "WITNESS": "WITNESS",
+      "STORY": "STORY",
+      "FIRMS": "FIRMS"
+    },
+    "row-one": {
+      "THE ORI": "THE ORI",
+      "INCIDENT": "INCIDENT",
+      "TYPE OF REPORT": "TYPE OF REPORT",
+      "check-boxes": {
+        "INITIAL REPORT": "INITIAL REPORT ",
+        "SUPPLEMENT": "SUPPLEMENT"
+      },
+      "COMMONWEALTH OF PUERTO RICO": "COMMONWEALTH OF PUERTO RICO",
+      "MUNICIPAL POLICE GUAYNABO": "MUNICIPAL POLICE GUAYNABO",
+      "REPORT INCIDENT": "REPORT INCIDENT",
+      "INCIDENT STATUS": "INCIDENT STATUS",
+      "UNFOUNDED": "UNFOUNDED",
+      "CLEARED BY": "CLEARED BY",
+      "ARREST": "ARREST",
+      "EXCEPTIONAL": "EXCEPTIONAL",
+      "options": {
+        "OFFENDER'S DEATH": "OFFENDER'S DEATH",
+        "REFUSAL OF TRIAL": "REFUSAL OF TRIAL ",
+        "EXTRADICION IS DENIED": "EXTRADICION IS DENIED",
+        "NEGOTIATE TO COLLABORATE": "NEGOTIATE TO COLLABORATE",
+        "MINOR, WITHOUT CUSTODY": "MINOR, WITHOUT CUSTODY ",
+        "NO APLICA": "NO APLICA"
+      }
+    },
+    "row-two": {
+      "COMPLAINANT": "COMPLAINANT",
+      "Surname, Name, Middle Name": "Surname, Name, Middle Name",
+      "S.S": "S.S",
+      "TELEPHONE": "TELEPHONE ",
+      "Home": "Home"
+    },
+    "row-three": {
+      "DIRECTION": "DIRECTION",
+      "TELEPHONE": "TELEPHONE",
+      "Job": "Job"
+    },
+    "row-four": {
+      "PLACE OF THE INCIDENT": "PLACE OF THE INCIDENT",
+      "Exact Direction": "Exact Direction ",
+      "CRIME": "CRIME",
+      "Check if you were motivated out of prejudice": "Check if you were motivated out of prejudice",
+      "OFFENDER": "OFFENDER"
+    },
+    "row-five": {
+      "CRIME CODE UCR": "CRIME CODE UCR",
+      "INCIDENT DATE (S)": "INCIDENT DATE (S)",
+      "INCIDENT TIME (S)": "INCIDENT TIME (S)"
+    },
+    "row-seven": {
+      "MOTION FOR PREJUDICE": "MOTION FOR PREJUDICE",
+      "Mark one for crime": "Mark one for crime",
+      "RACIAL": " RACIAL",
+      "ANTI-WHITE": "ANTI-WHITE",
+      "ANTI-BLACK": "ANTI-BLACK",
+      "ANTI-AMERICAN INDIAN / ALASKA NATIVE": "ANTI-AMERICAN INDIAN / ALASKA NATIVE ",
+      "ANTI-ASIATIC / PACIFIC ISLAND": "ANTI-ASIATIC / PACIFIC ISLAND",
+      "ANTI-MULTIRACIAL GROUP": "ANTI-MULTIRACIAL GROUP",
+      "ETHNIC GROUP / NATIONAL ORIGIN": "ETHNIC GROUP / NATIONAL ORIGIN",
+      "ANTI-ARAB": "ANTI-ARAB",
+      "ANTI-HISPANIC": "ANTI-HISPANIC",
+      "ANTI-OTORO ETHNIC GROUP / NATIONAL ORIGIN": "ANTI-OTORO ETHNIC GROUP / NATIONAL ORIGIN",
+      "RELIGIOUS": " RELIGIOUS",
+      "ANTI-JEW": "ANTI-JEW",
+      "ANTI-CATHOLIC": "ANTI-CATHOLIC",
+      "ANTI-PROTESTANT": "ANTI-PROTESTANT",
+      "ANTI-ISLAMIC / MUSLIM": "ANTI-ISLAMIC / MUSLIM",
+      "ANTI-OTHER RELIGION": "ANTI-OTHER RELITION",
+      "MULTI-RELIGIOUS ANTI-GROUP": "MULTI-RELIGIOUS ANTI-GROUP",
+      "ANTI-ATHEISM / AGNOSTICISM": "ANTI-ATHEISM / AGNOSTICISM",
+      "SEXUAL": "SEXUAL",
+      "HOMOSEXUAL ANTI-MAN": "HOMOSEXUAL ANTI-MAN",
+      "HOMOSEXUAL ANTI-WOMAN": "HOMOSEXUAL ANTI-WOMAN",
+      "ANTI-HOMOSEXUAL (Men and Women)": "ANTI-HOMOSEXUAL (Men and Women)",
+      "ANTI-HETEROSEXUAL": "ANTI-HETEROSEXUAL ",
+      "ANTI-BISEXUAL": "ANTI-BISEXUAL",
+      "INDICATE THE MOTIVATION CODE IF IT IS DIFFERENT FROM CRIME": "INDICATE THE MOTIVATION CODE IF IT IS DIFFERENT FROM CRIME "
+    },
+    "row-eight": {
+      "CRIME SITUATION: (check only one per crime)": "CRIME SITUATION: (check only one per crime)",
+      "TRIED": " TRIED",
+      "FULL": " FULL",
+      "OFFENDER (S) USE: (Check all that apply)": "OFFENDER (S) USE: (Check all that apply)",
+      "ALCOHOL": " ALCOHOL",
+      "DRUGS": " DRUGS",
+      "COMPUTER EQUIPMENT": "COMPUTER EQUIPMENT",
+      "DOES NOT APPLY": "DOES NOT APPLY",
+      "(Only for robberies) NUM. OF LOCATED ALLANADOS": "(Only for robberies) NUM. OF LOCATED ALLANADOS",
+      "INPUT METHOD": "INPUT METHOD",
+      "BY FORCE": " BY FORCE",
+      "WITHOUT FORCE": "WITHOUT FORCE"
+    },
+    "row-nine": {
+      "PLACE OF CRIME": "PLACE OF CRIME",
+      "Check only one": "Check only one ",
+      "Indicate code number for crime": "Indicate code number for crime",
+      "AIR / BUS / TRAIN TERMINAL": "AIR / BUS / TRAIN TERMINAL",
+      "BANK / SAVINGS AND LOANS": "BANK / SAVINGS AND LOANS",
+      "CANTINA / NIGHT CLUB": "CANTINA / NIGHT CLUB",
+      "CHURCH / SYNAGOGUE / TEMPLE": "CHURCH / SYNAGOGUE / TEMPLE",
+      "COMMERCIAL / OFFICE BUILDING": "COMMERCIAL / OFFICE BUILDING",
+      "CONSTRUCTION SITE": "CONSTRUCTION SITE",
+      "HARDWARE STORE": " HARDWARE STORE",
+      "DEPARTMENT / DISCOUNT STORE": "DEPARTMENT / DISCOUNT STORE",
+      "PHARMACY / DOCTOR'S OFFICE / HOSPITAL": "PHARMACY / DOCTOR'S OFFICE / HOSPITAL",
+      "FIELD / FOREST": "FIELD / FOREST",
+      "GOVERNMENT / PUBLIC BUILDINGS": "GOVERNMENT / PUBLIC BUILDINGS ",
+      "FOOD STORE / SUPERMARKET": "FOOD STORE / SUPERMARKET ",
+      "ROAD / STREET / ALLEY": "ROAD / STREET / ALLEY ",
+      "HOTEL / MOTEL / ETC": "HOTEL / MOTEL / ETC",
+      "JAIL PRISON": "JAIL PRISON ",
+      "LAKE / WATERWAY": "LAKE / WATERWAY",
+      "LIQUOR STORE": "LIQUOR STORE",
+      "PARKING / GARAGE": "PARKING / GARAGE",
+      "STORAGE RENTAL CENTER": "STORAGE RENTAL CENTER",
+      "RESIDENCE / HOME": "RESIDENCE / HOME",
+      "RESTAURANT": " RESTAURANT",
+      "UNIVERSITY": "UNIVERSITY",
+      "FUEL STATION": "FUEL STATION ",
+      "SPECIALIZED STORE": "SPECIALIZED STORE ",
+      "OTHER / UNKNOWN": "OTHER / UNKNOWN "
+    },
+    "row-ten": {
+      "TYPE OF CRIMINAL ACTIVITY (Mark up to three)": "TYPE OF CRIMINAL ACTIVITY (Mark up to three)",
+      "BUY / RECEIVE": "BUY / RECEIVE ",
+      "CULTIVATE / MANUFACTURE / PUBLISH": "CULTIVATE / MANUFACTURE / PUBLISH ",
+      "DISTRIBUTE / SELL": "DISTRIBUTE / SELL",
+      "EXPLOIT CHILDREN": "EXPLOIT CHILDREN",
+      "PROTEST, PROMOTE / ASSIST": "PROTEST, PROMOTE / ASSIST",
+      "OWN / HIDE": "OWN / HIDE",
+      "TRANSPORT / TRANSMIT / IMPORT": "TRANSPORT / TRANSMIT / IMPORT ",
+      "USE / CONSUME": "USE / CONSUME "
+    },
+    "row-eleven": {
+      "TYPE OF WEAPON / FORCE INVOLVED": "TYPE OF WEAPON / FORCE INVOLVED",
+      "(Check up to three)": "(Check up to three)",
+      "FIREARM (Unidentified type)": "FIREARM (Unidentified type)",
+      "GUN": "GUN",
+      "RIFLE": "RIFLE",
+      "SHOTGUN": "SHOTGUN",
+      "ANOTHER FIREARM": "ANOTHER FIREARM",
+      "KNIFE / CUTTING INSTRUMENT": "KNIFE / CUTTING INSTRUMENT",
+      "SHARPENED OBJECT": "SHARPENED OBJECT",
+      "MOTOR VEHICLE": "MOTOR VEHICLE",
+      "PERSONAL WEAPONS": "PERSONAL WEAPONS",
+      "POISON": " POISON",
+      "EXPLOSIVES": " EXPLOSIVES",
+      "FIRE / FIRE": "FIRE / FIRE",
+      "NARCOTICS / DRUGS": "NARCOTICS / DRUGS",
+      "SUFFOCATION": "SUFFOCATION ",
+      "OTHER": "OTHER",
+      "Unknown": "Unknown",
+      "NONE": "NONE"
+    },
+    "row-twelve": {
+      "VICTIM (Last name, First name, Middle name)": "VICTIM (Last name, First name, Middle name)",
+      "Home phone": "Home phone"
+    },
+    "row-thirteen": {
+      "ADDRESS: (Street, city, postal code)": "ADDRESS: (Street, city, postal code)"
+    },
+    "row-fourtheen": {
+      "VICTIM TYPE: (Mark only one)": "VICTIM TYPE: (Mark only one)",
+      "INDIVIDUAL": "INDIVIDUAL",
+      "DEAL": "DEAL",
+      "FINANCIAL": " FINANCIAL",
+      "GOVERNMENT": " GOVERNMENT",
+      "RELIGIOUS": " RELIGIOUS",
+      "SOCIETY / PUBLIC": "SOCIETY / PUBLIC",
+      "OTHER": " OTHER",
+      "UNKNOWN": " UNKNOWN",
+      "RACE": " RACE",
+      "WHITE": "WHITE",
+      "BLACK": " BLACK",
+      "AMERICAN INDIAN": "AMERICAN INDIAN",
+      "ASIAN": " ASIAN",
+      "HAWAIIANA": " HAWAIIANA",
+      "Unknown": " Unknown",
+      "SEX": " SEX",
+      "MALE": "MALE",
+      "FEMALE": "FEMALE",
+      "CONDITION OF RESIDENCE": "CONDITION OF RESIDENCE",
+      "RESIDENT": " RESIDENT",
+      "NON-RESIDENT": "NON-RESIDENT",
+      "ETHNIC GROUP": "ETHNIC GROUP",
+      "HISPANIC": " HISPANIC",
+      "NOT HISPANIC": "NOT HISPANIC",
+      "AGE": " AGE",
+      "DATE OF BIRTH": "DATE OF BIRTH",
+      "NUM. OF VICTIMS": "NUM. OF VICTIMS"
+    },
+    "row-fifteen": {
+      "CIRCUMSTANCES OF SERIOUS ASSAULT / HOMICIDE: (Check up to two)": "CIRCUMSTANCES OF SERIOUS ASSAULT / HOMICIDE: (Check up to two)",
+      "DISCUSSION": "DISCUSSION",
+      "AGGRESSION AGAINST POLICE AGENT": "AGGRESSION AGAINST POLICE AGENT",
+      "DRUG SALES": "DRUG SALES ",
+      "ORGANIZED CRIME": "ORGANIZED CRIME",
+      "JUVENILE GANGS": "JUVENILE GANGS",
+      "FIGHT BETWEEN LOVERS": "FIGHT BETWEEN LOVERS",
+      "EUTHANASIA": "EUTHANASIA",
+      "ANOTHER CRIME INVOLVED": "ANOTHER CRIME INVOLVED",
+      "OTHER CIRCUMSTANCES": "OTHER CIRCUMSTANCES",
+      "CIRCUMSTANCES Unknown": "CIRCUMSTANCES Unknown",
+      "TYPE OF INJURY: (mark up to five)": "TYPE OF INJURY: (mark up to five) ",
+      "NONE": "NONE",
+      "BONES": "BONES",
+      "POSSIBLE INJURIES INTERNAL": "POSSIBLE INJURIES INTERNAL",
+      "RIP SEVERE": "RIP SEVERE",
+      "MINOR INJURY": "MINOR INJURY",
+      "MAJOR INJURY": "MAJOR INJURY",
+      "WASTE OF TEETH": "WASTE OF TEETH ",
+      "WASTE OF KNOWLEDGE": "WASTE OF KNOWLEDGE",
+      "VICTIM RELATED TO NUM. OF CRIME STATED ABOVE": "VICTIM RELATED TO NUM. OF CRIME STATED ABOVE"
+    },
+    "row-sixteen": {
+      "VICTIM-TO-OFFENDER RELATION: (For multiple offender relationships, enter offender number (s) in the space)": "VICTIM-TO-OFFENDER RELATION: (For multiple offender relationships, enter offender number (s) in the space)",
+      "SPOUSE": "SPOUSE",
+      "SPOUSE BY AGREEMENT Consensual": "SPOUSE BY AGREEMENT Consensual",
+      "FATHER": "FATHER",
+      "BROTHER": "BROTHER",
+      "SON (A)": "SON(A)",
+      "GRANDFATHER (A)": "GRANDFATHER(A)",
+      "GRANDCHILD (A)": "GRANDCHILD(A)",
+      "POLITICAL RELATIVE": "POLITICAL RELATIVE",
+      "STEPFATHER/STEPMOTHER": "STEPFATHER/STEPMOTHER",
+      "STEP-SON (A)": "STEP-SON (A)",
+      "STEP-BROTHER (A)": "STEP-BROTHER(A)",
+      "ANOTHER FAMILY": "ANOTHER FAMILY",
+      "KNOWN (A)": "KNOWN(A)",
+      "FRIEND (A)": "FRIEND(A)",
+      "NEIGHBOR (A)": "NEIGHBOR(A)",
+      "CHILD CARED FOR BABYSITTER": "CHILD CARED FOR BABYSITTER",
+      "BOYFRIEND (A)": "BOYFRIEND(A)",
+      "SON OF BG": "SON OF BG",
+      "HOMOSEXUAL RELATIVE": "HOMOSEXUAL RELATIVE",
+      "EX-SPOUSE": "EX-SPOUSE",
+      "EMPLOYEE": "EMPLOYEE(A)",
+      "PATRON": "PATRON",
+      "OTHER KNOWN": "OTHER KNOWN(A)",
+      "UNKNOWN": "UNKNOWN",
+      "THE VICTIM WAS THE OFFENDER": "THE VICTIM WAS THE OFFENDER",
+      "UNKNOWN RELATIONSHIP": "UNKNOWN RELATIONSHIP"
+    },
+    "row-seventeen": {
+      "TYPE OF LOSS OF ASSETS / ETC": "TYPE OF LOSS OF ASSETS / ETC",
+      "CODE": "CODE",
+      "QUANTITY": "QUANTITY",
+      "PROPERTY DESCRIPTION": "PROPERTY DESCRIPTION",
+      "Included": "(Include brand, model, size, type, serial number, color, etc.)",
+      "VALUE": "VALUE",
+      "DATE ON WHICH THEY RECOVERED": "DATE ON WHICH THEY RECOVERED",
+      "NONE": "NONE",
+      "BURNED": "BURNED",
+      "Counterfeit": "Counterfeit",
+      "DAMAGED": "DAMAGED",
+      "RECOVERED": "RECOVERED",
+      "SEIZED": "SEIZED",
+      "STOLEN": "STOLEN",
+      "Unknown": "Unknown"
+    },
+    "row-eighteen": {
+      "head": "TABLE OF PROPERTY DESCRIPTION CODES: (Enter code number in the corresponding column above)",
+      "AIRCRAFT": "AIRCRAFT",
+      "ALCOHOL": "ALCOHOL",
+      "AUTOMOBILES": "AUTOMOBILES",
+      "BIKES": "BIKES",
+      "BUSES": "BUSES",
+      "CLOTHES": "CLOTHES",
+      "EQUIPMENT / COMPUTER PROGRAMS": "EQUIPMENT / COMPUTER PROGRAMS",
+      "CONSUMABLE GOODS": "CONSUMABLE GOODS",
+      "CREDIT / DEBIT CARDS": "CREDIT / DEBIT CARDS",
+      "DRUGS / NARCOTICS": "DRUGS / NARCOTICS",
+      "DRUG / NARCOTIC TEAM": "DRUG / NARCOTIC TEAM",
+      "AGRICULTURAL EQUIPMENT": "AGRICULTURAL EQUIPMENT",
+      "FIREARMS": "FIREARMS",
+      "PLAYING EQUIPMENT": "PLAYING EQUIPMENT",
+      "HEAVY INDUSTRIAL CONSTRUCTION EQUIPMENT": "HEAVY INDUSTRIAL CONSTRUCTION EQUIPMENT",
+      "HOUSEHOLD GOODS": "HOUSEHOLD GOODS",
+      "JEWELS / PRECIOUS METALS": "JEWELS / PRECIOUS METALS",
+      "WON": "WON",
+      "GOODS": "GOODS",
+      "MONEY": "MONEY",
+      "NEGOTIABLE INSTRUMENTS": "NEGOTIABLE INSTRUMENTS",
+      "NON-NEGOTIABLE INSTRUMENTS": "NON-NEGOTIABLE INSTRUMENTS",
+      "OFFICE TEAMS": "OFFICE TEAMS",
+      "OTHER MOTOR VEHICLES": "OTHER MOTOR VEHICLES",
+      "WALLETS / BAGS / WALLETS": "WALLETS / BAGS / WALLETS",
+      "RADIOS / TELEVISIONS / VIDEO RECORDERS": "RADIOS / TELEVISIONS / VIDEO RECORDERS",
+      "RECORDINGS-AUDIOVISUAL": "RECORDINGS-AUDIOVISUAL",
+      "RECREATION VEHICLES": "RECREATION VEHICLES",
+      "STRUCTURES-SINGLE-FAMILY HOUSING": "STRUCTURES-SINGLE-FAMILY HOUSING",
+      "STRUCTURES-OTHER HOUSING": "STRUCTURES-OTHER HOUSING",
+      "STRUCTURES-COMMERCIAL": "STRUCTURES-COMMERCIAL",
+      "STRUCTURES-INDUSTRIAL / MANUFACTURE": "STRUCTURES-INDUSTRIAL / MANUFACTURE",
+      "PUBLIC / COMMUNITY STRUCTURES": "PUBLIC / COMMUNITY STRUCTURES",
+      "STRUCTURES-STORAGE": "STRUCTURES-STORAGE",
+      "STRUCTURES-OTHERS": "STRUCTURES-OTHERS",
+      "ELECTRICAL / MANUAL TOOLS": "ELECTRICAL / MANUAL TOOLS",
+      "TRUCKS": "TRUCKS",
+      "VEHICLE PARTS / ACCESSORIES": "VEHICLE PARTS / ACCESSORIES",
+      "BOATS": "BOATS",
+      "OTHERS": "OTHERS",
+      "WAITING FOR INVENTORY": "WAITING FOR INVENTORY",
+      "NUMBER OF CRIMINALS": "NUMBER OF CRIMINALS",
+      "SOCIAL SECURITY": "SOCIAL SECURITY",
+      "ADDRESS: (Street, city, state, zip code)": "ADDRESS: (Street, city, state, zip code)"
+    },
+    "row-twentyone": {
+      "AGE": "AGE",
+      "SEX": "SEX",
+      "MALE": "MALE",
+      "FEMALE": "FEMALE",
+      "UNKNOWN": "UNKNOWN",
+      "RACE": "RACE",
+      "WHITE": "WHITE",
+      "BLACK": "BLACK",
+      "AMERICAN INDIAN": "AMERICAN INDIAN",
+      "ASIAN": "ASIAN",
+      "HAWAIIAN": "HAWAIIAN",
+      "DATE / PLACE OF BIRTH": "DATE / PLACE OF BIRTH",
+      "HEIGHT": "HEIGHT",
+      "WEIGHT": "WEIGHT",
+      "EYES": "EYES",
+      "HAIR": "HAIR",
+      "CLOTHES": "CLOTHES"
+    },
+    "row-twentysix": {
+      "NUMBER OF DETAINEES": "NUMBER OF DETAINEES",
+      "MULTIPLE CLARIFICATION INDICATOR": "MULTIPLE CLARIFICATION INDICATOR",
+      "MULTIPLE": "MULTIPLE",
+      "COUNT A DETAINEE": "COUNT A DETAINEE",
+      "DOES NOT APPLY": "DOES NOT APPLY"
+    },
+    "row-twentynine": {
+      "heading": "THE DETAINEE WAS ARMED WITH: (Check up to two) (Enter A in box if automatic)",
+      "NOT ASSEMBLED": "NOT ASSEMBLED",
+      "FIREARM (Unidentified type)": "FIREARM (Unidentified type)",
+      "PISTOL": "PISTOL",
+      "RIFLE": "RIFLE",
+      "SHOTGUN": "SHOTGUN",
+      "ANOTHER FIREARM": "ANOTHER FIREARM",
+      "LETHAL CUTTING INSTRUMENT": "LETHAL CUTTING INSTRUMENT",
+      "MITTEN (Another blunt object)": "MITTEN (Another blunt object)",
+      "TYPE OF DETENTION": "TYPE OF DETENTION",
+      "IN THE ACT": "IN THE ACT",
+      "AFOREMENTIONED": "AFOREMENTIONED",
+      "TAKEN UNDER CUSTODY": "TAKEN UNDER CUSTODY",
+      "DETAINEE ARRANGEMENT UNDER 18 YEARS OLD": "DETAINEE ARRANGEMENT UNDER 18 YEARS OLD",
+      "PROCESSED WITHIN THE DEPARTMENT": "PROCESSED WITHIN THE DEPARTMENT",
+      "RECOMMENDED TO ANOTHER AUTHORITY": "RECOMMENDED TO ANOTHER AUTHORITY"
+    },
+    "row-thirty": {
+      "HEIGHT": "HEIGHT",
+      "WEIGHT": "WEIGHT",
+      "EYES": "EYES",
+      "HAIR": "HAIR",
+      "NUM. OF DETENTION": "NUM. OF DETENTION",
+      "DATE OF DETENTION": "DATE OF DETENTION",
+      "UCR DETENTION CRIME CODE": "UCR DETENTION CRIME CODE"
+    },
+    "row-thirtyone": {
+      "NAME: (Surname, first name, middle name)": "NAME: (Surname, first name, middle name)",
+      "ADDRESS: (Street, city, state, zip code)": "ADDRESS: (Street, city, state, zip code)",
+      "RESIDENTIAL TELEPHONE": "RESIDENTIAL TELEPHONE",
+      "WORK PHONE": "WORK PHONE"
+    },
+    "row-thirtytwo": {
+      "COMPLAINANT": "COMPLAINANT",
+      "PREPARED BY": "PREPARED BY",
+      "DATE": "DATE",
+      "LICENSE PLATE": "LICENSE PLATE",
+      "SUPERVISOR": "SUPERVISOR",
+      "Continue in supplement": "Continue in supplement"
+    }
+  },
+  "button": {
+    "Close": "Close",
+    "Assign": "Assign",
+    "Open": "Open",
+    "Close Report": "Close Report",
+    "Next": "Next",
+    "Back": "Back",
+    "Export PDF": "Export PDF",
+    "Update": "Update"
+  },
+  "Types of incident": "Types of incident",
+  "Robbery": "Robbery",
+  "Aggression": "Aggression",
+  "Medical emergency": "Medical emergency",
+  "Vehicle Robbery": "Vehicle Robbery",
+  "Scaling": "Scaling",
+  "Rape": "Rape",
+  "Domestic violence / Law 54": "Domestic violence / Law 54",
+  "Murder / Homicide": "Murder / Homicide",
+  "Vandalismo": "Vandalismo",
+  "Law 22": "Law 22",
+  "Alarm activated": "Alarm activated",
+  "Controlled substances": "Controlled substances",
+  "Surveillance request in an area": "Surveillance request in an area",
+  "Suspicious person or vehicle": "Suspicious person or vehicle",
+  "Noise": "Noise",
+  "Other": "Other"
+}

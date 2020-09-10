@@ -1,0 +1,32 @@
+nav {
+  background-color: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border-bottom: 1px solid #dee2e6;
+}
+
+.dropdown-menu {
+  left: 0;
+  padding: 0;
+}
+
+.dropdown .nav-link {
+  font-size: 18px;
+  color: #0c172d;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+ul {
+  float: right;
+  list-style: none;
+}
+
+.languagebtn {
+  margin-right: 15px;
+}
+.help{
+  color: #313131 !important;
+  text-decoration: none !important;
+}

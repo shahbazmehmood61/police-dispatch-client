@@ -1,0 +1,32 @@
+<div class="main bg-dark" [ngClass]="isShow ? 'show' : 'hide'">
+  <div>
+    <h4 class="calls">{{ "sos-sideabr.Calls" | translate }}</h4>
+    <ul>
+      <li *ngFor="let call of sosCalls">
+        <span (click)="searchService.getSosCallSingleVictim(
+              call.callerID,
+              'mobilevictim',
+              call)">
+          <!-- <span class="text">{{ call.phoneNumber | formater }}</span> -->
+          <span class="text">{{ call.phoneNumber}}</span>
+          <span class="circle"><i class="fas fa-circle"></i></span>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h4>{{ "sos-sideabr.Chats" | translate }}</h4>
+    <ul>
+      <li *ngFor="let chat of sosChats" (click)="chatClicked(chat)">
+        <!-- <span class="text">{{ chat.phoneNumber | formater }}</span> -->
+        <span class="text">{{ chat.phoneNumber }}</span>
+        <span class="circle"><i class="fas fa-circle"></i></span>
+      </li>
+    </ul>
+  </div>
+</div>
+<button class="btn btn-success w-100" (click)="toggleDisplay()">
+  SOS {{ "sos-sideabr.Calls" | translate }}/{{
+    "sos-sideabr.Chats" | translate
+  }}
+</button>

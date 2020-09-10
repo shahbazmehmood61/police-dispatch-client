@@ -1,0 +1,237 @@
+table,
+tr,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+table {
+  min-width: 100%;
+}
+.pdf-section {
+  padding: 20px 80px 20px 80px !important;
+}
+td {
+  padding: 5px;
+}
+
+.heading {
+  font-size: 20px;
+  transform: rotate(-90deg);
+}
+.incidnet-report {
+  margin-left: -58px !important;
+  margin-top: -50px !important;
+  margin-right: -56px !important;
+}
+.goods {
+  margin-left: -6px !important;
+}
+.victim {
+  margin-left: 2px !important;
+}
+.form-control {
+  background-color: transparent;
+  margin-right: 2px;
+  margin-left: 1px;
+  margin-top: 4px;
+}
+
+.offenders {
+  margin-right: -45px !important;
+  margin-left: -45px !important;
+}
+
+.arrested {
+  margin-left: -21px !important;
+  margin-right: -21px !important;
+}
+
+.offenders-address{
+  max-width: 350px !important;
+  margin-bottom: 20px !important;
+  overflow-wrap: break-word;
+}
+
+.witness {
+  margin-left: -11.4px !important;
+  margin-right: -11.4px !important;
+}
+.story {
+  margin-top: -0px !important;
+  margin-left: -0px !important;
+}
+
+.nostory {
+  margin-top: -200px !important;
+  margin-left: -0px !important;
+}
+
+.hr {
+  border: 2px solid black;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+  display: none !important;
+}
+
+.btn-group {
+  float: right;
+  margin-top: 30px;
+}
+
+.btn-group button {
+  margin: 5px;
+}
+
+.closeModel ::ng-deep .modal-lg {
+  max-width: 1300px !important;
+}
+.story-description {
+  max-width: 950px !important;
+  overflow-wrap: break-word;
+}
+.crime {
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+}
+.firms {
+  margin-left: 6px !important;
+}
+.form-check-input {
+  width: 20px !important;
+  height: 20px !important;
+  margin-right: 4px !important;
+}
+kendo-pdf-export {
+  font-family: "DejaVu Sans", "Arial", sans-serif;
+  font-size: 16px !important;
+  background-color: white;
+}
+.back-btn {
+  text-decoration: none;
+  color: #585858;
+}
+.incidentNarrative {
+  max-width: 294px !important;
+}
+.goods-description{
+  max-width: 300px !important;
+  overflow-wrap: break-word;
+}
+.description{
+  max-width: 70px !important;
+}
+input[type=checkbox]{
+  pointer-events: none;
+}
+.incident-narrative{
+  max-width: 400px !important;
+}
+.necessery-resources{
+  max-width: 400px !important;
+}
+/* table,
+tr,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+table {
+  min-width: 100%;
+}
+.pdf-section {
+  padding: 20px 80px 20px 80px !important;
+}
+td {
+  padding: 5px;
+}
+
+.heading {
+  font-size: 20px;
+  transform: rotate(-90deg);
+}
+.incidnet-report {
+  margin-left: -58px !important;
+  margin-top: -50px !important;
+  margin-right: -56px !important;
+}
+.goods {
+  margin-left: -6px !important;
+}
+.victim {
+  margin-left: 6px;
+}
+.form-control {
+  background-color: transparent;
+  margin-right: 2px;
+  margin-left: 1px;
+  margin-top: 4px;
+}
+
+.offenders {
+  margin-right: -45px !important;
+  margin-left: -45px !important;
+}
+
+.arrested {
+  margin-left: -21px !important;
+  margin-right: -21px !important;
+}
+
+.witness {
+  margin-left: -11px !important;
+  margin-right: -11px !important;
+}
+
+.story {
+  margin-top: -0px !important;
+  margin-left: -0px !important;
+}
+
+.hr {
+  border: 2px solid black;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+  display: none !important;
+}
+
+.btn-group {
+  float: right;
+  margin-top: 30px;
+}
+
+.btn-group button {
+  margin: 5px;
+}
+
+.closeModel ::ng-deep .modal-lg {
+  max-width: 1300px !important;
+}
+.story-description {
+  max-width: 950px !important;
+  overflow-wrap: break-word;
+}
+.crime {
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+}
+.firms {
+  margin-top: -35px !important;
+  margin-left: -20px !important;
+  margin-right: -21.3px !important;
+}
+.form-check-input {
+  width: 20px !important;
+  height: 20px !important;
+  margin-right: 4px !important;
+}
+kendo-pdf-export {
+  font-family: "DejaVu Sans", "Arial", sans-serif;
+  font-size: 16px !important;
+  background-color: white;
+}
+.back-btn {
+  text-decoration: none;
+  color: #585858;
+} */

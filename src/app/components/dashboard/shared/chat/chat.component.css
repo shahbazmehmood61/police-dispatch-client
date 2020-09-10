@@ -1,0 +1,295 @@
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+.inbox_people {
+  width: 30%;
+  float: left;
+  height: inherit;
+  overflow: hidden;
+  border-right: 1px solid #c4c4c4;
+  background: #f8f8f8 none repeat scroll 0 0;
+}
+
+.inbox_msg {
+  height: inherit;
+  border: 1px solid #c4c4c4;
+  clear: both;
+  overflow: hidden;
+}
+
+.srch_bar {
+  display: inline-block;
+  width: 100%;
+}
+
+.headind_srch {
+  padding: 10px 5px 0;
+  overflow: hidden;
+}
+
+input:focus {
+  outline: none;
+}
+
+.search-bar,
+.srch_bar input {
+  width: 100%;
+  padding: 2px 0 4px 6px;
+  background: none;
+}
+
+.input-group-addon button {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  padding: 0;
+  color: #707070;
+  font-size: 18px;
+}
+
+.input-group-addon {
+  margin: 0 0 0 -27px;
+}
+
+.msg-head {
+  display: inline-block;
+  width: 85%;
+  margin-left: 10px !important;
+}
+
+.time-stamp {
+  font-size: 12px;
+}
+
+.group-inbox h5,
+.msg-head .contact-name,
+.msg-head {
+  font-size: 15px;
+  color: #000;
+  margin: 0;
+}
+
+.chat_img {
+  display: inline-block;
+  width: 10%;
+  vertical-align: top;
+}
+
+.chat_ib {
+  float: left;
+  padding: 0 0 0 5px;
+  width: 100%;
+}
+
+.chat_people {
+  overflow: hidden;
+  clear: both;
+}
+
+.chat_list {
+  border-bottom: 1px solid #c4c4c4;
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+.inbox_chat {
+  height: inherit;
+  overflow: hidden;
+}
+
+.active_chat {
+  background: #ebebeb;
+}
+
+.received_msg {
+  display: inline-block;
+  padding: 0 0 0 10px;
+  vertical-align: top;
+  width: 92%;
+}
+
+.sent_msg,
+.received_msg {
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 0;
+  padding: 5px 10px;
+}
+
+.received_msg {
+  background: #ebebeb none repeat scroll 0 0;
+  border-top-left-radius: 0;
+  color: #646464;
+}
+
+.sent_msg .time_date {
+  text-align: right;
+}
+
+.group-inbox {
+  display: inline-block;
+  width: 80%;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.group-inbox h5 {
+  margin: 0;
+  padding: 0;
+}
+
+.group-inbox div {
+  font-size: 12px;
+}
+
+.sender {
+  font-weight: 600;
+  color: #7f7f7f;
+}
+
+.msg {
+  color: #7f7f7f;
+}
+
+.time_date {
+  color: #7f7f7f;
+  display: block;
+  font-size: 10px;
+}
+
+.received_withd_msg p {
+  margin: 0;
+}
+
+.received_withd_msg {
+  max-width: 57%;
+  width: fit-content;
+}
+
+.mesgs {
+  float: left;
+  padding: 5px;
+  width: 70%;
+  height: inherit;
+}
+
+.sent_msg {
+  /* background-image: linear-gradient(#00afff, #006dfc);*/
+  background: #dcf8c6;
+  border-bottom-right-radius: 0;
+  color: #000;
+}
+
+.incoming_msg,
+.outgoing_msg {
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.input_msg_write input {
+  background: #fff;
+  border: none;
+  color: #000;
+  font-size: 15px;
+  min-height: 35px;
+  width: 95%;
+  margin: 1px 0 1px 8px;
+}
+
+.type_msg {
+  border: 1px solid #c4c4c4;
+  position: relative;
+  padding: 0 5px;
+  border-radius: 25px;
+}
+
+.msg_send_btn {
+  background: #6a6a6a;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  height: 30px;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  width: 30px;
+}
+
+.messaging {
+  height: 600px;
+  margin: 0 0 50px 0;
+}
+
+.msg_history {
+  height: 553px;
+  overflow-y: auto;
+}
+
+::ng-deep .mat-autocomplete-panel {
+  padding: 3px;
+}
+
+.msg_send_btn:disabled {
+  color: #ccc;
+}
+
+.nochat-container {
+  text-align: center;
+}
+
+.nochat-container .img img {
+  padding: 60px 40px;
+}
+
+.nochat-container .img {
+  margin-bottom: 15px;
+  width: 200px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #efefef;
+}
+
+.modal-title {
+  font-weight: 500;
+}
+
+.members {
+  background-color: #e8e8e8;
+  font-size: 13px;
+  border-radius: 50px;
+  margin: 2px;
+  padding: 5px;
+}
+
+.members img {
+  width: 4%;
+  vertical-align: text-top;
+}
+
+.members i {
+  margin-left: 5px;
+}
+
+::ng-deep .mat-tab-body-content {
+  height: auto !important;
+}
+
+.mat-option {
+  line-height: 29px;
+  height: 30px;
+}
+
+.btn-close-chat {
+  float: right;
+  font-size: 12px;
+  padding: 0 3px;
+}

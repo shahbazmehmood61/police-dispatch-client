@@ -1,0 +1,95 @@
+table,
+tr,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  min-width: 100%;
+}
+
+td {
+  padding: 5px;
+}
+
+.heading {
+  font-size: 20px;
+  transform: rotate(-90deg);
+}
+
+.form-control {
+  background-color: transparent;
+  margin-right: 2px;
+  margin-left: 1px;
+  margin-top: 4px;
+}
+
+.story {
+  margin-top: -100px !important;
+  margin-left: -30px !important;
+}
+
+.hr {
+  border: 2px solid black;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+  display: none !important;
+}
+/* 
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+  height: 40px !important;
+  margin-top: 4px !important;
+  width: 180px !important;
+} */
+
+/* ::ng-deep .mat-datepicker-toggle-default-icon{
+  margin-top: -20px !important;
+} */
+/* ::ng-deep .mat-form-field-underline {
+  display: none !important;
+} */
+/* .date-picker{
+  height: 40px !important; 
+  margin-top: -20px !important;
+   width: 170px !important; 
+} .mate-date  */
+
+.btn-group {
+  float: right;
+  margin-top: 30px;
+}
+
+.btn-group button {
+  margin: 5px;
+}
+
+.closeModel ::ng-deep .modal-lg {
+  max-width: 1300px !important;
+}
+.firstTextArea{
+  min-height: 50px !important;
+}
+.textArea{
+  min-height: 50px !important;
+}
+.victim{
+  margin-right: -3px !important;
+}
+.offenders{
+  margin-left: -36px !important;
+  margin-right: -36px !important;
+}
+.arrested{
+  margin-left: -18px !important;
+  margin-right: -18px !important;
+}
+.witness{
+  margin-left: -9px !important;
+  margin-right: -8px !important;
+}
+.firms{
+  margin-left: -9px !important;
+  margin-right: -9px !important;
+}

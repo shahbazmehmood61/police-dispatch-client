@@ -1,0 +1,59 @@
+nav,
+form,
+.nav-link,
+.nav-link.activeLink,
+.mat-tab-label,
+.mat-tab-link,
+.mat-form-field-appearance-legacy .mat-form-field-label,
+.mat-select-arrow,
+.mat-datepicker-toggle,
+.not-found,
+.mat-input-element:disabled,
+.dashboard-main {
+  color: #fff !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #fff !important;
+}
+
+nav {
+  background-color: #000 !important;
+}
+
+.mat-slide-toggle-bar {
+  background: #bdbdbd !important;
+}
+
+form,
+.mat-tab-group,
+.nav-link.activeLink,
+.dashboard-main {
+  background-color: #425c85 !important;
+}
+
+/* .mat-tab-body-content {
+  min-height: 92.2vh;
+} */
+
+.mat-tab-header {
+  border-bottom: 1px solid #fff !important;
+}
+
+.user-details,
+.data {
+  color: #aeb9ca !important;
+}
+
+tr.incident-report:hover {
+  background-color: #627ba2 !important;
+}
+
+table.incident-detail-table {
+  color: #c7c7c7 !important;
+  border: 1px solid #c7c7c7 !important;
+}
+
+.error {
+  color: rgb(250, 150, 150) !important;
+}

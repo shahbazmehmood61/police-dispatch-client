@@ -1,0 +1,194 @@
+<form class="overflow-hidden p-3" [formGroup]="RegisterVictimForm" (ngSubmit)="searchService.editVictimDetail ? update() : submit()">
+  <mat-chip-list aria-label="header">
+    <mat-chip color="primary" selected>
+      <h3 class="m-0 text-white p-1">
+        {{ "register-victim.Register Victim" | translate }}
+      </h3>
+    </mat-chip>
+  </mat-chip-list>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="inputs mt-1">
+            <mat-form-field>
+              <input matInput formControlName="firstName" type="text" placeholder="{{ 'register-victim.First Name' | translate }}" />
+            </mat-form-field>
+            <print-error [control]="RegisterVictimForm.get('firstName')"></print-error>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="inputs mt-1">
+            <mat-form-field>
+              <input matInput formControlName="middleInitial" type="text" placeholder="{{ 'register-victim.Middle Initial' | translate }}" />
+            </mat-form-field>
+            <print-error [control]="RegisterVictimForm.get('middleInitial')"></print-error>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="inputs mt-1">
+            <mat-form-field>
+              <input matInput formControlName="lastName" type="text" placeholder="{{ 'register-victim.Last Name' | translate }}" />
+            </mat-form-field>
+            <print-error [control]="RegisterVictimForm.get('lastName')"></print-error>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="inputs mt-1">
+            <mat-form-field>
+              <input matInput formControlName="secondLastName" type="text" placeholder="{{
+                  'register-victim.Second Last Name' | translate
+                }}" />
+            </mat-form-field>
+            <print-error [control]="RegisterVictimForm.get('secondLastName')"></print-error>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="inputs mt-1">
+            <mat-form-field>
+              <input matInput formControlName="cellNumber" appNumberformat maxlength="14" #cellnumber="matInput" type="text"
+                (keyup)="transform(cellnumber)" placeholder="{{ 'register-victim.Cell Number' | translate }}" />
+            </mat-form-field>
+            <div *ngIf="RegisterVictimForm.get('cellNumber').invalid">
+              <p class="error" *ngIf="RegisterVictimForm.get('cellNumber').errors.maxlength">
+                your field should contain less numbers
+              </p>
+              <p class="error" *ngIf="RegisterVictimForm.get('cellNumber').errors.minlength">
+                phone number requires more numbers
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="inputs mt-1">
+            <mat-form-field>
+              <input matInput maxlength="14" #homeCellNumber="matInput" type="text" (keyup)="transform(homeCellNumber)"
+                formControlName="homeCellNumber" type="text" placeholder="{{
+                  'register-victim.Home Cell Number' | translate
+                }}" />
+            </mat-form-field>
+            <div *ngIf="RegisterVictimForm.get('homeCellNumber').invalid">
+              <p class="error" *ngIf="
+                  RegisterVictimForm.get('homeCellNumber').errors.maxlength
+                ">
+                your field should contain less numbers
+              </p>
+              <p class="error" *ngIf="
+                  RegisterVictimForm.get('homeCellNumber').errors.minlength
+                ">
+                phone number requires more numbers
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="inputs mt-1">
+            <mat-form-field>
+              <mat-label>{{
+                "register-victim.Date of Birth" | translate
+              }}</mat-label>
+              <input matInput [matDatepicker]="incidentDate" formControlName="DOB" />
+              <mat-datepicker-toggle matSuffix [for]="incidentDate"></mat-datepicker-toggle>
+              <mat-datepicker #incidentDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="inputs mt-1">
+            <mat-form-field>
+              <mat-label>{{ "register-victim.Gender" | translate }}</mat-label>
+              <mat-select formControlName="gender">
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <print-error [control]="RegisterVictimForm.get('gender')"></print-error>
+          </div>
+        </div>
+      </div>
+
+      <div class="inputs mt-1">
+        <mat-form-field>
+          <input matInput formControlName="address" type="text" placeholder="{{ 'register-victim.Address' | translate }}" />
+        </mat-form-field>
+        <print-error [control]="RegisterVictimForm.get('address')"></print-error>
+      </div>
+      <div class="inputs mt-1">
+        <mat-form-field>
+          <input matInput formControlName="locationMap" type="text" placeholder="Location Mao" />
+        </mat-form-field>
+        <print-error [control]="RegisterVictimForm.get('locationMap')"></print-error>
+      </div>
+    </div>
+    <div class="col-md-6 mt-auto">
+      <mat-label>{{ "register-victim.Height" | translate }}</mat-label>
+      <div class="inputs mt-1 form-row" formGroupName="height">
+        <mat-form-field class="col-md-6">
+          <mat-label>{{ "register-victim.Feet" | translate }}</mat-label>
+          <mat-select formControlName="feets">
+            <mat-option *ngFor="let fets of fakeFeets; let ind = index" [value]="ind + 1">{{ ind + 1 }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="col-md-6">
+          <mat-label>{{ "register-victim.Inches" | translate }}</mat-label>
+          <mat-select formControlName="inches">
+            <mat-option *ngFor="let inche of fakeInches; let ind = index" [value]="ind">{{ ind }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="inputs mt-1">
+            <mat-form-field>
+              <input matInput formControlName="eyeColor" type="text" placeholder="{{ 'register-victim.Eye Color' | translate }}" />
+            </mat-form-field>
+            <print-error [control]="RegisterVictimForm.get('eyeColor')"></print-error>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="inputs mt-1">
+            <mat-form-field>
+              <input matInput formControlName="weight" type="text" placeholder="{{ 'register-victim.Weight' | translate }}" />
+            </mat-form-field>
+            <print-error [control]="RegisterVictimForm.get('weight')"></print-error>
+          </div>
+        </div>
+      </div>
+      <div class="inputs mt-1">
+        <mat-form-field>
+          <input matInput formControlName="drivingLicense" type="text" placeholder="Driver License Image" />
+        </mat-form-field>
+        <print-error [control]="RegisterVictimForm.get('drivingLicense')"></print-error>
+      </div>
+      <div class="inputs mt-1">
+        <mat-form-field>
+          <input matInput formControlName="driverLicenseNumber" type="text" placeholder="{{
+              'register-victim.Driver License Number' | translate
+            }}" />
+        </mat-form-field>
+        <print-error [control]="RegisterVictimForm.get('driverLicenseNumber')"></print-error>
+      </div>
+      <div class="inputs mt-1">
+        <mat-form-field>
+          <input matInput formControlName="email" type="email" placeholder="{{ 'register-victim.Email' | translate }}" />
+        </mat-form-field>
+        <print-error [patternMsg]="'Invalid email'" [control]="RegisterVictimForm.get('email')"></print-error>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-2 mb-2">
+    <button *ngIf="!searchService.editVictimDetail" mat-raised-button color="primary" type="submit">
+      {{ "register-victim.Register" | translate }}
+      <i class="fas fa-user-plus"></i>
+    </button>
+    <button *ngIf="searchService.editVictimDetail" mat-raised-button color="primary" type="submit">
+      {{ "button.Update" | translate }}
+    </button>
+  </div>
+</form>

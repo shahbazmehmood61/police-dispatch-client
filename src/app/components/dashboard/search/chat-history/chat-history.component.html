@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="messaging">
+    <div class="inbox_msg">
+      <div class="inbox_people">
+        <div class="inbox_chat">
+          <div
+            class="chat_list"
+            *ngFor="let user of chatService.closedChatRoomIDs"
+            (click)="getMessages(user)"
+            [ngClass]="
+              user.chatID == chatService.selectChatID ? 'active_chat' : ''
+            "
+          >
+            <div class="chat_people">
+              <div class="chat_ib">
+                <img
+                  class="chat_img rounded-circle"
+                  src="../../../../../assets/images/user-icon.png"
+                  alt="img"
+                />
+                <div class="msg-head">
+                  <span class="contact-name">{{ user.reciverName }}</span>
+                  <span
+                    class="time-stamp float-right msg"
+                    *ngIf="user.timeStamp"
+                    >{{ user.timeStamp | date }}</span
+                  >
+                  <span class="msg d-block" *ngIf="user.lastMsg">
+                    {{
+                      user.lastMsg.length > 36
+                        ? (user.lastMsg | slice: 0:33) + "..."
+                        : user.lastMsg
+                    }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mesgs">
+        <div
+          class="msg_history"
+          #singleChatScroll
+          [scrollTop]="singleChatScroll.scrollHeight"
+        >
+          <div *ngIf="chatService.chatRoom.length > 0; else noChat">
+            <div
+              *ngFor="let chat of chatService.chatRoom"
+              [ngClass]="
+                chatService.userMeta.uid == chat.senderID
+                  ? 'outgoing_msg'
+                  : 'incoming_msg'
+              "
+            >
+              <div
+                class="received_withd_msg"
+                [ngClass]="
+                  chatService.userMeta.uid == chat.senderID
+                    ? 'sent_msg float-right'
+                    : 'received_msg'
+                "
+              >
+                <p>{{ chat.text }}</p>
+                <span class="time_date">{{
+                  chat.timeStamp | date: "medium"
+                }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-template #noChat>
+          <div class="nochat-container">
+            <div class="img" id="chat_history">
+              <img
+                *ngIf="this.darkmode.mode"
+                src="../../../../../assets/images/monarch_horiz.png"
+                alt="Logo"
+              />
+              <img
+                *ngIf="!this.darkmode.mode"
+                src="../../../../../assets/images/monarch_horiz_dark.png"
+                alt="Logo"
+              />
+            </div>
+            <h4>Monarch Police Dispatch</h4>
+            <p>{{ "search-victim.Chat History" | translate }}</p>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

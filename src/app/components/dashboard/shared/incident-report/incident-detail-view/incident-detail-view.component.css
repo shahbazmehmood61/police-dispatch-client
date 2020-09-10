@@ -1,0 +1,35 @@
+.header {
+  border-bottom: 3px solid #ccc;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+table.incident-detail-table {
+  font-weight: 600;
+  width: 100%;
+  color: #636363;
+  border: 1px solid #636363;
+}
+
+mat-chip-list {
+  display: inline-block;
+}
+
+.data {
+  color: #000;
+}
+
+.btn-back {
+  cursor: pointer;
+}
+.updateBtns {
+  float: right;
+  margin: 20px 0px 20px 0px;
+}
+.updateBtns button {
+  margin: 0px 0px 0px 0px;
+}
+.pdf {
+  color: #313131 !important;
+  text-decoration: none !important;
+}

@@ -1,0 +1,58 @@
+.toggle-box {
+  padding: 10px 20px;
+  margin-bottom: 10px !important;
+}
+
+.table-custom {
+  overflow: auto;
+  padding: 0px 20px;
+}
+
+table {
+  width: max-content;
+}
+
+.heading {
+  background-color: #9cbbf5;
+}
+
+tr,
+td {
+  width: 150px;
+  white-space: nowrap;
+}
+
+.filter {
+  width: fit-content;
+}
+.pdf {
+  color: #313131 !important;
+  text-decoration: none;
+}
+.reportType{
+  height: 150px !important;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.main-table {
+  overflow: auto;
+}
+
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+  padding: 5px;
+  white-space: nowrap;
+}
+
+th.mat-header-cell {
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #9cbbf5;
+}
+th.action{
+  margin-left: -20px !important;
+}

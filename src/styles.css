@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css";
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #091932;
+}
+
+/* ================== Auth Region */
+
+/* all auth forms */
+.auth-modal {
+  width: 100%;
+  max-width: 40%;
+  margin: auto;
+}
+
+.auth-modal form {
+  padding: 15px;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.position-relative i {
+  position: absolute;
+  font-size: 16px;
+  right: 10px;
+  top: 42px;
+}
+
+.btn-link {
+  cursor: pointer;
+}
+
+.forms .inputs {
+  position: relative;
+  display: block;
+}
+
+.primary-btn {
+  background-color: #03315c;
+  color: #fff;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.forms .mat-error {
+  position: absolute;
+  top: 42px;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0 0 0.5em;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.cdk-overlay-container {
+  z-index: 1100;
+}
+
+@media (max-width: 768px) {
+  .auth-modal {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 550px) {
+  .auth-modal {
+    max-width: 90%;
+  }
+}
