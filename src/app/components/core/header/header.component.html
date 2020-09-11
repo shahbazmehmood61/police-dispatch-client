@@ -26,9 +26,11 @@
           Spanish
         </button>
       </mat-menu>
-      <button class="mr-4" mat-button><a class="help" target="_blank" href="http://monarchss.com/help/index.html">Help</a></button>
+      <a class="help" target="_blank" href="http://monarchss.com/help/index.html"><button class="mr-4"
+          mat-button>{{'header-tab.help' | translate}}</button></a>
       <mat-slide-toggle (change)="modeChanged()">
-        <span>{{ "header-tab.Light" | translate }}</span>
+        <span *ngIf="!darkmode.mode">{{ "header-tab.Light" | translate }}</span>
+        <span *ngIf="darkmode.mode">{{ "header-tab.Dark" | translate }}</span>
       </mat-slide-toggle>
       <li class="nav-item dropdown" *ngIf="authService.isLoggedIn()">
         <a class="nav-link pl-0 pr-0" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

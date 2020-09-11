@@ -5,8 +5,10 @@
       "username": "Username",
       "password": "Password",
       "rememberme": "Remember Me",
-      "forgotpassword": "Forgot your Password ?"
+      "forgotpassword": "Forgot your Password ?",
+      "Email Address": "Email Address"
     },
+    "Sign In": "Sign In",
     "validation": {
       "username": {
         "required": "*Username is required"
@@ -157,7 +159,8 @@
     "Incident Report": "Incident Report",
     "logout": "Logout",
     "Light": "Light",
-    "Dark": "Dark"
+    "Dark": "Dark",
+    "help": "Help"
   },
   "sos-sideabr": {
     "Calls": "Calls",

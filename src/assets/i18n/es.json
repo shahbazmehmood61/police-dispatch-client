@@ -5,8 +5,10 @@
       "username": "Nombre de Usuario",
       "password": "Contraseña",
       "rememberme": "Recuérdame",
-      "forgotpassword": "Olvidó contraseña?"
+      "forgotpassword": "Olvidó contraseña?",
+      "Email Address": "Email"
     },
+    "Sign In": "Registrarse",
     "validation": {
       "username": {
         "required": "*Nombre de Usuario es requerido"
@@ -157,7 +159,8 @@
     "Incident Report": "Reporte de Incidente",
     "logout": "Cerrar sesión",
     "Light": "Claro",
-    "Dark": "Oscuro"
+    "Dark": "Oscuro",
+    "help": "Ayuda"
   },
   "sos-sideabr": {
     "Calls": "Llamadas",

@@ -4,25 +4,7 @@ import { SearchService } from "src/app/core/services/search.service";
 import { AuthService } from "src/app/core/services/auth.service";
 import { Router } from "@angular/router";
 import { MatTableDataSource } from '@angular/material/table';
-
-const reportTypes = [
-  { typeValue: "robbery", type: "Robbery" },
-  { typeValue: "aggression", type: "Aggression" },
-  { typeValue: "medicalEmergency", type: "Medical emergency" },
-  { typeValue: "vehicleRobbery", type: "Vehicle Robbery" },
-  { typeValue: "scaling", type: "Scaling" },
-  { typeValue: "rape", type: "Rape" },
-  { typeValue: "domesticViolence", type: "Domestic violence / Law 54" },
-  { typeValue: "murderHomicide", type: "Murder / Homicide" },
-  { typeValue: "vandalismo", type: "Vandalismo" },
-  { typeValue: "law22", type: "Law 22" },
-  { typeValue: "alarmActivated", type: "Alarm activated" },
-  { typeValue: "controlledSubstances", type: "Controlled substances" },
-  { typeValue: "surveillanceRequest", type: "Surveillance request in an area" },
-  { typeValue: "suspiciousPerson", type: "Suspicious person or vehicle" },
-  { typeValue: "noise", type: "Noise" },
-  { typeValue: "other", type: "Other" }
-];
+import { reportTypes } from '../../../../core/constants/report-types';
 
 @Component({
   selector: "app-incident-report",

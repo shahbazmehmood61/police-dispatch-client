@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { APIs } from '../constants/apis';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SosService {
-
+  sosCall: any = new BehaviorSubject([]);
   userInfo;
   sosCalls;
   constructor(

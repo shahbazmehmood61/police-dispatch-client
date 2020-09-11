@@ -11,6 +11,11 @@ table.incident-detail-table {
   border: 1px solid #636363;
 }
 
+.close-btn{
+  float: left;
+  margin-top: 20px;
+}
+
 mat-chip-list {
   display: inline-block;
 }

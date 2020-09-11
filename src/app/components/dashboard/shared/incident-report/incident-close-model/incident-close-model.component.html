@@ -113,22 +113,19 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label>Necessary Resources</label>
-                    <textarea matTextareaAutosize class="form-control firstTextArea"
-                      formControlName="necessaryResources" rows="3"></textarea>
+                    <textarea matTextareaAutosize class="form-control firstTextArea" formControlName="necessaryResources" rows="3"></textarea>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label>Incident Narrative</label>
-                    <textarea matTextareaAutosize class="form-control firstTextArea" formControlName="incidentNarrative"
-                      rows="3"></textarea>
+                    <textarea matTextareaAutosize class="form-control firstTextArea" formControlName="incidentNarrative" rows="3"></textarea>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="btn-group">
-            <button mat-raised-button (click)="addGroup('secondPage',stepper)">{{ "button.Next" | translate }}</button>
+          <div class="close-btn">
             <button mat-raised-button type="button" data-dismiss="modal" (click)="
                 updateStatus(
                   closeReportForm,
@@ -140,6 +137,10 @@
               {{ "button.Close Report" | translate }}
             </button>
           </div>
+          <div class="btn-group">
+            <button mat-raised-button (click)="addGroup('secondPage',stepper)">{{ "button.Next" | translate }}</button>
+
+          </div>
         </mat-step>
 
         <mat-step *ngIf="closeReportForm.get('secondPage')">
@@ -150,10 +151,8 @@
                   <td rowspan="3" colspan="2">
                     <div class="row">
                       <div class="col-lg-12 text-center">
-                        <img *ngIf="darkmode.mode" src="../../../../../../assets/images/monarch_horiz.png"
-                          width="140" />
-                        <img *ngIf="!darkmode.mode" src="../../../../../../assets/images/monarch_horiz_dark.png"
-                          width="140" />
+                        <img *ngIf="darkmode.mode" src="../../../../../../assets/images/monarch_horiz.png" width="140" />
+                        <img *ngIf="!darkmode.mode" src="../../../../../../assets/images/monarch_horiz_dark.png" width="140" />
                       </div>
                     </div>
                   </td>
@@ -221,8 +220,7 @@
                       <div class="col-lg-6">
                         <div class="d-flex flex-column">
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="offernderDeathStatus" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="offernderDeathStatus" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-one.options.OFFENDER'S DEATH"
                                 | translate
@@ -236,16 +234,14 @@
                             }}</label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="extradicionDeniedStatus" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="extradicionDeniedStatus" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-one.options.EXTRADICION IS DENIED"
                                 | translate
                             }}</label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="negotiateCollaborateStatus" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="negotiateCollaborateStatus" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-one.options.NEGOTIATE TO COLLABORATE"
                                 | translate
@@ -295,8 +291,7 @@
                           }}</label>
                         </div>
                         <div class="col-lg-6">
-                          <input type="checkbox" class="form-check-input mln-1"
-                            formControlName="supplementReportType" />
+                          <input type="checkbox" class="form-check-input mln-1" formControlName="supplementReportType" />
                           <label class="form-check-label m-0 mln-1">{{
                             "close-incident.row-one.check-boxes.SUPPLEMENT"
                               | translate
@@ -331,16 +326,13 @@
                         </p>
                       </div>
                       <div class="col-lg-4 m-0">
-                        <input type="text" class="form-control mt-n3" formControlName="complainantSurName"
-                          placeholder="Sr Name" />
+                        <input type="text" class="form-control mt-n3" formControlName="complainantSurName" placeholder="Sr Name" />
                       </div>
                       <div class="col-lg-4 m-0">
-                        <input type="text" formControlName="complainantName" placeholder="Name"
-                          class="form-control mt-n3" />
+                        <input type="text" formControlName="complainantName" placeholder="Name" class="form-control mt-n3" />
                       </div>
                       <div class="col-lg-4 m-0">
-                        <input type="text" formControlName="complainantmiddleName" placeholder="Middle Name"
-                          class="form-control mt-n3" />
+                        <input type="text" formControlName="complainantmiddleName" placeholder="Middle Name" class="form-control mt-n3" />
                       </div>
                     </div>
                   </td>
@@ -366,8 +358,7 @@
                         </p>
                       </div>
                       <div>
-                        <input class="form-control mt-n3"
-                          [value]="closeReportForm.get('secondPage.crime.homeTelephone').value | formater"
+                        <input class="form-control mt-n3" [value]="closeReportForm.get('secondPage.crime.homeTelephone').value | formater"
                           formControlName="homeTelephone" placeholder="Home Phone Number" type="text" maxlength="14" />
                       </div>
                     </div>
@@ -382,8 +373,7 @@
                         </p>
                       </div>
                       <div>
-                        <input class="form-control mt-n3" formControlName="direction" placeholder="Direction"
-                          type="text" />
+                        <input class="form-control mt-n3" formControlName="direction" placeholder="Direction" type="text" />
                       </div>
                     </div>
                   </td>
@@ -397,9 +387,8 @@
                         </p>
                       </div>
                       <div>
-                        <input class="form-control mt-n3" formControlName="jobTelephone" placeholder="Job Phone Number"
-                          type="text" [value]="closeReportForm.get('secondPage.crime.jobTelephone').value | formater"
-                          maxlength="14" />
+                        <input class="form-control mt-n3" formControlName="jobTelephone" placeholder="Job Phone Number" type="text"
+                          [value]="closeReportForm.get('secondPage.crime.jobTelephone').value | formater" maxlength="14" />
                       </div>
                     </div>
                   </td>
@@ -419,8 +408,7 @@
                         </p>
                       </div>
                       <div>
-                        <input class="form-control mt-n3" formControlName="incidentPlace" placeholder="Incident Place"
-                          type="text" />
+                        <input class="form-control mt-n3" formControlName="incidentPlace" placeholder="Incident Place" type="text" />
                       </div>
                     </div>
                   </td>
@@ -450,10 +438,8 @@
                         *ngFor="let motivated of closeReportForm.get('secondPage.crime.ifMotivatedOfPrejudice')?.controls;let j = index"
                         [formGroupName]="j">
                         <input class="form-control" formControlName="crimeName" placeholder="Crime Name" type="text" />
-                        <input class="form-control" formControlName="oneMotivatedOfPrejudice"
-                          placeholder="IF Motivated Of Prejudice" type="text" />
-                        <input class="form-control" type="text" formControlName="offenderName"
-                          placeholder="Offender Name" />
+                        <input class="form-control" formControlName="oneMotivatedOfPrejudice" placeholder="IF Motivated Of Prejudice" type="text" />
+                        <input class="form-control" type="text" formControlName="offenderName" placeholder="Offender Name" />
                         <button mat-icon-button class="bg-light ml-1 mt-1" (click)="
                             incidentReportClose.removeMotivatedPrejudice(j)
                           ">
@@ -461,8 +447,7 @@
                         </button>
                       </div>
                     </div>
-                    <button class="mt-1 bg-light" mat-icon-button
-                      (click)="incidentReportClose.addMotivatedOfPrejudice()">
+                    <button class="mt-1 bg-light" mat-icon-button (click)="incidentReportClose.addMotivatedOfPrejudice()">
                       <i class="fas fa-plus"></i>
                     </button>
                   </td>
@@ -489,20 +474,16 @@
                           }}
                         </p>
                       </div>
-                      <div class="d-flex flex-row"
-                        *ngFor="let crime of closeReportForm.get('secondPage.crime.crimeUcr')?.controls;let i = index"
+                      <div class="d-flex flex-row" *ngFor="let crime of closeReportForm.get('secondPage.crime.crimeUcr')?.controls;let i = index"
                         [formGroupName]="i">
                         <div>
-                          <input class="form-control" formControlName="crimeCode" placeholder="Crime UCR Code"
-                            type="text" />
+                          <input class="form-control" formControlName="crimeCode" placeholder="Crime UCR Code" type="text" />
                         </div>
                         <div>
-                          <input class="form-control" formControlName="incidentDate" placeholder="incident Date"
-                            type="text" bsDatepicker />
+                          <input class="form-control" formControlName="incidentDate" placeholder="incident Date" type="text" bsDatepicker />
                         </div>
                         <div>
-                          <input class="form-control" formControlName="incidentTime" placeholder="Incident Time"
-                            type="text" />
+                          <input class="form-control" formControlName="incidentTime" placeholder="Incident Time" type="text" />
                         </div>
                         <button mat-icon-button class="bg-light ml-1 mt-1" (click)="incidentReportClose.removeCrime(i)">
                           <i class="fas fa-minus"></i>
@@ -687,13 +668,12 @@
                               | translate
                           }}
                         </p>
-                        <div class="d-flex flex-row" *ngFor="let crime of closeReportForm.get('secondPage.crime.ifDifferentFromCrime')?.controls;let i = index">
+                        <div class="d-flex flex-row"
+                          *ngFor="let crime of closeReportForm.get('secondPage.crime.ifDifferentFromCrime')?.controls;let i = index">
                           <div>
-                            <input type="text" [formControlName]="i" placeholder="Crime Code"
-                              class="form-control ml-1" />
+                            <input type="text" [formControlName]="i" placeholder="Crime Code" class="form-control ml-1" />
                           </div>
-                          <button mat-icon-button class="bg-light ml-1 mt-1"
-                            (click)="incidentReportClose.removediffFromCrime(i)">
+                          <button mat-icon-button class="bg-light ml-1 mt-1" (click)="incidentReportClose.removediffFromCrime(i)">
                             <i class="fas fa-minus"></i>
                           </button>
                         </div>
@@ -788,8 +768,7 @@
                         </div>
                         <div class="d-flex flex-column">
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="offenderUseComputerEquip" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="offenderUseComputerEquip" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-eight.COMPUTER EQUIPMENT"
                                 | translate
@@ -852,8 +831,7 @@
                       <div class="d-flex flex-row justify-content-between">
                         <div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="airBustrainterminal" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="airBustrainterminal" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-nine.AIR / BUS / TRAIN TERMINAL"
                                 | translate
@@ -881,8 +859,7 @@
                             }}</label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="commercialOfficeBuilding" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="commercialOfficeBuilding" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-nine.COMMERCIAL / OFFICE BUILDING"
                                 | translate
@@ -940,8 +917,7 @@
                             }}</label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="superMarketFoodStore" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="superMarketFoodStore" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-nine.FOOD STORE / SUPERMARKET"
                                 | translate
@@ -990,8 +966,7 @@
                             }}</label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="storageRentalCenter" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="storageRentalCenter" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-nine.STORAGE RENTAL CENTER"
                                 | translate
@@ -1065,8 +1040,7 @@
                             }}</label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="cultivateManufacture" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="cultivateManufacture" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-ten.CULTIVATE / MANUFACTURE / PUBLISH"
                                 | translate
@@ -1091,8 +1065,7 @@
                         </div>
                         <div class="d-flex flex-column">
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="protestPromoteAssist" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="protestPromoteAssist" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-ten.PROTEST, PROMOTE / ASSIST"
                                 | translate
@@ -1272,12 +1245,9 @@
                         }}
                       </p>
                       <div class="d-flex flex-row">
-                        <input type="text" class="form-control" formControlName="victimFirstName"
-                          placeholder="First Name" />
-                        <input type="text" class="form-control" formControlName="victimLastName"
-                          placeholder="Last Name" />
-                        <input type="text" class="form-control" formControlName="victimMiddleName"
-                          placeholder="Middle Name" />
+                        <input type="text" class="form-control" formControlName="victimFirstName" placeholder="First Name" />
+                        <input type="text" class="form-control" formControlName="victimLastName" placeholder="Last Name" />
+                        <input type="text" class="form-control" formControlName="victimMiddleName" placeholder="Middle Name" />
                       </div>
                     </div>
                   </td>
@@ -1286,8 +1256,7 @@
                       <p>
                         {{ "close-incident.row-twelve.Home phone" | translate }}
                       </p>
-                      <input type="text" class="form-control" formControlName="homePhone"
-                        placeholder="Home Phone Number" maxlength="14"
+                      <input type="text" class="form-control" formControlName="homePhone" placeholder="Home Phone Number" maxlength="14"
                         [value]="closeReportForm.get('secondPage.victim.homePhone').value | formater" />
                     </div>
                   </td>
@@ -1301,8 +1270,8 @@
                             | translate
                         }}
                       </p>
-                      <textarea matTextareaAutosize type="text" class="form-control textArea"
-                        placeholder="Enter Complete Address" formControlName="address" rows="2"></textarea>
+                      <textarea matTextareaAutosize type="text" class="form-control textArea" placeholder="Enter Complete Address"
+                        formControlName="address" rows="2"></textarea>
                     </div>
                   </td>
                 </tr>
@@ -1507,16 +1476,14 @@
                             "close-incident.row-fourtheen.DATE OF BIRTH"
                               | translate
                           }}</label>
-                          <input type="text" class="form-control ml-1" placeholder="Date Of Birth"
-                            formControlName="dateOfBirth" bsDatepicker />
+                          <input type="text" class="form-control ml-1" placeholder="Date Of Birth" formControlName="dateOfBirth" bsDatepicker />
                         </div>
                         <div>
                           <label class="m-0 ml-1">{{
                             "close-incident.row-fourtheen.NUM. OF VICTIMS"
                               | translate
                           }}</label>
-                          <input type="text" class="form-control ml-1" placeholder="Num Of Victims"
-                            formControlName="numOfVictims" />
+                          <input type="text" class="form-control ml-1" placeholder="Num Of Victims" formControlName="numOfVictims" />
                         </div>
                       </div>
                     </div>
@@ -1543,8 +1510,7 @@
                             }}</label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="aggressionAgaintPolice" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="aggressionAgaintPolice" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-fifteen.AGGRESSION AGAINST POLICE AGENT"
                                 | translate
@@ -1602,8 +1568,7 @@
                             }}</label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="unknownCircumstance" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="unknownCircumstance" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-fifteen.CIRCUMSTANCES Unknown"
                                 | translate
@@ -1638,8 +1603,7 @@
                               }}</label>
                             </div>
                             <div>
-                              <input type="checkbox" class="form-check-input ml-1"
-                                formControlName="possibleInjuriesInternal" />
+                              <input type="checkbox" class="form-check-input ml-1" formControlName="possibleInjuriesInternal" />
                               <label class="form-check-label m-0 ml-4">{{
                                 "close-incident.row-fifteen.POSSIBLE INJURIES INTERNAL"
                                   | translate
@@ -1709,8 +1673,7 @@
                         </div>
                       </div>
                       <div>
-                        <button class="mt-1 bg-light" mat-icon-button
-                          (click)="incidentReportClose.victimRealtedCrime()">
+                        <button class="mt-1 bg-light" mat-icon-button (click)="incidentReportClose.victimRealtedCrime()">
                           <i class="fas fa-plus"></i>
                         </button>
                       </div>
@@ -1926,8 +1889,7 @@
                             }}</label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="unknownRelationship" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="unknownRelationship" />
                             <label class="form-check-label m-0 ml-4">{{
                               "close-incident.row-sixteen.UNKNOWN RELATIONSHIP"
                                 | translate
@@ -1941,8 +1903,7 @@
               </tbody>
             </table>
           </div>
-          <div class="btn-group">
-            <button mat-raised-button (click)="addGroup('thirdPage',stepper)">{{ "button.Next" | translate }}</button>
+          <div class="close-btn">
             <button mat-raised-button type="button" data-dismiss="modal" (click)="
                 updateStatus(
                   closeReportForm,
@@ -1953,8 +1914,11 @@
               ">
               {{ "button.Close Report" | translate }}
             </button>
-            <button mat-raised-button
-              (click)="removeGroup('secondPage', stepper)">{{ "button.Back" | translate }}</button>
+          </div>
+          <div class="btn-group">
+            <button mat-raised-button (click)="addGroup('thirdPage',stepper)">{{ "button.Next" | translate }}</button>
+
+            <button mat-raised-button (click)="removeGroup('secondPage', stepper)">{{ "button.Back" | translate }}</button>
           </div>
         </mat-step>
 
@@ -2030,8 +1994,8 @@
                   </td>
                   <td colspan="3">
                     <div>
-                      <textarea class="form-control textArea" matTextareaAutosize formControlName="noneDescription"
-                        placeholder="Description" rows="2"></textarea>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="noneDescription" placeholder="Description"
+                        rows="2"></textarea>
                     </div>
                   </td>
                   <td>
@@ -2063,8 +2027,8 @@
                   </td>
                   <td colspan="3">
                     <div>
-                      <textarea class="form-control textArea" matTextareaAutosize formControlName="burnedDescription"
-                        placeholder="Description" rows="2"></textarea>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="burnedDescription" placeholder="Description"
+                        rows="2"></textarea>
                     </div>
                   </td>
                   <td>
@@ -2098,8 +2062,8 @@
                   </td>
                   <td colspan="3">
                     <div>
-                      <textarea class="form-control textArea" matTextareaAutosize
-                        formControlName="counterfietDescription" placeholder="Description" rows="2"></textarea>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="counterfietDescription" placeholder="Description"
+                        rows="2"></textarea>
                     </div>
                   </td>
                   <td>
@@ -2131,8 +2095,8 @@
                   </td>
                   <td colspan="3">
                     <div>
-                      <textarea class="form-control textArea" matTextareaAutosize formControlName="damagedDescription"
-                        placeholder="Description" rows="2"></textarea>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="damagedDescription" placeholder="Description"
+                        rows="2"></textarea>
                     </div>
                   </td>
                   <td>
@@ -2164,8 +2128,8 @@
                   </td>
                   <td colspan="3">
                     <div>
-                      <textarea class="form-control textArea" matTextareaAutosize formControlName="recoveredDescription"
-                        placeholder="Description" rows="2"></textarea>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="recoveredDescription" placeholder="Description"
+                        rows="2"></textarea>
                     </div>
                   </td>
                   <td>
@@ -2197,8 +2161,8 @@
                   </td>
                   <td colspan="3">
                     <div>
-                      <textarea class="form-control textArea" matTextareaAutosize formControlName="seizedDescription"
-                        placeholder="Description" rows="2"></textarea>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="seizedDescription" placeholder="Description"
+                        rows="2"></textarea>
                     </div>
                   </td>
                   <td>
@@ -2230,8 +2194,8 @@
                   </td>
                   <td colspan="3">
                     <div>
-                      <textarea class="form-control textArea" matTextareaAutosize formControlName="stoledDescription"
-                        placeholder="Description" rows="2"></textarea>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="stoledDescription" placeholder="Description"
+                        rows="2"></textarea>
                     </div>
                   </td>
                   <td>
@@ -2263,8 +2227,8 @@
                   </td>
                   <td colspan="3">
                     <div>
-                      <textarea class="form-control textArea" matTextareaAutosize formControlName="unknownDescription"
-                        placeholder="Description" rows="2"></textarea>
+                      <textarea class="form-control textArea" matTextareaAutosize formControlName="unknownDescription" placeholder="Description"
+                        rows="2"></textarea>
                     </div>
                   </td>
                   <td>
@@ -2386,8 +2350,7 @@
                             </label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="agriculcureEquipment" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="agriculcureEquipment" />
                             <label class="form-check-label ml-4">
                               {{
                                 "close-incident.row-eighteen.AGRICULTURAL EQUIPMENT"
@@ -2414,8 +2377,7 @@
                             </label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="structuresCommercial" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="structuresCommercial" />
                             <label class="form-check-label ml-4">
                               {{
                                 "close-incident.row-eighteen.STRUCTURES-COMMERCIAL"
@@ -2424,8 +2386,7 @@
                             </label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="structuresIndustrial" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="structuresIndustrial" />
                             <label class="form-check-label ml-4">
                               {{
                                 "close-incident.row-eighteen.STRUCTURES-INDUSTRIAL / MANUFACTURE"
@@ -2488,8 +2449,7 @@
                             </label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="negotableInstruments" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="negotableInstruments" />
                             <label class="form-check-label ml-4">
                               {{
                                 "close-incident.row-eighteen.NEGOTIABLE INSTRUMENTS"
@@ -2498,8 +2458,7 @@
                             </label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="nonNegotableInstruments" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="nonNegotableInstruments" />
                             <label class="form-check-label ml-4">
                               {{
                                 "close-incident.row-eighteen.NON-NEGOTIABLE INSTRUMENTS"
@@ -2544,8 +2503,7 @@
                             </label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="recordingAudioVisual" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="recordingAudioVisual" />
                             <label class="form-check-label ml-4">
                               {{
                                 "close-incident.row-eighteen.RECORDINGS-AUDIOVISUAL"
@@ -2563,8 +2521,7 @@
                             </label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="structurefamilyHousing" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="structurefamilyHousing" />
                             <label class="form-check-label ml-4">
                               {{
                                 "close-incident.row-eighteen.STRUCTURES-SINGLE-FAMILY HOUSING"
@@ -2573,8 +2530,7 @@
                             </label>
                           </div>
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="structureOtherHousing" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="structureOtherHousing" />
                             <label class="form-check-label ml-4">
                               {{
                                 "close-incident.row-eighteen.STRUCTURES-OTHER HOUSING"
@@ -2586,8 +2542,7 @@
 
                         <div class="d-flex flex-column">
                           <div>
-                            <input type="checkbox" class="form-check-input ml-1"
-                              formControlName="publicCommunityStructure" />
+                            <input type="checkbox" class="form-check-input ml-1" formControlName="publicCommunityStructure" />
                             <label class="form-check-label ml-4">
                               {{
                                 "close-incident.row-eighteen.PUBLIC / COMMUNITY STRUCTURES"
@@ -2680,23 +2635,20 @@
                             | translate
                         }}
                       </label>
-                      <input type="text" class="form-control ml-1" formControlName="numOfCriminals"
-                        placeholder="Num Of Criminals" />
+                      <input type="text" class="form-control ml-1" formControlName="numOfCriminals" placeholder="Num Of Criminals" />
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td colspan="9" formArrayName="offendersRecord">
-                    <div
-                      *ngFor="let offenders of closeReportForm.get('thirdPage.offender.offendersRecord')?.controls; let l = index"
+                    <div *ngFor="let offenders of closeReportForm.get('thirdPage.offender.offendersRecord')?.controls; let l = index"
                       [formGroupName]="l">
                       <div class="d-flex flex-row justify-content-between">
                         <div class="d-flex flex-column">
                           <label class="ml-1">
                             {{ l + 1 }}
                           </label>
-                          <input type="text" class="form-control ml-1" formControlName="criminalName"
-                            placeholder="Name Of Criminal" />
+                          <input type="text" class="form-control ml-1" formControlName="criminalName" placeholder="Name Of Criminal" />
                         </div>
                         <div class="d-flex flex-column">
                           <label class="ml-1">
@@ -2705,8 +2657,7 @@
                                 | translate
                             }}
                           </label>
-                          <input type="text" class="form-control ml-1" formControlName="socialSecurity"
-                            placeholder="Social Security" />
+                          <input type="text" class="form-control ml-1" formControlName="socialSecurity" placeholder="Social Security" />
                         </div>
                         <div class="d-flex flex-column">
                           <label class="ml-1">
@@ -2715,8 +2666,8 @@
                                 | translate
                             }}
                           </label>
-                          <textarea type="text" class="form-control ml-1" matTextareaAutosize class="textArea"
-                            formControlName="address" placeholder="Complete Address" rows="2"></textarea>
+                          <textarea type="text" class="form-control ml-1" matTextareaAutosize class="textArea" formControlName="address"
+                            placeholder="Complete Address" rows="2"></textarea>
                         </div>
                       </div>
                       <div class="d-flex flex-row justify-content-between">
@@ -2830,8 +2781,7 @@
                                 | translate
                             }}
                           </p>
-                          <input class="form-control" formControlName="dateOfBirth" placeholder="Date Of Birth"
-                            bsDatepicker />
+                          <input class="form-control" formControlName="dateOfBirth" placeholder="Date Of Birth" bsDatepicker />
                           <p class="m-0">
                             {{
                               "close-incident.row-twentyone.HEIGHT" | translate
@@ -2866,8 +2816,7 @@
                           <input class="form-control" formControlName="hair" placeholder="Hair Color" />
                         </div>
                       </div>
-                      <button mat-icon-button class="bg-light mb-3 ml-3 mt-1"
-                        (click)="incidentReportClose.removeOffender(l)">
+                      <button mat-icon-button class="bg-light mb-3 ml-3 mt-1" (click)="incidentReportClose.removeOffender(l)">
                         <i class="fas fa-minus"></i>
                       </button>
                       <hr class="my-3" />
@@ -2897,8 +2846,7 @@
                             | translate
                         }}
                       </label>
-                      <input type="text" class="form-control ml-1" formControlName="numOfDetainee"
-                        placeholder="Num Of Detainee" />
+                      <input type="text" class="form-control ml-1" formControlName="numOfDetainee" placeholder="Num Of Detainee" />
                     </div>
                   </td>
                   <td colspan="5">
@@ -2952,8 +2900,7 @@
                       <label class="ml-1">
                         1
                       </label>
-                      <input type="text" class="form-control ml-1" formControlName="criminalName"
-                        placeholder="Criminal Name" />
+                      <input type="text" class="form-control ml-1" formControlName="criminalName" placeholder="Criminal Name" />
                     </div>
                   </td>
                   <td colspan="2">
@@ -2975,8 +2922,7 @@
                             | translate
                         }}
                       </label>
-                      <input type="text" class="form-control ml-1" formControlName="address"
-                        placeholder="Conplete Address" />
+                      <input type="text" class="form-control ml-1" formControlName="address" placeholder="Conplete Address" />
                     </div>
                   </td>
                 </tr>
@@ -3092,8 +3038,7 @@
                             | translate
                         }}
                       </p>
-                      <input class="form-control" formControlName="dateOfBirth" placeholder="Date of Birth"
-                        bsDatepicker />
+                      <input class="form-control" formControlName="dateOfBirth" placeholder="Date of Birth" bsDatepicker />
                     </div>
                   </td>
                   <td colspan="2">
@@ -3357,8 +3302,7 @@
                         "close-incident.row-thirty.NUM. OF DETENTION"
                           | translate
                       }}</label>
-                      <input type="text" class="form-control" formControlName="numOfDetention"
-                        placeholder="Num Of Detention" />
+                      <input type="text" class="form-control" formControlName="numOfDetention" placeholder="Num Of Detention" />
                     </div>
                   </td>
                   <td colspan="2">
@@ -3367,8 +3311,7 @@
                         "close-incident.row-thirty.DATE OF DETENTION"
                           | translate
                       }}</label>
-                      <input type="text" class="form-control" formControlName="dateOfDetention" bsDatepicker
-                        placeholder="Date Of Detention" />
+                      <input type="text" class="form-control" formControlName="dateOfDetention" bsDatepicker placeholder="Date Of Detention" />
                     </div>
                   </td>
                   <td colspan="2">
@@ -3377,8 +3320,7 @@
                         "close-incident.row-thirty.UCR DETENTION CRIME CODE"
                           | translate
                       }}</label>
-                      <input type="text" class="form-control" formControlName="detentionCrimeCode"
-                        placeholder="Detention Crime Code" />
+                      <input type="text" class="form-control" formControlName="detentionCrimeCode" placeholder="Detention Crime Code" />
                     </div>
                   </td>
                 </tr>
@@ -3441,14 +3383,12 @@
                       placeholder="Complete Address"></textarea>
                   </td>
                   <td colspan="2">
-                    <input class="form-control" formControlName="residentialTelephone" placeholder="Residential Number"
-                      maxlength="14" [value]="
+                    <input class="form-control" formControlName="residentialTelephone" placeholder="Residential Number" maxlength="14" [value]="
                         closeReportForm.get('thirdPage.witness.residentialTelephone').value | formater
                       " />
                   </td>
                   <td colspan="2">
-                    <input class="form-control" formControlName="workTelephone" placeholder="Work Phone Number"
-                      maxlength="14"
+                    <input class="form-control" formControlName="workTelephone" placeholder="Work Phone Number" maxlength="14"
                       [value]="closeReportForm.get('thirdPage.witness.workTelephone').value | formater" />
                   </td>
                 </tr>
@@ -3466,8 +3406,8 @@
                     </div>
                   </td>
                   <td colspan="9">
-                    <textarea matTextareaAutosize class="form-control textArea" rows="5"
-                      formControlName="completeDescription" placeholder="Complete Report Description"></textarea>
+                    <textarea matTextareaAutosize class="form-control textArea" rows="5" formControlName="completeDescription"
+                      placeholder="Complete Report Description"></textarea>
                   </td>
                 </tr>
                 <tr>
@@ -3557,7 +3497,7 @@
               </tbody>
             </table>
           </div>
-          <div class="btn-group">
+          <div class="close-btn">
             <button mat-raised-button type="button" data-dismiss="modal" (click)="
                 updateStatus(
                   closeReportForm,
@@ -3568,8 +3508,10 @@
               ">
               {{ "button.Close Report" | translate }}
             </button>
-            <button mat-raised-button
-              (click)="removeGroup('thirdPage', stepper)">{{ "button.Back" | translate }}</button>
+          </div>
+          <div class="btn-group">
+
+            <button mat-raised-button (click)="removeGroup('thirdPage', stepper)">{{ "button.Back" | translate }}</button>
           </div>
         </mat-step>
       </mat-horizontal-stepper>

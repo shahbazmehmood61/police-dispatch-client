@@ -36,7 +36,7 @@ import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { PdfTableComponent } from "./components/dashboard/close-report-pdf/pdf-table.component";
 import { LoaderComponent } from './components/shared/loader/loader.component';
-
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'
 export function translateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -64,6 +64,7 @@ firebase.initializeApp(firebaseConfig);
     LocalizationModule,
     HttpClientModule,
     PDFExportModule,
+    BsDatepickerModule.forRoot(),
 
     TranslateModule.forRoot({
       loader: {

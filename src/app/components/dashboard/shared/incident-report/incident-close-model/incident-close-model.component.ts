@@ -8,6 +8,7 @@ import { IncidentReportService } from "src/app/core/services/incident-report.ser
 import { FormaterPipe } from "src/app/core/pipes/formater.pipe";
 import { MatStepper } from '@angular/material/stepper'
 import { AlertService } from 'src/app/core/services/alert.service';
+
 @Component({
   selector: "app-incident-close-model",
   templateUrl: "./incident-close-model.component.html",

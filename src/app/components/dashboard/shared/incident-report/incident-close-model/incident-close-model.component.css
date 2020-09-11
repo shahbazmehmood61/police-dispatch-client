@@ -56,6 +56,11 @@ td {
    width: 170px !important; 
 } .mate-date  */
 
+.close-btn{
+  float: left;
+  margin-top: 30px;
+}
+
 .btn-group {
   float: right;
   margin-top: 30px;
@@ -93,3 +98,6 @@ td {
   margin-left: -9px !important;
   margin-right: -9px !important;
 }
+/* .bs-calendar-container {
+  z-index: 1001;
+} */

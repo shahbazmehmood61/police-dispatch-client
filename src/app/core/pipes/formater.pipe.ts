@@ -14,6 +14,6 @@ export class FormaterPipe implements PipeTransform {
       return "(" + match[1] + ") " + match[2] + "-" + match[3];
     }
 
-    return value;
+    return cleaned;
   }
 }

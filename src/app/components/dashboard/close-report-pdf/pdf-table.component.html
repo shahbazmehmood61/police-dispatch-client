@@ -53,29 +53,25 @@
                 <div class="col-lg-6">
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.headingRow.unfoundedStatus" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.unfoundedStatus" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-one.UNFOUNDED" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.headingRow.clearedByStatus" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.clearedByStatus" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-one.CLEARED BY" | translate
                       }}</label>
                     </div>
                     <div class="pl-4">
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.headingRow.arrestStatus" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.arrestStatus" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-one.ARREST" | translate
                       }}</label>
                     </div>
                     <div class="pl-4">
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.headingRow.exceptionalStatus" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.exceptionalStatus" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-one.EXCEPTIONAL" | translate
                       }}</label>
@@ -85,48 +81,42 @@
                 <div class="col-lg-6">
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.headingRow.offernderDeathStatus" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.offernderDeathStatus" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-one.options.OFFENDER'S DEATH"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.headingRow.refusalTrailStatus" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.refusalTrailStatus" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-one.options.REFUSAL OF TRIAL"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.headingRow.extradicionDeniedStatus" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.extradicionDeniedStatus" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-one.options.EXTRADICION IS DENIED"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.headingRow.negotiateCollaborateStatus" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.negotiateCollaborateStatus" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-one.options.NEGOTIATE TO COLLABORATE"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.headingRow.minorStatus" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.minorStatus" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-one.options.MINOR, WITHOUT CUSTODY"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.headingRow.noApplicaStatus" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.noApplicaStatus" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-one.options.NO APLICA" | translate
                       }}</label>
@@ -154,16 +144,14 @@
                 }}</label><br />
                 <div class="row">
                   <div class="col-lg-12">
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.headingRow.initialReportType" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.initialReportType" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-one.check-boxes.INITIAL REPORT"
                         | translate
                     }}</label>
                   </div>
                   <div class="col-lg-12">
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.headingRow.supplementReportType" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.headingRow.supplementReportType" />
                     <label class="form-check-label ml-4">{{
                       "close-incident.row-one.check-boxes.SUPPLEMENT"
                         | translate
@@ -400,8 +388,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="d-flex  justify-content-around"
-                  *ngFor="let motivated of report.secondPage.crime.ifMotivatedOfPrejudice">
+                <div class="d-flex  justify-content-around" *ngFor="let motivated of report.secondPage.crime.ifMotivatedOfPrejudice">
                   <div>
                     <p class="mb-0">{{ check(motivated.crimeName) }}</p>
                   </div>
@@ -464,38 +451,33 @@
                     {{ "close-incident.row-seven.RACIAL" | translate }}
                   </p>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiWhite" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiWhite" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-WHITE" | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiBlack" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiBlack" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-BLACK" | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiAmerican" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiAmerican" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-AMERICAN INDIAN / ALASKA NATIVE"
                         | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiAsiatic" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiAsiatic" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-ASIATIC / PACIFIC ISLAND"
                         | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiMultiracial" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiMultiracial" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-MULTIRACIAL GROUP"
                         | translate
@@ -521,8 +503,7 @@
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiOtoroEthnic" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiOtoroEthnic" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-OTORO ETHNIC GROUP / NATIONAL ORIGIN"
                         | translate
@@ -540,45 +521,39 @@
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiCatholic" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiCatholic" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-CATHOLIC" | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiProtestant" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiProtestant" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-PROTESTANT" | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiMuslim" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiMuslim" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-ISLAMIC / MUSLIM"
                         | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiOtherReligion" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiOtherReligion" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-OTHER RELITION" | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.multiReligion" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.multiReligion" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.MULTI-RELIGIOUS ANTI-GROUP"
                         | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiAtheism" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiAtheism" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-ATHEISM / AGNOSTICISM"
                         | translate
@@ -589,38 +564,33 @@
                     {{ "close-incident.row-seven.SEXUAL" | translate }}
                   </p>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.homosexualMen" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.homosexualMen" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.HOMOSEXUAL ANTI-MAN" | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.homosexualWomen" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.homosexualWomen" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.HOMOSEXUAL ANTI-WOMAN"
                         | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiHomosexual" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiHomosexual" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-HOMOSEXUAL (Men and Women)"
                         | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiHeterosexual" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiHeterosexual" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-HETEROSEXUAL" | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.antiBisexual" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.antiBisexual" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-seven.ANTI-BISEXUAL" | translate
                     }}</label>
@@ -638,10 +608,9 @@
                       let i = index
                     ">
                     <div>
-                      <p class="mb-0">{{ check(diff[i]) }}</p>
+                      <p class="mb-0">{{ check(diff) }}</p>
                     </div>
                   </div>
-                  <div></div>
                 </div>
               </div>
             </td>
@@ -660,15 +629,13 @@
                 <div class="d-flex flex-row">
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.crimeTried1" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.crimeTried1" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eight.TRIED" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.crimeFull1" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.crimeFull1" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eight.FULL" | translate
                       }}</label>
@@ -676,15 +643,13 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.crimeTried2" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.crimeTried2" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eight.TRIED" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.crimeFull2" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.crimeFull2" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eight.FULL" | translate
                       }}</label>
@@ -692,15 +657,13 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.crimeTried3" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.crimeTried3" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eight.TRIED" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.crimeFull3" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.crimeFull3" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eight.FULL" | translate
                       }}</label>
@@ -720,14 +683,13 @@
                 <div class="d-flex flex-row">
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.offenderUseAlcohal" />
                       <label class="form-check-label m-0 ml-4 text-dark">{{
                         "close-incident.row-eight.ALCOHOL" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.offenderUseDrugs" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.offenderUseDrugs" />
                       <label class="form-check-label m-0 ml-4 text-dark">{{
                         "close-incident.row-eight.DRUGS" | translate
                       }}</label>
@@ -735,16 +697,14 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.offenderUseComputerEquip" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.offenderUseComputerEquip" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eight.COMPUTER EQUIPMENT"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.doesNotApply" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.doesNotApply" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eight.DOES NOT APPLY" | translate
                       }}</label>
@@ -769,15 +729,13 @@
                     {{ "close-incident.row-eight.INPUT METHOD" | translate }}
                   </p>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.robberyByForce" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.robberyByForce" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-eight.BY FORCE" | translate
                     }}</label>
                   </div>
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.secondPage.crime.robberyWithoutForce" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.robberyWithoutForce" />
                     <label class="form-check-label m-0 ml-4">{{
                       "close-incident.row-eight.WITHOUT FORCE" | translate
                     }}</label>
@@ -797,8 +755,7 @@
                 <div class="d-flex flex-row justify-content-between">
                   <div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.airBustrainterminal" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.airBustrainterminal" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.AIR / BUS / TRAIN TERMINAL"
                           | translate
@@ -812,46 +769,40 @@
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.nightClub" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.nightClub" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.CANTINA / NIGHT CLUB"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.churchTemple" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.churchTemple" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.CHURCH / SYNAGOGUE / TEMPLE"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.commercialOfficeBuilding" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.commercialOfficeBuilding" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.COMMERCIAL / OFFICE BUILDING"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.constructionSite" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.constructionSite" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.CONSTRUCTION SITE" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.hardwareStore" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.hardwareStore" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.HARDWARE STORE" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.departmentStore" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.departmentStore" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.DEPARTMENT / DISCOUNT STORE"
                           | translate
@@ -866,62 +817,54 @@
                   </div>
                   <div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.pharmacyHospital" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.pharmacyHospital" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.PHARMACY / DOCTOR'S OFFICE / HOSPITAL"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.fieldForest" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.fieldForest" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.FIELD / FOREST" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.govtPublicBuilding" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.govtPublicBuilding" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.GOVERNMENT / PUBLIC BUILDINGS"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.superMarketFoodStore" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.superMarketFoodStore" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.FOOD STORE / SUPERMARKET"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.roadStreetAlley" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.roadStreetAlley" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.ROAD / STREET / ALLEY"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.hotelMotel" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.hotelMotel" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.HOTEL / MOTEL / ETC"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.jailPrison" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.jailPrison" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.JAIL PRISON" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.lakeWaterway" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.lakeWaterway" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.LAKE / WATERWAY" | translate
                       }}</label>
@@ -929,58 +872,50 @@
                   </div>
                   <div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.liquorStore" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.liquorStore" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.LIQUOR STORE" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.parkingGarage" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.parkingGarage" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.PARKING / GARAGE" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.storageRentalCenter" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.storageRentalCenter" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.STORAGE RENTAL CENTER"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.residenceHome" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.residenceHome" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.RESIDENCE / HOME" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.restaurant" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.restaurant" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.RESTAURANT" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.university" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.university" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.UNIVERSITY" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.fuelStation" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.fuelStation" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.FUEL STATION" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.crime.specializedStore" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.crime.specializedStore" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-nine.SPECIALIZED STORE" | translate
                       }}</label>
@@ -1016,15 +951,13 @@
                 <div class="d-flex flex-row justify-content-around">
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.buyReceive" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.buyReceive" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-ten.BUY / RECEIVE" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.cultivateManufacture" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.cultivateManufacture" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-ten.CULTIVATE / MANUFACTURE / PUBLISH"
                           | translate
@@ -1033,15 +966,13 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.distributeSell" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.distributeSell" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-ten.DISTRIBUTE / SELL" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.exploitChildren" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.exploitChildren" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-ten.EXPLOIT CHILDREN" | translate
                       }}</label>
@@ -1049,16 +980,14 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.protestPromoteAssist" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.protestPromoteAssist" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-ten.PROTEST, PROMOTE / ASSIST"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.ownHide" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.ownHide" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-ten.OWN / HIDE" | translate
                       }}</label>
@@ -1066,16 +995,14 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.transportImport" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.transportImport" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-ten.TRANSPORT / TRANSMIT / IMPORT"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.useConsume" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.useConsume" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-ten.USE / CONSUME" | translate
                       }}</label>
@@ -1102,8 +1029,7 @@
                 <div class="d-flex flex-row">
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.firearm" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.firearm" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.FIREARM (Unidentified type)"
                           | translate
@@ -1122,15 +1048,13 @@
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.shotGun" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.shotGun" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.SHOTGUN" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.anotherFirearm" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.anotherFirearm" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.ANOTHER FIREARM" | translate
                       }}</label>
@@ -1145,29 +1069,25 @@
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.shappenedObject" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.shappenedObject" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.SHARPENED OBJECT" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.motorVehicle" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.motorVehicle" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.MOTOR VEHICLE" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.personalWeapon" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.personalWeapon" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.PERSONAL WEAPONS" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.poison" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.poison" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.POISON" | translate
                       }}</label>
@@ -1175,8 +1095,7 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.explosives" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.explosives" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.EXPLOSIVES" | translate
                       }}</label>
@@ -1188,16 +1107,14 @@
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.narcoticDrug" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.narcoticDrug" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.NARCOTICS / DRUGS"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.suffocation" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.suffocation" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.SUFFOCATION" | translate
                       }}</label>
@@ -1211,8 +1128,7 @@
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.unknown" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.unknown" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-eleven.Unknown" | translate
                       }}</label>
@@ -1278,8 +1194,7 @@
                   }}
                 </p>
                 <div>
-                  <input type="checkbox" class="form-check-input ml-1"
-                    [checked]="report.secondPage.victim.individual" />
+                  <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.individual" />
                   <label class="form-check-label m-0 ml-4">{{
                     "close-incident.row-fourtheen.INDIVIDUAL" | translate
                   }}</label>
@@ -1297,8 +1212,7 @@
                   }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="form-check-input ml-1"
-                    [checked]="report.secondPage.victim.government" />
+                  <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.government" />
                   <label class="form-check-label m-0 ml-4">{{
                     "close-incident.row-fourtheen.GOVERNMENT" | translate
                   }}</label>
@@ -1316,15 +1230,13 @@
                   }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="form-check-input ml-1"
-                    [checked]="report.secondPage.victim.otherVictimtype" />
+                  <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.otherVictimtype" />
                   <label class="form-check-label m-0 ml-4">{{
                     "close-incident.row-fourtheen.OTHER" | translate
                   }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="form-check-input ml-1"
-                    [checked]="report.secondPage.victim.unknownVictimType" />
+                  <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.unknownVictimType" />
                   <label class="form-check-label m-0 ml-4">{{
                     "close-incident.row-fourtheen.UNKNOWN" | translate
                   }}</label>
@@ -1349,8 +1261,7 @@
                   }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="form-check-input ml-1"
-                    [checked]="report.secondPage.victim.americanIndian" />
+                  <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.americanIndian" />
                   <label class="form-check-label m-0 ml-4">{{
                     "close-incident.row-fourtheen.AMERICAN INDIAN" | translate
                   }}</label>
@@ -1368,8 +1279,7 @@
                   }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="form-check-input ml-1"
-                    [checked]="report.secondPage.victim.raceUnknown" />
+                  <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.raceUnknown" />
                   <label class="form-check-label m-0 ml-4">{{
                     "close-incident.row-fourtheen.Unknown" | translate
                   }}</label>
@@ -1416,15 +1326,13 @@
                   }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="form-check-input ml-1"
-                    [checked]="report.secondPage.victim.nonResident" />
+                  <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.nonResident" />
                   <label class="form-check-label m-0 ml-4">{{
                     "close-incident.row-fourtheen.NON-RESIDENT" | translate
                   }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="form-check-input ml-1"
-                    [checked]="report.secondPage.victim.residentOther" />
+                  <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.residentOther" />
                   <label class="form-check-label m-0 ml-4">{{
                     "close-incident.row-eleven.OTHER" | translate
                   }}</label>
@@ -1443,15 +1351,13 @@
                   }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="form-check-input ml-1"
-                    [checked]="report.secondPage.victim.notHispanic" />
+                  <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.notHispanic" />
                   <label class="form-check-label m-0 ml-4">{{
                     "close-incident.row-fourtheen.NOT HISPANIC" | translate
                   }}</label>
                 </div>
                 <div>
-                  <input type="checkbox" class="form-check-input ml-1"
-                    [checked]="report.secondPage.victim.otherGroup" />
+                  <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.otherGroup" />
                   <label class="form-check-label m-0 ml-4">{{
                     "close-incident.row-eleven.OTHER" | translate
                   }}</label>
@@ -1497,37 +1403,32 @@
                 <div class="d-flex flex-row">
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.discussion" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.discussion" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-fifteen.DISCUSSION" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.aggressionAgaintPolice" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.aggressionAgaintPolice" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-fifteen.AGGRESSION AGAINST POLICE AGENT"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.drugSales" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.drugSales" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-fifteen.DRUG SALES" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.organizedCrime" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.organizedCrime" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-fifteen.ORGANIZED CRIME" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.juvenileGang" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.juvenileGang" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-fifteen.JUVENILE GANGS" | translate
                       }}</label>
@@ -1535,39 +1436,34 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.fightBtwLovers" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.fightBtwLovers" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-fifteen.FIGHT BETWEEN LOVERS"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.euthanasia" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.euthanasia" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-fifteen.EUTHANASIA" | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.otherCrimeInvolve" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.otherCrimeInvolve" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-fifteen.ANOTHER CRIME INVOLVED"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.otherCircumstance" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.otherCircumstance" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-fifteen.OTHER CIRCUMSTANCES"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.unknownCircumstance" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.unknownCircumstance" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-fifteen.CIRCUMSTANCES Unknown"
                           | translate
@@ -1590,30 +1486,26 @@
                   <div class="d-flex flex-row">
                     <div class="d-flex flex-column">
                       <div>
-                        <input type="checkbox" class="form-check-input ml-1"
-                          [checked]="report.secondPage.victim.injuryNone" />
+                        <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.injuryNone" />
                         <label class="form-check-label m-0 ml-4">{{
                           "close-incident.row-fifteen.NONE" | translate
                         }}</label>
                       </div>
                       <div>
-                        <input type="checkbox" class="form-check-input ml-1"
-                          [checked]="report.secondPage.victim.bones" />
+                        <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.bones" />
                         <label class="form-check-label m-0 ml-4">{{
                           "close-incident.row-fifteen.BONES" | translate
                         }}</label>
                       </div>
                       <div>
-                        <input type="checkbox" class="form-check-input ml-1"
-                          [checked]="report.secondPage.victim.possibleInjuriesInternal" />
+                        <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.possibleInjuriesInternal" />
                         <label class="form-check-label m-0 ml-4">{{
                           "close-incident.row-fifteen.POSSIBLE INJURIES INTERNAL"
                             | translate
                         }}</label>
                       </div>
                       <div>
-                        <input type="checkbox" class="form-check-input ml-1"
-                          [checked]="report.secondPage.victim.ripSevere" />
+                        <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.ripSevere" />
                         <label class="form-check-label m-0 ml-4">{{
                           "close-incident.row-fifteen.RIP SEVERE" | translate
                         }}</label>
@@ -1621,30 +1513,26 @@
                     </div>
                     <div class="d-flex flex-column">
                       <div>
-                        <input type="checkbox" class="form-check-input ml-1"
-                          [checked]="report.secondPage.victim.minorInjury" />
+                        <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.minorInjury" />
                         <label class="form-check-label m-0 ml-4">{{
                           "close-incident.row-fifteen.MINOR INJURY" | translate
                         }}</label>
                       </div>
                       <div>
-                        <input type="checkbox" class="form-check-input ml-1"
-                          [checked]="report.secondPage.victim.majorInjury" />
+                        <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.majorInjury" />
                         <label class="form-check-label m-0 ml-4">{{
                           "close-incident.row-fifteen.MAJOR INJURY" | translate
                         }}</label>
                       </div>
                       <div>
-                        <input type="checkbox" class="form-check-input ml-1"
-                          [checked]="report.secondPage.victim.wasteOfTeeth" />
+                        <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.wasteOfTeeth" />
                         <label class="form-check-label m-0 ml-4">{{
                           "close-incident.row-fifteen.WASTE OF TEETH"
                             | translate
                         }}</label>
                       </div>
                       <div>
-                        <input type="checkbox" class="form-check-input ml-1"
-                          [checked]="report.secondPage.victim.wasteOfKnowledge" />
+                        <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.wasteOfKnowledge" />
                         <label class="form-check-label m-0 ml-4">{{
                           "close-incident.row-fifteen.WASTE OF KNOWLEDGE"
                             | translate
@@ -1671,7 +1559,7 @@
                     let i = index
                   ">
                   <div class="d-flex flex-row">
-                    <p class="mb-0">{{ check(victimRelatedCrimes[i]) }}</p>
+                    <p class="mb-0">{{ check(victimRelatedCrimes) }}</p>
                   </div>
                 </div>
                 <div></div>
@@ -1692,16 +1580,14 @@
                 <div class="d-flex flex-row">
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.spouse" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.spouse" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.SPOUSE" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.spouseByAggrement" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.spouseByAggrement" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.SPOUSE BY AGREEMENT Consensual"
                           | translate
@@ -1709,16 +1595,14 @@
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.father" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.father" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.FATHER" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.brother" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.brother" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.BROTHER" | translate
                       }}</label>
@@ -1734,24 +1618,21 @@
 
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.grandfather" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.grandfather" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.GRANDFATHER (A)" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.grandchild" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.grandchild" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.GRANDCHILD (A)" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.politcalRelative" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.politcalRelative" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.POLITICAL RELATIVE"
                           | translate
@@ -1759,8 +1640,7 @@
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.stepFatherMother" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.stepFatherMother" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.STEPFATHER/STEPMOTHER"
                           | translate
@@ -1768,8 +1648,7 @@
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.stepson" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.stepson" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.STEP-SON (A)" | translate
                       }}</label>
@@ -1777,8 +1656,7 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.stepbrother" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.stepbrother" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.STEP-BROTHER (A)"
                           | translate
@@ -1786,8 +1664,7 @@
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.anotherFamily" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.anotherFamily" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.ANOTHER FAMILY" | translate
                       }}</label>
@@ -1801,16 +1678,14 @@
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.friend" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.friend" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.FRIEND (A)" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.neighbor" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.neighbor" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.NEIGHBOR (A)" | translate
                       }}</label>
@@ -1819,8 +1694,7 @@
 
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.babysitter" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.babysitter" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.CHILD CARED FOR BABYSITTER"
                           | translate
@@ -1828,24 +1702,21 @@
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.boyfriend" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.boyfriend" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.BOYFRIEND (A)" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.sonOfBG" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.sonOfBG" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.SON OF BG" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.homosexualRelative" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.homosexualRelative" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.HOMOSEXUAL RELATIVE"
                           | translate
@@ -1853,8 +1724,7 @@
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.exSpouse" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.exSpouse" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.EX-SPOUSE" | translate
                       }}</label>
@@ -1862,48 +1732,42 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.employee" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.employee" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.EMPLOYEE" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.patron" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.patron" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.PATRON" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.otherKnown" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.otherKnown" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.OTHER KNOWN" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.unKnown" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.unKnown" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.UNKNOWN" | translate
                       }}</label>
                     </div>
 
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.victimWasOffender" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.victimWasOffender" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.THE VICTIM WAS THE OFFENDER"
                           | translate
                       }}</label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.secondPage.victim.unknownRelationship" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.secondPage.victim.unknownRelationship" />
                       <label class="form-check-label m-0 ml-4">{{
                         "close-incident.row-sixteen.UNKNOWN RELATIONSHIP"
                           | translate
@@ -2241,8 +2105,7 @@
                 <div class="d-flex flex-row">
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" [checked]="report.thirdPage.goods.aircraft"
-                        class="form-check-input ml-1" />
+                      <input type="checkbox" [checked]="report.thirdPage.goods.aircraft" class="form-check-input ml-1" />
                       <label class="form-check-label ml-4">
                         {{ "close-incident.row-eighteen.AIRCRAFT" | translate }}
                       </label>
@@ -2254,8 +2117,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.autoMobiles" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.autoMobiles" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.AUTOMOBILES" | translate
@@ -2281,8 +2143,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.equipmentsPrograms" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.equipmentsPrograms" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.EQUIPMENT / COMPUTER PROGRAMS"
@@ -2291,8 +2152,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.consumeableGoods" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.consumeableGoods" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.CONSUMABLE GOODS"
@@ -2301,8 +2161,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.creditDebitCard" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.creditDebitCard" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.CREDIT / DEBIT CARDS"
@@ -2311,8 +2170,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.drugsNarcotics" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.drugsNarcotics" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.DRUGS / NARCOTICS"
@@ -2321,8 +2179,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.drugNarcoticsTeam" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.drugNarcoticsTeam" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.DRUG / NARCOTIC TEAM"
@@ -2331,8 +2188,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.agriculcureEquipment" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.agriculcureEquipment" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.AGRICULTURAL EQUIPMENT"
@@ -2341,15 +2197,13 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.firearms" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.firearms" />
                       <label class="form-check-label ml-4">
                         {{ "close-incident.row-eighteen.FIREARMS" | translate }}
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.playingEquipment" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.playingEquipment" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.PLAYING EQUIPMENT"
@@ -2358,8 +2212,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.structuresCommercial" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.structuresCommercial" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.STRUCTURES-COMMERCIAL"
@@ -2368,8 +2221,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.structuresIndustrial" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.structuresIndustrial" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.STRUCTURES-INDUSTRIAL / MANUFACTURE"
@@ -2381,8 +2233,7 @@
 
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.heavyEquipments" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.heavyEquipments" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.HEAVY INDUSTRIAL CONSTRUCTION EQUIPMENT"
@@ -2391,8 +2242,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.householdGoods" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.householdGoods" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.HOUSEHOLD GOODS"
@@ -2401,8 +2251,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.praciousMetals" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.praciousMetals" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.JEWELS / PRECIOUS METALS"
@@ -2429,8 +2278,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.negotableInstruments" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.negotableInstruments" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.NEGOTIABLE INSTRUMENTS"
@@ -2439,8 +2287,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.nonNegotableInstruments" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.nonNegotableInstruments" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.NON-NEGOTIABLE INSTRUMENTS"
@@ -2449,8 +2296,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.officeTeams" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.officeTeams" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.OFFICE TEAMS" | translate
@@ -2458,8 +2304,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.otherMotorVehical" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.otherMotorVehical" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.OTHER MOTOR VEHICLES"
@@ -2468,8 +2313,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.walletBag" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.walletBag" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.WALLETS / BAGS / WALLETS"
@@ -2478,8 +2322,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.radioTelevision" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.radioTelevision" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.RADIOS / TELEVISIONS / VIDEO RECORDERS"
@@ -2488,8 +2331,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.recordingAudioVisual" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.recordingAudioVisual" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.RECORDINGS-AUDIOVISUAL"
@@ -2498,8 +2340,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.recreationVehicel" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.recreationVehicel" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.RECREATION VEHICLES"
@@ -2508,8 +2349,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.structurefamilyHousing" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.structurefamilyHousing" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.STRUCTURES-SINGLE-FAMILY HOUSING"
@@ -2518,8 +2358,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.structureOtherHousing" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.structureOtherHousing" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.STRUCTURES-OTHER HOUSING"
@@ -2531,8 +2370,7 @@
 
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.publicCommunityStructure" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.publicCommunityStructure" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.PUBLIC / COMMUNITY STRUCTURES"
@@ -2541,8 +2379,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.structureStorage" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.structureStorage" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.STRUCTURES-STORAGE"
@@ -2551,8 +2388,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.structureOther" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.structureOther" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.STRUCTURES-OTHERS"
@@ -2561,8 +2397,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.electricalTools" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.electricalTools" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.ELECTRICAL / MANUAL TOOLS"
@@ -2577,8 +2412,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" class="form-check-input ml-1"
-                        [checked]="report.thirdPage.goods.vehicelParts" />
+                      <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.goods.vehicelParts" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-eighteen.VEHICLE PARTS / ACCESSORIES"
@@ -2810,16 +2644,14 @@
                 </div>
                 <div class="d-flex justify-content-between">
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.thirdPage.arrested.indicatorMultiple" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.arrested.indicatorMultiple" />
                     <label class="form-check-label ml-4">
                       {{ "close-incident.row-twentysix.MULTIPLE" | translate }}
                     </label>
                   </div>
 
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.thirdPage.arrested.countDetainee" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.arrested.countDetainee" />
                     <label class="form-check-label ml-4">
                       {{
                         "close-incident.row-twentysix.COUNT A DETAINEE"
@@ -2829,8 +2661,7 @@
                   </div>
 
                   <div>
-                    <input type="checkbox" class="form-check-input ml-1"
-                      [checked]="report.thirdPage.arrested.doesNotApply" />
+                    <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.arrested.doesNotApply" />
                     <label class="form-check-label ml-4">
                       {{
                         "close-incident.row-twentysix.DOES NOT APPLY"
@@ -2905,8 +2736,7 @@
                     </label>
                   </div>
                   <div>
-                    <input type="checkbox" [checked]="report.thirdPage.arrested.unknown"
-                      class="form-check-input ml-1" />
+                    <input type="checkbox" [checked]="report.thirdPage.arrested.unknown" class="form-check-input ml-1" />
                     <label class="form-check-label ml-4">
                       {{ "close-incident.row-twentyone.UNKNOWN" | translate }}
                     </label>
@@ -2931,8 +2761,7 @@
                     </label>
                   </div>
                   <div>
-                    <input type="checkbox" [checked]="report.thirdPage.arrested.americanIndian"
-                      class="form-check-input ml-1" />
+                    <input type="checkbox" [checked]="report.thirdPage.arrested.americanIndian" class="form-check-input ml-1" />
                     <label class="form-check-label ml-4">
                       {{
                         "close-incident.row-twentyone.AMERICAN INDIAN"
@@ -2947,15 +2776,13 @@
                     </label>
                   </div>
                   <div>
-                    <input type="checkbox" [checked]="report.thirdPage.arrested.hawaiiana"
-                      class="form-check-input ml-1" />
+                    <input type="checkbox" [checked]="report.thirdPage.arrested.hawaiiana" class="form-check-input ml-1" />
                     <label class="form-check-label ml-4">
                       {{ "close-incident.row-twentyone.HAWAIIAN" | translate }}
                     </label>
                   </div>
                   <div>
-                    <input type="checkbox" [checked]="report.thirdPage.arrested.unknownRace"
-                      class="form-check-input ml-1" />
+                    <input type="checkbox" [checked]="report.thirdPage.arrested.unknownRace" class="form-check-input ml-1" />
                     <label class="form-check-label ml-4">
                       {{ "close-incident.row-twentyone.UNKNOWN" | translate }}
                     </label>
@@ -2987,8 +2814,7 @@
                   </label>
                 </div>
                 <div>
-                  <input type="checkbox" [checked]="report.thirdPage.arrested.notHispanic"
-                    class="form-check-input ml-1" />
+                  <input type="checkbox" [checked]="report.thirdPage.arrested.notHispanic" class="form-check-input ml-1" />
                   <label class="form-check-label ml-4">
                     {{
                       "close-incident.row-fourtheen.NOT HISPANIC" | translate
@@ -2996,8 +2822,7 @@
                   </label>
                 </div>
                 <div>
-                  <input type="checkbox" [checked]="report.thirdPage.arrested.unknownGroup"
-                    class="form-check-input ml-1" />
+                  <input type="checkbox" [checked]="report.thirdPage.arrested.unknownGroup" class="form-check-input ml-1" />
                   <label class="form-check-label ml-4">
                     {{ "close-incident.row-fourtheen.UNKNOWN" | translate }}
                   </label>
@@ -3015,8 +2840,7 @@
                   </label>
                 </div>
                 <div>
-                  <input type="checkbox" [checked]="report.thirdPage.arrested.nonResident"
-                    class="form-check-input ml-1" />
+                  <input type="checkbox" [checked]="report.thirdPage.arrested.nonResident" class="form-check-input ml-1" />
                   <label class="form-check-label ml-4">
                     {{
                       "close-incident.row-fourtheen.NON-RESIDENT" | translate
@@ -3024,8 +2848,7 @@
                   </label>
                 </div>
                 <div>
-                  <input type="checkbox" [checked]="report.thirdPage.arrested.unknownResident"
-                    class="form-check-input ml-1" />
+                  <input type="checkbox" [checked]="report.thirdPage.arrested.unknownResident" class="form-check-input ml-1" />
                   <label class="form-check-label ml-4">
                     {{ "close-incident.row-fourtheen.UNKNOWN" | translate }}
                   </label>
@@ -3042,8 +2865,7 @@
                 <div class="d-flex flex-row">
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" [checked]="report.thirdPage.arrested.notAssembled"
-                        class="form-check-input ml-1" />
+                      <input type="checkbox" [checked]="report.thirdPage.arrested.notAssembled" class="form-check-input ml-1" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-twentynine.NOT ASSEMBLED"
@@ -3052,8 +2874,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" [checked]="report.thirdPage.arrested.firearm"
-                        class="form-check-input ml-1" />
+                      <input type="checkbox" [checked]="report.thirdPage.arrested.firearm" class="form-check-input ml-1" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-twentynine.FIREARM (Unidentified type)"
@@ -3062,15 +2883,13 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" [checked]="report.thirdPage.arrested.pistol"
-                        class="form-check-input ml-1" />
+                      <input type="checkbox" [checked]="report.thirdPage.arrested.pistol" class="form-check-input ml-1" />
                       <label class="form-check-label ml-4">
                         {{ "close-incident.row-twentynine.PISTOL" | translate }}
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" [checked]="report.thirdPage.arrested.rifle"
-                        class="form-check-input ml-1" />
+                      <input type="checkbox" [checked]="report.thirdPage.arrested.rifle" class="form-check-input ml-1" />
                       <label class="form-check-label ml-4">
                         {{ "close-incident.row-twentynine.RIFLE" | translate }}
                       </label>
@@ -3078,8 +2897,7 @@
                   </div>
                   <div class="d-flex flex-column">
                     <div>
-                      <input type="checkbox" [checked]="report.thirdPage.arrested.shotGun"
-                        class="form-check-input ml-1" />
+                      <input type="checkbox" [checked]="report.thirdPage.arrested.shotGun" class="form-check-input ml-1" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-twentynine.SHOTGUN" | translate
@@ -3087,8 +2905,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" [checked]="report.thirdPage.arrested.anotherFirearm"
-                        class="form-check-input ml-1" />
+                      <input type="checkbox" [checked]="report.thirdPage.arrested.anotherFirearm" class="form-check-input ml-1" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-twentynine.ANOTHER FIREARM"
@@ -3097,8 +2914,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" [checked]="report.thirdPage.arrested.cuttingInstrument"
-                        class="form-check-input ml-1" />
+                      <input type="checkbox" [checked]="report.thirdPage.arrested.cuttingInstrument" class="form-check-input ml-1" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-twentynine.LETHAL CUTTING INSTRUMENT"
@@ -3107,8 +2923,7 @@
                       </label>
                     </div>
                     <div>
-                      <input type="checkbox" [checked]="report.thirdPage.arrested.mitten"
-                        class="form-check-input ml-1" />
+                      <input type="checkbox" [checked]="report.thirdPage.arrested.mitten" class="form-check-input ml-1" />
                       <label class="form-check-label ml-4">
                         {{
                           "close-incident.row-twentynine.MITTEN (Another blunt object)"
@@ -3130,8 +2945,7 @@
                     }}
                   </p>
                   <div>
-                    <input type="checkbox" [checked]="report.thirdPage.arrested.inTheFact"
-                      class="form-check-input ml-1" />
+                    <input type="checkbox" [checked]="report.thirdPage.arrested.inTheFact" class="form-check-input ml-1" />
                     <label class="form-check-label ml-4">
                       {{
                         "close-incident.row-twentynine.IN THE ACT" | translate
@@ -3139,8 +2953,7 @@
                     </label>
                   </div>
                   <div>
-                    <input type="checkbox" [checked]="report.thirdPage.arrested.afforementioned"
-                      class="form-check-input ml-1" />
+                    <input type="checkbox" [checked]="report.thirdPage.arrested.afforementioned" class="form-check-input ml-1" />
                     <label class="form-check-label ml-4">
                       {{
                         "close-incident.row-twentynine.AFOREMENTIONED"
@@ -3149,8 +2962,7 @@
                     </label>
                   </div>
                   <div>
-                    <input type="checkbox" [checked]="report.thirdPage.arrested.takenUnderCustody"
-                      class="form-check-input ml-1" />
+                    <input type="checkbox" [checked]="report.thirdPage.arrested.takenUnderCustody" class="form-check-input ml-1" />
                     <label class="form-check-label ml-4">
                       {{
                         "close-incident.row-twentynine.TAKEN UNDER CUSTODY"
@@ -3167,8 +2979,7 @@
                     }}
                   </p>
                   <div>
-                    <input type="checkbox" [checked]="report.thirdPage.arrested.processInDepartment"
-                      class="form-check-input ml-1" />
+                    <input type="checkbox" [checked]="report.thirdPage.arrested.processInDepartment" class="form-check-input ml-1" />
                     <label class="form-check-label ml-4">
                       {{
                         "close-incident.row-twentynine.PROCESSED WITHIN THE DEPARTMENT"
@@ -3177,8 +2988,7 @@
                     </label>
                   </div>
                   <div>
-                    <input type="checkbox" [checked]="report.thirdPage.arrested.recommendToAuthority"
-                      class="form-check-input ml-1" />
+                    <input type="checkbox" [checked]="report.thirdPage.arrested.recommendToAuthority" class="form-check-input ml-1" />
                     <label class="form-check-label ml-4">
                       {{
                         "close-incident.row-twentynine.RECOMMENDED TO ANOTHER AUTHORITY"
@@ -3410,8 +3220,7 @@
             <td></td>
             <td colspan="9">
               <div>
-                <input type="checkbox" class="form-check-input ml-1"
-                  [checked]="report.thirdPage.firms.continueSupplement" />
+                <input type="checkbox" class="form-check-input ml-1" [checked]="report.thirdPage.firms.continueSupplement" />
                 <label class="form-check-label ml-4">
                   {{
                     "close-incident.row-thirtytwo.Continue in supplement"

@@ -62,10 +62,10 @@ export class RegisterVictimComponent implements OnInit {
   transform(field) {
     const name = field.ngControl.name;
     const value = field.value;
-    if (value.length >= 10) {
-      var s = this.formater.transform(value);
-      this.RegisterVictimForm.controls[name].setValue(s);
-    }
+    // if (value.length >= 10) {
+    var s = this.formater.transform(value);
+    this.RegisterVictimForm.controls[name].setValue(s);
+    // }
   }
 
   submit() {

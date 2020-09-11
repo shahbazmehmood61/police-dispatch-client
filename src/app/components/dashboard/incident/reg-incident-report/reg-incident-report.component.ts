@@ -6,25 +6,9 @@ import { IncidentReportService } from 'src/app/core/services/incident-report.ser
 import { AlertService } from 'src/app/core/services/alert.service';
 import { DatePipe } from '@angular/common';
 import { FormaterPipe } from 'src/app/core/pipes/formater.pipe';
+import { SosService } from 'src/app/core/services/sos.service';
+import { reportTypes } from '../../../../core/constants/report-types'
 
-const reportTypes = [
-  { typeValue: "robbery", type: "Robbery" },
-  { typeValue: "aggression", type: "Aggression" },
-  { typeValue: "medicalEmergency", type: "Medical emergency" },
-  { typeValue: "vehicleRobbery", type: "Vehicle Robbery" },
-  { typeValue: "scaling", type: "Scaling" },
-  { typeValue: "rape", type: "Rape" },
-  { typeValue: "domesticViolence", type: "Domestic violence / Law 54" },
-  { typeValue: "murderHomicide", type: "Murder / Homicide" },
-  { typeValue: "vandalismo", type: "Vandalismo" },
-  { typeValue: "law22", type: "Law 22" },
-  { typeValue: "alarmActivated", type: "Alarm activated" },
-  { typeValue: "controlledSubstances", type: "Controlled substances" },
-  { typeValue: "surveillanceRequest", type: "Surveillance request in an area" },
-  { typeValue: "suspiciousPerson", type: "Suspicious person or vehicle" },
-  { typeValue: "noise", type: "Noise" },
-  { typeValue: "other", type: "Other" }
-];
 
 @Component({
   selector: 'app-reg-incident-report',
@@ -42,7 +26,8 @@ export class RegIncidentReportComponent implements OnInit {
     public incidentReportService: IncidentReportService,
     public registerIncidentReportForm: RegisterIncidentReportForm,
     private datePipe: DatePipe,
-    private formater: FormaterPipe
+    private formater: FormaterPipe,
+    public sosService: SosService
   ) {
     this.reportType = reportTypes;
   }
@@ -67,8 +52,12 @@ export class RegIncidentReportComponent implements OnInit {
         this.incidentReportForm.getRawValue(),
         this.searchService.victimID,
         this.searchService.sosCallId
-      ).subscribe(() => {
+      ).subscribe((res) => {
         this.resetForm();
+        console.log(res);
+        // if (res != null) {
+        this.sosService.sosCall.next(res)
+        // }
         this.alertService.successAlert(
           this.alertService.registerIncident.title,
           this.alertService.registerIncident.msg

@@ -6,25 +6,7 @@ import { TranslatorService } from "src/app/core/services/translator.service";
 import { Route } from "@angular/compiler/src/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { MatTableDataSource } from '@angular/material/table';
-
-const reportTypes = [
-  { typeValue: "robbery", type: "Robbery" },
-  { typeValue: "aggression", type: "Aggression" },
-  { typeValue: "medicalEmergency", type: "Medical emergency" },
-  { typeValue: "vehicleRobbery", type: "Vehicle Robbery" },
-  { typeValue: "scaling", type: "Scaling" },
-  { typeValue: "rape", type: "Rape" },
-  { typeValue: "domesticViolence", type: "Domestic violence / Law 54" },
-  { typeValue: "murderHomicide", type: "Murder / Homicide" },
-  { typeValue: "vandalismo", type: "Vandalismo" },
-  { typeValue: "law22", type: "Law 22" },
-  { typeValue: "alarmActivated", type: "Alarm activated" },
-  { typeValue: "controlledSubstances", type: "Controlled substances" },
-  { typeValue: "surveillanceRequest", type: "Surveillance request in an area" },
-  { typeValue: "suspiciousPerson", type: "Suspicious person or vehicle" },
-  { typeValue: "noise", type: "Noise" },
-  { typeValue: "other", type: "Other" }
-];
+import { reportTypes } from '../../../../core/constants/report-types'
 
 @Component({
   selector: "app-officer-registered-incident",

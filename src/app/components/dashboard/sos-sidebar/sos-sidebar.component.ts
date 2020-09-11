@@ -19,7 +19,7 @@ import { TranslatorService } from 'src/app/core/services/translator.service';
   styleUrls: ['./sos-sidebar.component.css'],
 })
 export class SosSidebarComponent implements OnInit {
-  sosCalls = [];
+  sosCalls: any;
   sosChats = [];
   isShow = true;
   searchEmail: string;
@@ -46,6 +46,9 @@ export class SosSidebarComponent implements OnInit {
     this.chatService.reciveMessages();
 
     this.officerInfo = JSON.parse(this.cookieService.get('userMeta')).userInfo;
+    this.sosService.sosCall.subscribe((res) => {
+      this.sosCalls = res;
+    })
     this.getSosCall();
     this.getSosChat();
     this.reciveSOSQueue();
@@ -68,7 +71,7 @@ export class SosSidebarComponent implements OnInit {
   getSosCall() {
     this.sosService.getSosCalls(this.officerInfo.cityCode).subscribe(
       (res: any) => {
-        this.sosCalls = res;
+        this.sosService.sosCall.next(res);
       },
       (error: any) => {
         this.sosCalls = [];

@@ -1,7 +1,7 @@
 <div class="main bg-dark" [ngClass]="isShow ? 'show' : 'hide'">
   <div>
     <h4 class="calls">{{ "sos-sideabr.Calls" | translate }}</h4>
-    <ul>
+    <ul *ngIf="sosCalls">
       <li *ngFor="let call of sosCalls">
         <span (click)="searchService.getSosCallSingleVictim(
               call.callerID,

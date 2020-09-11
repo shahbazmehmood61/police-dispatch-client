@@ -1,10 +1,8 @@
-<div class="container mt-3">
+<div class="container mt-3" *ngIf="report">
   <div class="row">
     <div class="col-md-12 text-center header">
-      <img *ngIf="darkmode.mode" src="../../../../../../assets/images/monarch_horiz.png" alt="logo" width="110px"
-        class="float-left" />
-      <img *ngIf="!darkmode.mode" src="../../../../../../assets/images/monarch_horiz_dark.png" alt="logo" width="110px"
-        class="float-left" />
+      <img *ngIf="darkmode.mode" src="../../../../../../assets/images/monarch_horiz.png" alt="logo" width="110px" class="float-left" />
+      <img *ngIf="!darkmode.mode" src="../../../../../../assets/images/monarch_horiz_dark.png" alt="logo" width="110px" class="float-left" />
 
       <h1 class="d-inline-block">
         {{ "header-tab.Incident Report" | translate }}
@@ -103,16 +101,15 @@
     </button>
   </div> -->
 
-  <div class="updateBtns">
-    <button data-toggle="modal" *ngIf="report.status != 'close'" (click)="openModel(report)"
-      data-target="#incidentCloseModel" mat-raised-button>
+  <div class="close-btn">
+    <button data-toggle="modal" *ngIf="report.status != 'close'" (click)="openModel(report)" data-target="#incidentCloseModel" mat-raised-button>
       {{ "button.Close" | translate }}
     </button>
   </div>
   <div class="updateBtns" *ngIf="report.status != 'close'">
     <!-- [disabled]="updated" -->
-    <button mat-raised-button *ngIf="report.status != 'assign'" class="mr-1" (click)="openModel(report)"
-      data-toggle="modal" data-target="#incidentAssignModel">
+    <button mat-raised-button *ngIf="report.status != 'assign'" class="mr-1" (click)="openModel(report)" data-toggle="modal"
+      data-target="#incidentAssignModel">
       {{ "button.Assign" | translate }}
     </button>
     <!-- [disabled]="updated" -->
