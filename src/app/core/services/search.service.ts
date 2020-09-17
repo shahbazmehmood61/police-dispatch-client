@@ -57,7 +57,7 @@ export class SearchService {
     //     this.incidentReportService.getIncidentDetails(id);
     //     resolve(resp);
     //   },
-    //   () => {
+    //   () => { 
     //     reject();
     //   }
     // );

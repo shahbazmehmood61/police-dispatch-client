@@ -18,7 +18,7 @@
     <h4>{{ "sos-sideabr.Chats" | translate }}</h4>
     <ul>
       <li *ngFor="let chat of sosService.sosChats | async" (click)="chatClicked(chat)">
-        <!-- <span class="text">{{ chat.phoneNumber | formater }}</span> -->
+        <!-- <span class= "text">{{ chat.phoneNumber | formater }}</span> -->
         <span class="text">{{ chat.phoneNumber }}</span>
         <span class="circle"><i class="fas fa-circle"></i></span>
       </li>
