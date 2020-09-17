@@ -1,8 +1,8 @@
 <div class="main bg-dark" [ngClass]="isShow ? 'show' : 'hide'">
   <div>
     <h4 class="calls">{{ "sos-sideabr.Calls" | translate }}</h4>
-    <ul *ngIf="sosCalls">
-      <li *ngFor="let call of sosCalls">
+    <ul>
+      <li *ngFor="let call of sosService.sosCalls | async">
         <span (click)="searchService.getSosCallSingleVictim(
               call.callerID,
               'mobilevictim',
@@ -17,7 +17,7 @@
   <div>
     <h4>{{ "sos-sideabr.Chats" | translate }}</h4>
     <ul>
-      <li *ngFor="let chat of sosChats" (click)="chatClicked(chat)">
+      <li *ngFor="let chat of sosService.sosChats | async" (click)="chatClicked(chat)">
         <!-- <span class="text">{{ chat.phoneNumber | formater }}</span> -->
         <span class="text">{{ chat.phoneNumber }}</span>
         <span class="circle"><i class="fas fa-circle"></i></span>

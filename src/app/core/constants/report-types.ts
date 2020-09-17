@@ -3,7 +3,7 @@ export const reportTypes = [
   { typeValue: "aggression", type: "Aggression" },
   { typeValue: "medicalEmergency", type: "Medical emergency" },
   { typeValue: "vehicleRobbery", type: "Vehicle Robbery" },
-  { typeValue: "vehicleIncident", type: "Vehicle Incident" },
+  { typeValue: "vehicleAccident", type: "Vehicle Accident" },
   { typeValue: "scaling", type: "Scaling" },
   { typeValue: "rape", type: "Rape" },
   { typeValue: "domesticViolence", type: "Domestic violence / Law 54" },

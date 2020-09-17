@@ -56,8 +56,9 @@ export class OfficerRegisteredIncidentComponent implements OnInit {
     const id = this.authService.userInfo.uid;
     this.incidentReport.getOfficerRegisteredReports(id).subscribe((data) => {
       if (data) {
-        this.incidentReports = data.reverse();
-        this.filterReports = data.reverse();
+        data.reverse();
+        this.incidentReports = data;
+        this.filterReports = data;
         this.dataSource = new MatTableDataSource(this.incidentReports)
         this.statusFilter("open");
         this.incidentTypeFilter('none');

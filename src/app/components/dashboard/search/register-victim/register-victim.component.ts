@@ -6,6 +6,7 @@ import { AlertService } from "src/app/core/services/alert.service";
 import { TranslatorService } from "src/app/core/services/translator.service";
 import { FormaterPipe } from "src/app/core/pipes/formater.pipe";
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-register-victim",
@@ -17,13 +18,15 @@ export class RegisterVictimComponent implements OnInit {
   fakeInches = new Array(13);
   RegisterVictimForm: FormGroup;
   editVictim;
+  edit = false;
   constructor(
     private registerUserForm: RegisterVictimForm,
     public searchService: SearchService,
     private alertService: AlertService,
     public translator: TranslatorService,
     private formater: FormaterPipe,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -33,8 +36,11 @@ export class RegisterVictimComponent implements OnInit {
     if (this.searchService.editVictimDetail) {
       this.searchService.editVictimDetail.subscribe((res) => {
         if (res) {
+          this.editVictim = res;
+          this.edit = res['id'] ? true : false;
           this.RegisterVictimForm.patchValue(res);
         } else {
+          this.edit = false;
           this.alertService.errorAlert('Police Dipatch', 'Failed to laod data');
         }
       })
@@ -75,12 +81,18 @@ export class RegisterVictimComponent implements OnInit {
       }
       this.searchService
         .registerUser(data)
-        .subscribe(() => {
-          this.alertService.successAlert(
-            this.alertService.registeredVictim.title,
-            this.alertService.registeredVictim.msg
-          );
-          this.RegisterVictimForm.reset();
+        .subscribe((res) => {
+          if (res) {
+            console.log(res);
+            this.alertService.successAlert(
+              this.alertService.registeredVictim.title,
+              this.alertService.registeredVictim.msg
+            );
+            this.RegisterVictimForm.reset();
+            this.searchService.viewVictimDetail = res;
+            this.edit = false
+            this.router.navigate(['/incident/victim-detail']);
+          }
         });
     } else {
       this.alertService.warningAlert(
@@ -94,15 +106,18 @@ export class RegisterVictimComponent implements OnInit {
     if (this.RegisterVictimForm.valid) {
       const data = {
         form: this.RegisterVictimForm.value,
-        id: this.searchService.victimDetails.id,
-        node: this.searchService.victimDetails.node
-      }
+        id: this.editVictim.id,
+        node: this.editVictim.node
+      };
+      // console.log(data);
       this.searchService.registerUser(data).subscribe((res) => {
         if (res) {
           this.alertService.successAlert(this.alertService.registeredVictim.title,
             this.alertService.registeredVictim.msg);
           this.RegisterVictimForm.reset();
           this.searchService.editVictimDetail.next({});
+          this.editVictim = undefined;
+          this.edit = false
         } else {
           this.alertService.warningAlert(
             this.alertService.formErrors.invalidFormTitle,

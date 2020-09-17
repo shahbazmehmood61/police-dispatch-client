@@ -72,4 +72,4 @@ const routes: Routes = [
     LocalizationModule,
   ],
 })
-export class SearchModule {}
+export class SearchModule { }

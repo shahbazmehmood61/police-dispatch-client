@@ -4,7 +4,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { IChatRoom, ISingleChatRoomIDs } from '../models/chat-message.model';
-import { Subject } from 'rxjs';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/auth';
+// import * as admin from 'firebase-admin';
+// import { auth } from '../constants/admin';
+
+// const auth = admin.auth();
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +23,9 @@ export class ChatService {
 
   chatRoomIDs: Array<ISingleChatRoomIDs> = [];
   chatRoom: Array<IChatRoom> = [];
+  singleChatMesages = new BehaviorSubject([]);
+  groupChatMessages = new BehaviorSubject([]);
+  selectedSingleChat;
 
   groupChatRoom: Array<any> = [];
   groupChatRoomMsgs: Array<any> = [];
@@ -24,8 +33,13 @@ export class ChatService {
   closedChatRoomIDs: Array<ISingleChatRoomIDs> = []
   sosCalls = new Subject();
   sosChats = new Subject();
-
-  constructor(private http: HttpClient, private cookieService: CookieService) {
+  chatRoomReceiverID;
+  constructor(
+    private http: HttpClient,
+    private cookieService: CookieService,
+    public db: AngularFireDatabase,
+    public fireAuth: AngularFireAuth
+  ) {
     this.userMeta = JSON.parse(this.cookieService.get('userMeta')).user;
   }
 
@@ -84,34 +98,41 @@ export class ChatService {
 
   getChatRoomIDs() {
     this.chatRoomIDs = [];
+    // console.log(this.userMeta.uid, 'data');
     return this.http
       .get<Array<ISingleChatRoomIDs>>(
         APIs.getChatRoomIDs + '/' + this.userMeta.uid
       ).subscribe((resp) => {
+        // console.log(resp, "receved")
         this.chatRoomIDs = resp.reverse();
       });
   }
 
-  getMessages(chatID: string) {
-    this.chatRoom = [];
-    this.selectChatID = chatID;
+  getMessages(chatRoom: ISingleChatRoomIDs) {
+    // this.chatRoom = [];
+    this.selectChatID = chatRoom.chatID;
+    this.selectedSingleChat = chatRoom.reciverID;
 
-    this.http.get(APIs.getMessage + chatID).subscribe(
+    this.db.object('/singleChatMsgs/' + chatRoom.chatID).valueChanges().subscribe(
       (messages: any) => {
-        this.chatRoom = [];
-        const resp = messages.chat;
-        const messagesKeys = Object.keys(resp);
-
+        const chatRoom = [];
+        // const resp = messages.chat;
+        const messagesKeys = Object.keys(messages);
+        // console.log(resp, "sender");
+        // console.log(resp[messagesKeys[0]].senderID, "sender");
+        this.chatRoomReceiverID = messages[messagesKeys[0]].senderID;
         for (const key of messagesKeys) {
-          this.chatRoom.push({
+          chatRoom.push({
             msgNodeID: key,
-            ...resp[key],
+            ...messages[key],
           });
         }
+        this.singleChatMesages.next(chatRoom);
       },
       () => {
         this.chatRoom = [];
       }
+      // }
     );
   }
 
@@ -147,33 +168,47 @@ export class ChatService {
       });
   }
 
-  getGroupsMessages(GID: string) {
-    this.selectChatGID = GID;
-    this.http.get(APIs.getGroupMessages + GID).subscribe(
-      (resp: any) => {
-        if (resp.messages) {
-          this.groupChatRoomMsgs = [];
-          const response = resp.messages;
-          const keys = Object.keys(response);
-          for (const key of keys) {
-            for (const member of resp.members) {
-              if (member.uid === response[key].senderID) {
-                this.groupChatRoomMsgs.push({
-                  chatID: key,
-                  senderEmail: member.email,
-                  ...response[key],
-                });
-              }
+  getGroupsMessages(chat: any) {
+    // console.log(chat);
+    this.selectChatGID = chat.GID;
+    this.db.object('/groupMessage/' + this.selectChatGID).valueChanges()
+      .subscribe(
+        (resp: any) => {
+          if (resp) {
+            // console.log(resp, 'data');
+            const groupChatRoomMsgs = [];
+            // const response = resp.messages;
+            const keys = Object.keys(resp);
+            for (const key of keys) {
+              // auth.getUser(resp[key].senderID)
+              this.db.object('/usersOfficers/' + resp[key].senderID).valueChanges()
+                .subscribe((user: any) => {
+                  groupChatRoomMsgs.push({
+                    chatID: this.selectChatGID,
+                    senderEmail: user.email,
+                    ...resp[key],
+                  });
+                })
+
+              this.groupChatMessages.next(groupChatRoomMsgs);
+              //   for (const member of resp.members) {
+              //     if (member.uid === response[key].senderID) {
+              //       this.groupChatRoomMsgs.push({
+              //         chatID: this.selectChatGID,
+              //         senderEmail: member.email,
+              //         ...resp[key],
+              //       });
+              //     }
+              //   }
             }
+          } else {
+            this.groupChatRoomMsgs = [];
           }
-        } else {
+        },
+        () => {
           this.groupChatRoomMsgs = [];
         }
-      },
-      () => {
-        this.groupChatRoomMsgs = [];
-      }
-    );
+      );
   }
 
   bindGroupChatNotfication(data) {
