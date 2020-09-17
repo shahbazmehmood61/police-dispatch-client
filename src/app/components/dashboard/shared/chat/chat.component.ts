@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from "@angular/core";
 import { ChatService } from "src/app/core/services/chat.service";
 import { AuthService } from "src/app/core/services/auth.service";
+import { AngularFireDatabase } from '@angular/fire/database';
 import {
   IChatRoom,
   ISuggestions,
@@ -33,8 +34,9 @@ export class ChatComponent implements OnInit, OnDestroy {
     public authService: AuthService,
     private alertService: AlertService,
     public translator: TranslatorService,
-    public darkmode: DarkmodeService
-  ) {}
+    public darkmode: DarkmodeService,
+    public db: AngularFireDatabase
+  ) { }
 
   ngOnInit() {
     // this.chatService.getPermissions();
@@ -59,9 +61,9 @@ export class ChatComponent implements OnInit, OnDestroy {
       timeStamp: "",
       chatID: this.chatService.selectChatID,
       senderID: this.chatService.userMeta.uid,
-      reciverID: this.selectedSingleChat.reciverID,
+      reciverID: this.chatService.selectedSingleChat,
     };
-
+    console.log(body);
     this.chatService.sendMessages(body).subscribe((res: IChatRoom) => {
       this.chatService.chatRoom.push({ ...res, timeStamp: Date.now() });
     });
@@ -154,17 +156,32 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   sendGroupMessage() {
-    this.chatService.sendGroupMessage(this.message).subscribe(() => {});
+    this.chatService.sendGroupMessage(this.message).subscribe(() => { });
     this.message = undefined;
   }
 
-  getMessages(chatRoom: ISingleChatRoomIDs) {
-    this.selectedSingleChat = chatRoom;
-    this.chatService.getMessages(chatRoom.chatID);
-  }
+  // getMessages(chatRoom: ISingleChatRoomIDs) {
+  // console.log('getting');
+  // this.selectedSingleChat = chatRoom;
+  // console.log(chatRoom);
+  // this.chatService.getMessages(chatRoom.chatID);
+  // // const chatID = request.params.chatID;
+
+  // return this.db.object('/singleChatMsgs/' + chatRoom.chatID).valueChanges()
+
+  // .then((snapshot: any) => {
+  //   if (snapshot) {
+  //     return response.send({ chat: snapshot });
+  //   } else {
+  //     return response.status(400).send({ code: 'No Chat History' });
+  //   }
+  // }).catch((error: any) => { return response.status(400).send({ code: error.message }); })
+
+  // }
 
   closeChat(chatRoom: ISingleChatRoomIDs) {
     if (confirm("Are you sure to close?")) {
+      console.log(chatRoom);
       this.chatService
         .closeChat(chatRoom.chatID, chatRoom.reciverID, chatRoom.chatNodeID)
         .subscribe((data) => {

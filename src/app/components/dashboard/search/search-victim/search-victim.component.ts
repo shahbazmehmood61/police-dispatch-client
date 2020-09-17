@@ -50,7 +50,8 @@ export class SearchVictimComponent implements OnInit {
 
   getRegisteredUser() {
     this.searchService.getRegisteredUser().subscribe((resp: Array<any>) => {
-      this.dataSource = new MatTableDataSource(resp.reverse());
+      // resp.reverse();
+      this.dataSource = new MatTableDataSource(resp);
     });
   }
 

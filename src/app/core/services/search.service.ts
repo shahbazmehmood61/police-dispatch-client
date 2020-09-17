@@ -15,6 +15,7 @@ export class SearchService {
   public victimDetails;
   viewVictimDetail;
   editVictimDetail = new BehaviorSubject({});
+  currentRegisteredVictim = new Subject();
   public victimID: string;
   singleVictim = false;
   messageSource;
@@ -62,11 +63,10 @@ export class SearchService {
     // );
   }
 
-
   getSosCallSingleVictim(id: string, node: string, call) {
     this.viewVictimDetail = undefined;
     this.victimID = id;
-    this.sosCallId = call.nodeID;
+    this.sosCallId = call.key;
     this.singleVictim = false;
     this.http
       .get(APIs.getSingleVictim + "/" + id + "/" + node)

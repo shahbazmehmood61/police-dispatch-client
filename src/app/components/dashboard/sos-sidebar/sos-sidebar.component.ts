@@ -39,18 +39,20 @@ export class SosSidebarComponent implements OnInit {
     private cookieService: CookieService,
     private chatService: ChatService,
     public translator: TranslatorService
-  ) { }
+  ) {
+    this.officerInfo = JSON.parse(this.cookieService.get('userMeta')).userInfo;
+
+  }
 
   ngOnInit() {
     this.chatService.getPermissions();
     this.chatService.reciveMessages();
 
-    this.officerInfo = JSON.parse(this.cookieService.get('userMeta')).userInfo;
     this.sosService.sosCall.subscribe((res) => {
       this.sosCalls = res;
     })
-    this.getSosCall();
-    this.getSosChat();
+    this.sosService.getSosCalls(this.officerInfo.cityCode);
+    this.sosService.getSosChats(this.officerInfo.cityCode);
     this.reciveSOSQueue();
   }
 
@@ -68,35 +70,40 @@ export class SosSidebarComponent implements OnInit {
     this.isShow = !this.isShow;
   }
 
-  getSosCall() {
-    this.sosService.getSosCalls(this.officerInfo.cityCode).subscribe(
-      (res: any) => {
-        this.sosService.sosCall.next(res);
-      },
-      (error: any) => {
-        this.sosCalls = [];
-      }
-    );
-  }
+  // getSosCall() {
+  //   this.sosService.getSosCalls(this.officerInfo.cityCode).subscribe(
+  //     (res: any) => {
+  //       this.sosService.sosCall.next(res);
+  //     },
+  //     (error: any) => {
+  //       this.sosCalls = [];
+  //     }
+  //   );
+  // }
 
-  getSosChat() {
-    this.sosService.getSosChats(this.officerInfo.cityCode).subscribe(
-      (res: any) => {
-        this.sosChats = res;
-      },
-      (error: any) => {
-        this.sosChats = [];
-      }
-    );
-  }
+  // getSosChat() {
+  //   this.sosService.getSosChats(this.officerInfo.cityCode).subscribe(
+  //     (res: any) => {
+  //       this.sosChats = res;
+  //     },
+  //     (error: any) => {
+  //       this.sosChats = [];
+  //     }
+  //   );
+  // }
 
   chatClicked(chat) {
+    console.log(chat);
+    // console.log('callerID', chat.callerID,
+    //   'receiverID', this.chatService.userMeta.uid,
+    //   'callerName', chat.callerName)
     this.searchEmail = undefined;
     this.chatService
       .genrateChatRoomIDs({
         senderID: chat.callerID,
         reciverID: this.chatService.userMeta.uid,
         senderName: chat.callerName,
+        sosChatID: chat.key
       })
       .subscribe((chatRoom: ISingleChatRoomIDs) => {
         this.chatService.chatRoomIDs.push(chatRoom);
@@ -108,7 +115,7 @@ export class SosSidebarComponent implements OnInit {
 
   getMessages(chatRoom: ISingleChatRoomIDs) {
     this.selectedSingleChat = chatRoom;
-    this.chatService.getMessages(chatRoom.chatID);
+    this.chatService.getMessages(chatRoom);
   }
 
   sendMessages(chat) {
@@ -124,7 +131,7 @@ export class SosSidebarComponent implements OnInit {
       this.sosService
         .removeSosChat(chat.cityCode, chat.nodeID)
         .subscribe(() => {
-          this.getSosChat();
+          // this.getSosChat();
         });
     });
   }

@@ -30,15 +30,16 @@ export class VictimDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // console.log(this.searchService.viewVictimDetail);
     if (this.searchService.viewVictimDetail) {
       this.searchService.getSingleVictim(this.searchService.viewVictimDetail).subscribe((res) => {
+        console.log({ ...res, ...this.searchService.viewVictimDetail })
         this.searchService.victimDetails = { ...res, ...this.searchService.viewVictimDetail };
         this.mapLatLng();
       })
     } else {
       this.mapLatLng();
     }
-
   }
 
   getAge(dateOfBirth): string {

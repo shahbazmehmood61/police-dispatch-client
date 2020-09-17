@@ -1,4 +1,4 @@
-<form class="overflow-hidden p-3" [formGroup]="RegisterVictimForm" (ngSubmit)="searchService.editVictimDetail ? update() : submit()">
+<form class="overflow-hidden p-3" [formGroup]="RegisterVictimForm" (ngSubmit)="edit ? update() : submit()">
   <mat-chip-list aria-label="header">
     <mat-chip color="primary" selected>
       <h3 class="m-0 text-white p-1">
@@ -183,11 +183,11 @@
     </div>
   </div>
   <div class="text-center mt-2 mb-2">
-    <button *ngIf="!searchService.editVictimDetail" mat-raised-button color="primary" type="submit">
+    <button *ngIf="!edit" mat-raised-button color="primary" type="submit">
       {{ "register-victim.Register" | translate }}
       <i class="fas fa-user-plus"></i>
     </button>
-    <button *ngIf="searchService.editVictimDetail" mat-raised-button color="primary" type="submit">
+    <button *ngIf="edit" mat-raised-button color="primary" type="submit">
       {{ "button.Update" | translate }}
     </button>
   </div>

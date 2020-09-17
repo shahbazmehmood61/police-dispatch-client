@@ -50,8 +50,9 @@ export class IncidentReportComponent implements OnInit {
       this.incidentReportService
         .getIncidentDetails(this.searchService.victimID)
         .then((report: any) => {
-          this.reports = report.reverse();
-          this.filterReports = report.reverse();
+          report.reverse()
+          this.reports = report;
+          this.filterReports = report;
           this.dataSource = new MatTableDataSource(this.reports);
           this.statusFilter("open");
           this.incidentTypeFilter('none');

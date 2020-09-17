@@ -34,7 +34,7 @@
               <div class="chat_list" *ngFor="let user of chatService.chatRoomIDs"
                 [ngClass]="user.chatID == chatService.selectChatID ? 'active_chat' : ''">
                 <div class="chat_people">
-                  <div class="chat_ib" (click)="getMessages(user)">
+                  <div class="chat_ib" (click)="chatService.getMessages(user)">
                     <img class="chat_img rounded-circle" src="../../../../../assets/images/user-icon.png" alt="img" />
                     <div class="msg-head">
                       <span class="contact-name">{{ user.reciverName }}</span>
@@ -53,19 +53,17 @@
             </div>
           </mat-tab>
           <mat-tab label="{{ 'search-victim.Groups' | translate }}">
-            <button mat-raised-button color="primary" class="d-block w-100" (click)="addUsersToCreateGroup()"
-              data-toggle="modal" data-target="#createGroupModal">
+            <button mat-raised-button color="primary" class="d-block w-100" (click)="addUsersToCreateGroup()" data-toggle="modal"
+              data-target="#createGroupModal">
               <i class="fas fa-user-plus"></i> Create New Group
             </button>
             <div class="inbox_chat">
-              <div class="chat_list" *ngFor="let chat of chatService.groupChatRoom"
-                (click)="chatService.getGroupsMessages(chat.GID)" [ngClass]="
+              <div class="chat_list" *ngFor="let chat of chatService.groupChatRoom" (click)="chatService.getGroupsMessages(chat)" [ngClass]="
                   chat.GID == chatService.selectChatGID ? 'active_chat' : ''
                 ">
                 <div class="chat_people">
                   <div class="chat_ib">
-                    <img class="chat_img rounded-circle" src="../../../../../assets/images/group-icon.png"
-                      [alt]="chat.groupName" />
+                    <img class="chat_img rounded-circle" src="../../../../../assets/images/group-icon.png" [alt]="chat.groupName" />
                     <div class="group-inbox">
                       <h5>{{ chat.groupName }}</h5>
                       <div *ngIf="
@@ -89,20 +87,21 @@
       </div>
       <div class="mesgs" *ngIf="view === 0">
         <div class="msg_history" #singleChatScroll [scrollTop]="singleChatScroll.scrollHeight">
-          <div *ngIf="chatService.chatRoom.length > 0; else noChat">
-            <div *ngFor="let chat of chatService.chatRoom"
-              [ngClass]="chatService.userMeta.uid == chat.senderID? 'outgoing_msg': 'incoming_msg'">
-              <div class="received_withd_msg"
-                [ngClass]="chatService.userMeta.uid == chat.senderID? 'sent_msg float-right': 'received_msg'">
-                <p>{{ chat.text }}</p>
-                <span class="time_date">
-                  {{chat.timeStamp | date: "medium"}}
-                  <span class="text-primary" *ngIf="chatService.userMeta.uid == chat.senderID">
-                    <i class="fas fa-check-double"></i>
-                  </span>
+          <!-- <div *ngIf="chatService.singleChatMesages > 0; else noChat"> -->
+          <div *ngFor="let chat of chatService.singleChatMesages | async"
+            [ngClass]="chatService.userMeta.uid == chat.senderID? 'outgoing_msg': 'incoming_msg'">
+
+            <!-- {{chat.senderID}} -->
+            <div class="received_withd_msg" [ngClass]="chatService.userMeta.uid == chat.senderID? 'sent_msg float-right': 'received_msg'">
+              <p>{{ chat.text }}</p>
+              <span class="time_date">
+                {{chat.timeStamp | date: "medium"}}
+                <span class="text-primary" *ngIf="chatService.userMeta.uid == chat.senderID">
+                  <i class="fas fa-check-double"></i>
                 </span>
-              </div>
+              </span>
             </div>
+            <!-- </div> -->
           </div>
         </div>
         <ng-template #noChat>
@@ -117,10 +116,9 @@
         </ng-template>
         <div class="type_msg">
           <div class="input_msg_write">
-            <input [disabled]="chatService.selectChatID ? false : true" type="text" class="write_msg"
-              (keydown.enter)="sendMessages()" placeholder="Type a message" [(ngModel)]="message" />
-            <button class="msg_send_btn" type="button" (click)="sendMessages()"
-              [disabled]="chatService.selectChatID ? false : true">
+            <input [disabled]="chatService.selectChatID ? false : true" type="text" class="write_msg" (keydown.enter)="sendMessages()"
+              placeholder="Type a message" [(ngModel)]="message" />
+            <button class="msg_send_btn" type="button" (click)="sendMessages()" [disabled]="chatService.selectChatID ? false : true">
               <i class="fas fa-paper-plane"></i>
             </button>
           </div>
@@ -128,18 +126,17 @@
       </div>
       <div class="mesgs" *ngIf="view === 1">
         <div class="msg_history" #groupChatScroll [scrollTop]="groupChatScroll.scrollHeight">
-          <div *ngIf="chatService.groupChatRoomMsgs.length > 0; else noChat">
-            <div *ngFor="let chat of chatService.groupChatRoomMsgs"
-              [ngClass]="chatService.userMeta.uid == chat.senderID? 'outgoing_msg': 'incoming_msg'">
-              <div class="received_withd_msg"
-                [ngClass]="chatService.userMeta.uid == chat.senderID? 'sent_msg float-right': 'received_msg'">
-                <span class="sender">{{ chat.senderEmail }}</span>
-                <p>{{ chat.message }}</p>
-                <span class="time_date">
-                  {{chat.timeStamp | date: "medium"}}
-                </span>
-              </div>
+          <!-- <div *ngIf="chatService.groupChatRoomMsgs.length > 0; else noChat"> -->
+          <div *ngFor="let chat of chatService.groupChatMessages | async"
+            [ngClass]="chatService.userMeta.uid == chat.senderID? 'outgoing_msg': 'incoming_msg'">
+            <div class="received_withd_msg" [ngClass]="chatService.userMeta.uid == chat.senderID? 'sent_msg float-right': 'received_msg'">
+              <span class="sender">{{ chat.senderEmail }}</span>
+              <p>{{ chat.message }}</p>
+              <span class="time_date">
+                {{chat.timeStamp | date: "medium"}}
+              </span>
             </div>
+            <!-- </div> -->
           </div>
         </div>
         <ng-template #noChat>
@@ -154,10 +151,9 @@
         </ng-template>
         <div class="type_msg">
           <div class="input_msg_write">
-            <input [disabled]="chatService.selectChatGID ? false : true" type="text" class="write_msg"
-              (keydown.enter)="sendGroupMessage()" placeholder="Type a message" [(ngModel)]="message" />
-            <button class="msg_send_btn" type="button" (click)="sendGroupMessage()"
-              [disabled]="chatService.selectChatGID ? false : true">
+            <input [disabled]="chatService.selectChatGID ? false : true" type="text" class="write_msg" (keydown.enter)="sendGroupMessage()"
+              placeholder="Type a message" [(ngModel)]="message" />
+            <button class="msg_send_btn" type="button" (click)="sendGroupMessage()" [disabled]="chatService.selectChatGID ? false : true">
               <i class="fas fa-paper-plane"></i>
             </button>
           </div>
@@ -168,8 +164,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="createGroupModal" tabindex="-1" role="dialog" aria-labelledby="createGroupModalTitle"
-  aria-hidden="true">
+<div class="modal fade" id="createGroupModal" tabindex="-1" role="dialog" aria-labelledby="createGroupModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header p-1">
@@ -194,8 +189,8 @@
         </div>
 
         <mat-form-field class="mt-2">
-          <input matInput type="text" class="search-bar" [(ngModel)]="searchEmail" placeholder="Search with email"
-            [matAutocomplete]="groupAuto" (keydown.enter)="search(searchEmail)" />
+          <input matInput type="text" class="search-bar" [(ngModel)]="searchEmail" placeholder="Search with email" [matAutocomplete]="groupAuto"
+            (keydown.enter)="search(searchEmail)" />
           <span class="input-group-addon">
             <button type="button" (click)="search(searchEmail)">
               <i class="fa fa-search" aria-hidden="true"></i>
