@@ -121,7 +121,7 @@
       </div>
       <div class="inputs mt-1">
         <mat-form-field>
-          <input matInput formControlName="locationMap" type="text" placeholder="Location Map" />
+          <input matInput formControlName="locationMap" type="text" placeholder="{{'location map' | translate}}" />
         </mat-form-field>
         <print-error [control]="RegisterVictimForm.get('locationMap')"></print-error>
       </div>

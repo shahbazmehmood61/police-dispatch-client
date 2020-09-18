@@ -44,7 +44,7 @@
 
         <ng-container matColumnDef="Actions">
           <th class="action" mat-header-cell *matHeaderCellDef>
-            Actions
+            {{'Actions' | translate}}
           </th>
           <td class="action" mat-cell *matCellDef="let element">
             <div *ngIf="element.status != 'close'">

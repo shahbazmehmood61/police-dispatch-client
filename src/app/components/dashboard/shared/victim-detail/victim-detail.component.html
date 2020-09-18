@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-12 shadow p-2 mb-4">
       <button class="mr-2" color="primary" mat-raised-button routerLink="/search/search-victim">
-        <i class="fas fa-arrow-left"></i> Back
+        <i class="fas fa-arrow-left"></i> {{'button.Back' | translate}}
       </button>
 
       <button class="edit-btn" color="primary" mat-raised-button
-        (click)="editUserDetails(searchService.victimDetails)">Edit</button>
+        (click)="editUserDetails(searchService.victimDetails)">{{'button.Edit' | translate}}</button>
     </div>
     <div class="col-md-3 text-center">
       <!-- <img class="profile-img" src="../../../../assets/images/user.png" alt="" width="150px" /> -->

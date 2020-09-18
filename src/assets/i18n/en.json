@@ -641,6 +641,7 @@
     "Close Report": "Close Report",
     "Next": "Next",
     "Back": "Back",
+    "Edit": "Edit",
     "Export PDF": "Export PDF",
     "Update": "Update"
   },
@@ -664,5 +665,15 @@
   "Other": "Other",
   "Report Status": "Report Status",
   "Incident Type": "Incident Type",
-  "search from": "Search from any field you want"
+  "search from": "Search from any field you want",
+  "location map": "Location Map",
+  "Driver licence image": "Driver Licence Image",
+  "Actions": "Actions",
+  "Close Chat": "Close Chat",
+  "Init Date": "Init Date",
+  "Create new group": "Create new group",
+  "Add Members": "Add Members",
+  "Group Name": "Group Name",
+  "Search with email": "Search with email",
+  "Create Group": "Create Group"
 }

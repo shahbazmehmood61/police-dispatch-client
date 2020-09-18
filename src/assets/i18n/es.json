@@ -642,7 +642,8 @@
     "Next": "Siguiente",
     "Back": "Atrás",
     "Export PDF": "Exportar PDF",
-    "Update": "Actualizar"
+    "Update": "Actualizar",
+    "Edit": "Editar"
   },
   "Types of incident": "Típos de incidente",
   "Robbery": "Robo",
@@ -664,5 +665,15 @@
   "Other": "Otro",
   "Report Status": "Estado del informe",
   "Incident Type": "Tipo de incidente",
-  "search from": "Buscar desde cualquier campo que desee"
+  "search from": "Buscar desde cualquier campo que desee",
+  "location map": "Mapa de localización",
+  "Driver licence image": "Imagen de la licencia de conducir",
+  "Actions": "Acción",
+  "Close Chat": "Cerrar chat",
+  "Init Date": "Fecha de Inicialización",
+  "Create new group": "Crear nuevo grupo",
+  "Add Members": "Añadir Miembros",
+  "Group Name": "Nombre del grupo",
+  "Search with email": "Buscar con correo electrónico",
+  "Create Group": "Crea un Grupo"
 }

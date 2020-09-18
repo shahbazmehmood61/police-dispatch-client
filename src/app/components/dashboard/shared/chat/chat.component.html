@@ -45,9 +45,9 @@
                     </div>
                   </div>
                 </div>
-                <span class="badge badge-info">Init Date: {{user.chatInitDate | date}}</span>
+                <span class="badge badge-info">{{{"Init Date" | translate}}}: {{user.chatInitDate | date}}</span>
                 <button (click)="closeChat(user)" class="btn btn-success btn-close-chat">
-                  Close Chat
+                  {{'Close Chat' | translate}}
                 </button>
               </div>
             </div>
@@ -55,7 +55,7 @@
           <mat-tab label="{{ 'search-victim.Groups' | translate }}">
             <button mat-raised-button color="primary" class="d-block w-100" (click)="addUsersToCreateGroup()" data-toggle="modal"
               data-target="#createGroupModal">
-              <i class="fas fa-user-plus"></i> Create New Group
+              <i class="fas fa-user-plus"></i> {{'Create new group' | translate}}
             </button>
             <div class="inbox_chat">
               <div class="chat_list" *ngFor="let chat of chatService.groupChatRoom" (click)="chatService.getGroupsMessages(chat)" [ngClass]="
@@ -168,14 +168,14 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header p-1">
-        <p class="modal-title" id="exampleModalLongTitle">Add Members</p>
+        <p class="modal-title" id="exampleModalLongTitle">{{'Add Members' | translate}}</p>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <mat-form-field class="mt-2">
-          <input matInput type="text" [(ngModel)]="groupName" placeholder="Group Name" />
+          <input matInput type="text" [(ngModel)]="groupName" placeholder="{{'Group Name' | translate}}" />
         </mat-form-field>
 
         <div class="w-100" *ngIf="members.length > 0">
@@ -189,8 +189,8 @@
         </div>
 
         <mat-form-field class="mt-2">
-          <input matInput type="text" class="search-bar" [(ngModel)]="searchEmail" placeholder="Search with email" [matAutocomplete]="groupAuto"
-            (keydown.enter)="search(searchEmail)" />
+          <input matInput type="text" class="search-bar" [(ngModel)]="searchEmail" placeholder="{{'Search with email' | translate}}"
+            [matAutocomplete]="groupAuto" (keydown.enter)="search(searchEmail)" />
           <span class="input-group-addon">
             <button type="button" (click)="search(searchEmail)">
               <i class="fa fa-search" aria-hidden="true"></i>
@@ -209,7 +209,7 @@
           </mat-autocomplete>
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="createGroup()" data-dismiss="modal" aria-label="Close">
-          <i class="fas fa-user-plus"></i> Create Group
+          <i class="fas fa-user-plus"></i> {{'Create Group' | translate}}
         </button>
       </div>
     </div>
