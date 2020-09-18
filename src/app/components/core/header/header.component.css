@@ -26,7 +26,26 @@ ul {
 .languagebtn {
   margin-right: 15px;
 }
-.help{
-  color: #313131 !important;
-  text-decoration: none !important;
+
+mat-form-field ::ng-deep .mat-form-field-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+mat-form-field ::ng-deep .mat-form-field-infix {
+  padding: 2px 0;
+}
+
+mat-option {
+  height: 30px !important;
+}
+
+mat-form-field {
+  width: 120px;
+  font-size: 14px;
+}
+
+.mat-stroked-button {
+  padding: 0 5px;
+  line-height: 24px;
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/core/services/auth.service";
-import { TranslateService } from "@ngx-translate/core";
 import { TranslatorService } from "src/app/core/services/translator.service";
 import { DarkmodeService } from "src/app/core/services/darkmode.service";
 
@@ -12,6 +11,8 @@ declare var $: any;
 })
 export class HeaderComponent implements OnInit {
   // mode = true;
+  language = 'es';
+
   constructor(
     public authService: AuthService,
     public translator: TranslatorService,

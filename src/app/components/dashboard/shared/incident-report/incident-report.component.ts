@@ -64,6 +64,7 @@ export class IncidentReportComponent implements OnInit {
   }
 
   statusFilter(value: any) {
+    console.log(value);
     this.status = value;
     if (this.selectReportType != 'none' && this.selectReportType != undefined) {
       this.reports = this.filterReports.filter(

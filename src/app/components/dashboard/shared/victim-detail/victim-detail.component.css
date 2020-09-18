@@ -30,15 +30,12 @@ td {
   height: 300px !important;
 }
 
-.user-details {
+/* .user-details {
   margin: 10px 0;
-}
+} */
 
 .btn-back {
   cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 20px;
 }
 
 agm-map {
@@ -55,6 +52,7 @@ agm-map {
   padding: 20px;
   background-color: grey;
 }
-.edit-btn{
+
+.edit-btn {
   margin-right: 70px !important;
 }
