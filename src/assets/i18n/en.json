@@ -661,5 +661,8 @@
   "Surveillance request in an area": "Surveillance request in an area",
   "Suspicious person or vehicle": "Suspicious person or vehicle",
   "Noise": "Noise",
-  "Other": "Other"
+  "Other": "Other",
+  "Report Status": "Report Status",
+  "Incident Type": "Incident Type",
+  "search from": "Search from any field you want"
 }

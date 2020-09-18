@@ -56,3 +56,20 @@ th.mat-header-cell {
 th.action{
   margin-left: -20px !important;
 }
+mat-form-field.top-field ::ng-deep .mat-form-field-wrapper {
+  /* margin: 0; */
+  padding-bottom: 10px;
+}
+
+mat-form-field ::ng-deep .mat-form-field-infix {
+  padding: 3px 0;
+}
+/* 
+mat-option {
+  height: 30px !important;
+}
+
+mat-form-field {
+  width: 120px;
+  font-size: 14px;
+} */

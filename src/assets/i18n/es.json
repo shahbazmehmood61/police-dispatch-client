@@ -5,8 +5,10 @@
       "username": "Nombre de Usuario",
       "password": "Contraseña",
       "rememberme": "Recuérdame",
-      "forgotpassword": "Olvidó contraseña?"
+      "forgotpassword": "Olvidó contraseña?",
+      "Email Address": "Dirección de correo electrónico"
     },
+    "Sign In": "Registrarse",
     "validation": {
       "username": {
         "required": "*Nombre de Usuario es requerido"
@@ -157,7 +159,8 @@
     "Incident Report": "Reporte de Incidente",
     "logout": "Cerrar sesión",
     "Light": "Claro",
-    "Dark": "Oscuro"
+    "Dark": "Oscuro",
+    "help": "Ayuda"
   },
   "sos-sideabr": {
     "Calls": "Llamadas",
@@ -658,5 +661,8 @@
   "Surveillance request in an area": "Solicitud de vigilancia en un área",
   "Suspicious person or vehicle": "Persona o vehículo sospechoso",
   "Noise": "Ruido",
-  "Other": "Otro"
+  "Other": "Otro",
+  "Report Status": "Estado del informe",
+  "Incident Type": "Tipo de incidente",
+  "search from": "Buscar desde cualquier campo que desee"
 }

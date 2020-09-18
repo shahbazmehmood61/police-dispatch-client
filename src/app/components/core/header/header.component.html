@@ -3,8 +3,8 @@
     <img *ngIf="this.darkmode.mode" src="../../../../assets/images/monarch_horiz.png" alt="" width="100px" />
     <img *ngIf="!this.darkmode.mode" src="../../../../assets/images/monarch_horiz_dark.png" alt="" width="100px" />
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -27,27 +27,28 @@
         </button>
       </mat-menu> -->
 
-      <mat-form-field appearance="outline">
-        <mat-label>{{ "header-tab.Language" | translate }}</mat-label>
-        <mat-select (selectionChange)="translator.useLanguage(language)" [(ngModel)]="language">
-          <mat-option [value]="'en'">English</mat-option>
-          <mat-option [value]="'es'" selected>Spanish</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="d-flex flex-row pt-2">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ "header-tab.Language" | translate }}</mat-label>
+          <mat-select (selectionChange)="translator.useLanguage(language)" [(ngModel)]="language">
+            <mat-option [value]="'en'">English</mat-option>
+            <mat-option [value]="'es'" selected>Spanish</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      <button class="mr-3 ml-3" mat-stroked-button color="primary">
-        <a target="_blank" href="http://monarchss.com/help/index.html">
-          {{'header-tab.help' | translate}}
-        </a>
-      </button>
+        <button class="mr-3 ml-3" mat-stroked-button color="primary">
+          <a target="_blank" href="http://monarchss.com/help/index.html">
+            {{'header-tab.help' | translate}}
+          </a>
+        </button>
 
-      <mat-slide-toggle (change)="modeChanged()">
-        <span *ngIf="!darkmode.mode">{{ "header-tab.Light" | translate }}</span>
-        <span *ngIf="darkmode.mode">{{ "header-tab.Dark" | translate }}</span>
-      </mat-slide-toggle>
+        <mat-slide-toggle (change)="modeChanged()">
+          <span *ngIf="!darkmode.mode">{{ "header-tab.Light" | translate }}</span>
+          <span *ngIf="darkmode.mode">{{ "header-tab.Dark" | translate }}</span>
+        </mat-slide-toggle>
+      </div>
       <li class="nav-item dropdown" *ngIf="authService.isLoggedIn()">
-        <a class="nav-link pl-0 pr-0" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
+        <a class="nav-link pl-0 pr-0" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-user-circle"></i>
           {{
             authService.userInfo.displayName
@@ -58,8 +59,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" routerLink="/search"><i class="fas fa-search"></i>
             {{ "header-tab.search" | translate }}</a>
-          <a class="dropdown-item" routerLink="/incident"><i
-              class="fas fa-edit"></i>{{ "header-tab.Incident Report" | translate }}</a>
+          <a class="dropdown-item" routerLink="/incident"><i class="fas fa-edit"></i>{{ "header-tab.Incident Report" | translate }}</a>
           <a class="dropdown-item" routerLink="/inbox"><i class="fas fa-comments"></i>
             {{ "header-tab.inbox" | translate }}</a>
           <a class="dropdown-item" routerLink="/location"><i class="fas fa-map-marker-alt"></i>

@@ -1,7 +1,7 @@
 <div class="p-4 main-table">
   <mat-form-field>
-    <mat-label>{{ "search-victim.search" | translate }}</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Search from any field you want" />
+    <!-- <mat-label>{{ "search-victim.search" | translate }}</mat-label> -->
+    <input matInput (keyup)="applyFilter($event)" placeholder="{{'search from' | translate}}" />
   </mat-form-field>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

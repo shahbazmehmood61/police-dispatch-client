@@ -47,7 +47,7 @@ export class AuthService {
     this.http.get(APIs.logout).subscribe(() => {
       localStorage.clear();
       this.cookieService.deleteAll();
-
+      console.log('logout');
       this.router.navigate(['signin']);
       if (check === 'expire') {
         this.alertMessages.warningAlert(this.alertMessages.logout.Title, this.alertMessages.logout.expireMsg);

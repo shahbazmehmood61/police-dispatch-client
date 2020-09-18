@@ -1,175 +1,181 @@
-<div class="d-flex" *ngIf="incidentReports">
-  <div class=" m-4 filter">
-    <select class="form-control" (change)="statusFilter($event.target.value)">
-      <option value="open">{{ "button.Open" | translate }}</option>
-      <option value="assign">{{ "button.Assign" | translate }}</option>
-      <option value="close">{{ "button.Close" | translate }}</option>
-    </select>
-  </div>
-  <div class="m-4 filter">
-    <select class="form-control" (change)="incidentTypeFilter($event.target.value)">
-      <option *ngFor="let type of reportType;let i=index" [value]="type.typeValue">{{ type.type | translate }}</option>
-      <option value="none">None</option>
-    </select>
-  </div>
-</div>
+<!-- <div class="d-flex" *ngIf="">
+  <div class=" m-4 filter"> -->
+
+<!-- </div> -->
 
 <div class="container-fluid">
   <div class="row">
+    <div class="col-md-12 shadow pb-n2 pt-2 mb-3" *ngIf="incidentReports">
+      <mat-form-field appearance="outline" class="w-auto top-field">
+        <mat-label>{{"Report Status" | translate}}</mat-label>
+        <mat-select (selectionChange)="statusFilter(status.value)" #status [value]="'open'">
+          <mat-option value="open">{{ "button.Open" | translate }}</mat-option>
+          <mat-option value="assign">{{ "button.Assign" | translate }}</mat-option>
+          <mat-option value="close">{{ "button.Close" | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="w-auto ml-3 top-field">
+        <mat-label>{{"Incident Type" | translate}}</mat-label>
+        <mat-select (selectionChange)="incidentTypeFilter(type.value)" #type [value]="'none'">
+          <mat-option *ngFor="let type of reportType;let i=index" [value]="type.typeValue">{{ type.type | translate }}</mat-option>
+          <mat-option value="none">None</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <div class="col-lg-12 table-custom" *ngIf="incidentReports">
-      <div class="main-table">
-        <mat-form-field>
-          <mat-label>{{ "search-victim.search" | translate }}</mat-label>
-          <input matInput (keyup)="applyFilter($event)" />
-        </mat-form-field>
+      <!-- <div class="main-table"> -->
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event)" placeholder="{{'search from' | translate}}" />
+        <!-- <mat-label>{{ "search-victim.search" | translate }}</mat-label> -->
 
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-          <ng-container matColumnDef="View">
-            <th class="pr-n5" mat-header-cell *matHeaderCellDef>
-              {{ "search-victim.view" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              <a class="btn btn-link text-dark" [routerLink]="
+      </mat-form-field>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="View">
+          <th class="pr-n5" mat-header-cell *matHeaderCellDef>
+            {{ "search-victim.view" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <a class="btn btn-link text-dark" [routerLink]="
                   '/incident-details/' + element.key + '/' + element.victimId
                 "><i class="fas fa-eye"></i></a>
-            </td>
-          </ng-container>
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Actions">
-            <th class="action" mat-header-cell *matHeaderCellDef>
-              Actions
-            </th>
-            <td class="action" mat-cell *matCellDef="let element">
-              <div *ngIf="element.status != 'close'">
-                <button data-toggle="modal" *ngIf="element.status != 'assign'" (click)="openModel(element)"
-                  mat-raised-button class="mr-1" data-target="#incidentAssignModel">
-                  {{ "button.Assign" | translate }}
-                </button>
-                <button data-toggle="modal" data-target="#incidentCloseModel" mat-raised-button
-                  (click)="openModel(element)">
-                  {{ "button.Close" | translate }}
-                </button>
-              </div>
-              <div *ngIf="element.status == 'close'">
-                <button mat-raised-button>
-                  <a class="pdf" [routerLink]="['../../../close-report', element.key]">PDF</a>
-                </button>
-              </div>
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Actions">
+          <th class="action" mat-header-cell *matHeaderCellDef>
+            Actions
+          </th>
+          <td class="action" mat-cell *matCellDef="let element">
+            <div *ngIf="element.status != 'close'">
+              <button data-toggle="modal" *ngIf="element.status != 'assign'" (click)="openModel(element)" mat-raised-button class="mr-1"
+                data-target="#incidentAssignModel">
+                {{ "button.Assign" | translate }}
+              </button>
+              <button data-toggle="modal" data-target="#incidentCloseModel" mat-raised-button (click)="openModel(element)">
+                {{ "button.Close" | translate }}
+              </button>
+            </div>
+            <div *ngIf="element.status == 'close'">
+              <button mat-raised-button>
+                <a class="pdf" [routerLink]="['../../../close-report', element.key]">PDF</a>
+              </button>
+            </div>
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Status">
-            <th mat-header-cell class="pl-3" *matHeaderCellDef>
-              {{ "victim-detail.STATUS" | translate }}
-            </th>
-            <td mat-cell class="pl-3" *matCellDef="let element">
-              {{ check(element.status) }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Status">
+          <th mat-header-cell class="pl-3" *matHeaderCellDef>
+            {{ "victim-detail.STATUS" | translate }}
+          </th>
+          <td mat-cell class="pl-3" *matCellDef="let element">
+            {{ check(element.status) }}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Types of incident">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "Types of incident" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ check(element.typeOfReport)}}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Types of incident">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "Types of incident" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ check(element.typeOfReport)}}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Telephone">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "register-incident.Telephone" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ check(element.telephoneNo) | formater }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Telephone">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "register-incident.Telephone" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ check(element.telephoneNo) | formater }}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Victim Location">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "register-incident.Victim Location" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ check(element.locationOfIncident) }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Victim Location">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "register-incident.Victim Location" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ check(element.locationOfIncident) }}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Incident date">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "register-incident.Incident date" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.incidentDate | date }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Incident date">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "register-incident.Incident date" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.incidentDate | date }}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Incident time">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "register-incident.Incident time" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ check(element.incidentTime) }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Incident time">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "register-incident.Incident time" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ check(element.incidentTime) }}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Patrol dispatch time">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "register-incident.Patrol dispatch time" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ check(element.patrolDispatchTime) }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Patrol dispatch time">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "register-incident.Patrol dispatch time" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ check(element.patrolDispatchTime) }}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Dispatched patrol">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "register-incident.Dispatched patrol" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ check(element.dispatchedPatrol) }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Dispatched patrol">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "register-incident.Dispatched patrol" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ check(element.dispatchedPatrol) }}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Location of incident">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "register-incident.Location of incident" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ check(element.locationOfIncident) }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Location of incident">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "register-incident.Location of incident" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ check(element.locationOfIncident) }}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Level of Aggressiveness">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "register-incident.Level of Aggressiveness" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ check(element.levelsOfAggressiveness) }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Level of Aggressiveness">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "register-incident.Level of Aggressiveness" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ check(element.levelsOfAggressiveness) }}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="People involved">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "register-incident.People involved" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ check(element.peopleInvolved) }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="People involved">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "register-incident.People involved" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ check(element.peopleInvolved) }}
+          </td>
+        </ng-container>
 
-          <ng-container matColumnDef="Necessary resources">
-            <th mat-header-cell *matHeaderCellDef>
-              {{ "register-incident.Necessary resources" | translate }}
-            </th>
-            <td mat-cell *matCellDef="let element">
-              {{ check(element.necessaryResources) }}
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="Necessary resources">
+          <th mat-header-cell *matHeaderCellDef>
+            {{ "register-incident.Necessary resources" | translate }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            {{ check(element.necessaryResources) }}
+          </td>
+        </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
-      </div>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <!-- </div> -->
     </div>
     <div *ngIf="!incidentReports" class="col-lg-12 pt-5">
       <div class="text-center">

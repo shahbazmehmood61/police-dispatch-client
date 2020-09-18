@@ -44,20 +44,20 @@ th.mat-header-cell {
   background-color: #9cbbf5;
 }
 
-mat-form-field ::ng-deep .mat-form-field-wrapper {
-  margin: 0;
-  padding: 0;
+mat-form-field.top-field ::ng-deep .mat-form-field-wrapper {
+  /* margin: 0; */
+  padding-bottom: 10px;
 }
 
 mat-form-field ::ng-deep .mat-form-field-infix {
-  padding: 2px 0;
+  padding: 3px 0;
 }
 
-mat-option {
+/* mat-option {
   height: 30px !important;
 }
 
 mat-form-field {
   width: 120px;
   font-size: 14px;
-}
+} */
