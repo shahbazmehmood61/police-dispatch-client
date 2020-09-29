@@ -17,7 +17,7 @@ export class IncidentReportService {
       body: form,
       id: ID,
       sosCallId: sosCall,
-      city: "NewYork"
+      city: "Guaynabo"
     };
     // console.log(data)
     return this.http.post(APIs.registerIncident, data);

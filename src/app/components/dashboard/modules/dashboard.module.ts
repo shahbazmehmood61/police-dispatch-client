@@ -26,6 +26,8 @@ import { SosService } from "src/app/core/services/sos.service";
 import { LocalizationModule } from "../../shared/localization/localization.module";
 import { OfficerReportViewComponent } from "../search/officer-registered-incident/officer-report-view/officer-report-view.component";
 import { MaterialModule } from "src/app/material.module";
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from 'src/app/core/guards/interceptor';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,12 @@ import { MaterialModule } from "src/app/material.module";
     IncidentReportCloseForm,
     RegisterVictimForm,
     SosService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    }
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class DashboardModule {}
+export class DashboardModule { }

@@ -15,7 +15,7 @@ import { Injectable } from '@angular/core';
 })
 
 export class IncidentReportCloseForm {
-  officerID;
+  officerID: any;
   // secondPage;
   // thirdPage;
   firstPageForm = {

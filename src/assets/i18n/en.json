@@ -2,7 +2,7 @@
   "login": {
     "title": "Login",
     "placeholders": {
-      "username": "Username",
+      "username": "Email",
       "password": "Password",
       "rememberme": "Remember Me",
       "forgotpassword": "Forgot your Password ?",

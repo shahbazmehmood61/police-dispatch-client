@@ -7,6 +7,8 @@ import { MaterialModule } from "src/app/material.module";
 import { LocalizationModule } from "src/app/components/shared/localization/localization.module";
 
 import { AgmCoreModule } from "@agm/core";
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from 'src/app/core/guards/interceptor';
 
 const routes: Routes = [{ path: "", component: VictimDetailComponent }];
 
@@ -22,5 +24,12 @@ const routes: Routes = [{ path: "", component: VictimDetailComponent }];
       apiKey: "AIzaSyAFyXq1Y2l7l8wsVUQyAAgFAgxkw2le_FA",
     }),
   ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    }
+  ]
 })
-export class VictimDetailModule {}
+export class VictimDetailModule { }

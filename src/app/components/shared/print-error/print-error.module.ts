@@ -9,4 +9,4 @@ import { MaterialModule } from "src/app/material.module";
   imports: [CommonModule, ReactiveFormsModule, FormsModule, MaterialModule],
   exports: [PrintErrorComponent],
 })
-export class PrintErrorModule {}
+export class PrintErrorModule { }

@@ -40,6 +40,11 @@ const authRouting: Routes = [
       },
     ],
   },
+  {
+    path: 'admin',
+    loadChildren: () => import('../admin/admin.module')
+      .then((m) => m.AdminModule)
+  }
 ];
 
 export const DashboardRoutingModule: ModuleWithProviders = RouterModule.forChild(

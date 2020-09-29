@@ -8,6 +8,8 @@ import { MaterialModule } from 'src/app/material.module';
 import { PrintErrorModule } from '../../shared/print-error/print-error.module';
 import { RegisterIncidentReportForm } from 'src/app/core/forms/dashboard/register-incident-report-form';
 import { LocalizationModule } from '../../shared/localization/localization.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from 'src/app/core/guards/interceptor';
 
 const routes: Routes = [
   {
@@ -52,6 +54,12 @@ const routes: Routes = [
     PrintErrorModule,
     LocalizationModule,
   ],
-  providers: [RegisterIncidentReportForm],
+  providers: [RegisterIncidentReportForm,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    }
+  ],
 })
 export class IncidentModule { }

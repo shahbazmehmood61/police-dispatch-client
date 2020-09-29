@@ -6,7 +6,8 @@ import { TranslatorService } from "src/app/core/services/translator.service";
 import { Route } from "@angular/compiler/src/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { MatTableDataSource } from '@angular/material/table';
-import { reportTypes } from '../../../../core/constants/report-types'
+import { reportTypes } from '../../../../core/constants/report-types';
+import * as _underscore from 'underscore';
 
 @Component({
   selector: "app-officer-registered-incident",
@@ -56,9 +57,10 @@ export class OfficerRegisteredIncidentComponent implements OnInit {
     const id = this.authService.userInfo.uid;
     this.incidentReport.getOfficerRegisteredReports(id).subscribe((data) => {
       if (data) {
-        data.reverse();
-        this.incidentReports = data;
-        this.filterReports = data;
+        // data.reverse();
+        // console.log(data);
+        // this.incidentReports = _underscore.sortBy(data, 'incidentDate')
+        this.filterReports = _underscore.sortBy(data, 'incidentDate').reverse()
         this.dataSource = new MatTableDataSource(this.incidentReports)
         this.statusFilter("open");
         this.incidentTypeFilter('none');

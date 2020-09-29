@@ -127,7 +127,7 @@
         {{ checkData(element.address) }}
       </td>
     </ng-container>
-
+    <!-- 
     <ng-container matColumnDef="locationMap">
       <th mat-header-cell *matHeaderCellDef>
         {{'location map' | translate}}
@@ -135,15 +135,15 @@
       <td mat-cell *matCellDef="let element">
         {{ checkData(element.locationMap) }}
       </td>
-    </ng-container>
+    </ng-container> -->
 
-    <ng-container matColumnDef="drivingLicense">
+    <!-- <ng-container matColumnDef="drivingLicense">
       <th mat-header-cell *matHeaderCellDef>Driver License Image</th>
       <td mat-cell *matCellDef="let element">
         <a target="_blank" [href]="element.drivingLicense" *ngIf="element.drivingLicense"><i class="fas fa-external-link-alt"></i></a>
         <span *ngIf="!element.drivingLicense"> -- </span>
       </td>
-    </ng-container>
+    </ng-container> -->
 
     <ng-container matColumnDef="driverLicenseNumber">
       <th mat-header-cell *matHeaderCellDef>

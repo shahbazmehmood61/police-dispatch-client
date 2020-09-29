@@ -5,6 +5,7 @@ import { AuthService } from "src/app/core/services/auth.service";
 import { Router } from "@angular/router";
 import { MatTableDataSource } from '@angular/material/table';
 import { reportTypes } from '../../../../core/constants/report-types';
+import * as _underscore from 'underscore';
 
 @Component({
   selector: "app-incident-report",
@@ -50,9 +51,9 @@ export class IncidentReportComponent implements OnInit {
       this.incidentReportService
         .getIncidentDetails(this.searchService.victimID)
         .then((report: any) => {
-          report.reverse()
+          // report.reverse()
           this.reports = report;
-          this.filterReports = report;
+          this.filterReports = _underscore.sortBy(report, 'incidentDate').reverse()
           this.dataSource = new MatTableDataSource(this.reports);
           this.statusFilter("open");
           this.incidentTypeFilter('none');

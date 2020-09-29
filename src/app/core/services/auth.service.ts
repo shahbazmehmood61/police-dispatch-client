@@ -56,4 +56,8 @@ export class AuthService {
       }
     });
   }
+
+  createOfficer(form: Object) {
+    return this.http.post(APIs.registerOfficer, form);
+  }
 }
