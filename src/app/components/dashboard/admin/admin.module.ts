@@ -4,7 +4,7 @@ import { AdminRouterModule } from './admin.routing.module';
 import { LayoutComponent } from './layout/layout.component';
 import { RegisterOfficerComponent } from './register-officer/register-officer.component';
 import { AdminNavigatorComponent } from './admin-navigator/admin-navigator.component';
-import { MaterialModule } from 'src/app/material.module';
+import { MaterialModule } from '../../../material.module';;
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
