@@ -3,6 +3,8 @@ import { CommonModule } from "@angular/common";
 import { Routes, RouterModule } from "@angular/router";
 import { ChatHistoryComponent } from "./chat-history.component";
 import { LocalizationModule } from "src/app/components/shared/localization/localization.module";
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from 'src/app/core/guards/interceptor';
 
 const routes: Routes = [{ path: "", component: ChatHistoryComponent }];
 
@@ -10,5 +12,12 @@ const routes: Routes = [{ path: "", component: ChatHistoryComponent }];
   declarations: [ChatHistoryComponent],
   imports: [CommonModule, RouterModule.forChild(routes), LocalizationModule],
   // exports: [ChatHistoryComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    }
+  ]
 })
-export class ChatHistoryModule {}
+export class ChatHistoryModule { }

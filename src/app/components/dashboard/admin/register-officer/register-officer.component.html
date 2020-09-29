@@ -1,0 +1,53 @@
+<form [formGroup]="registerOfficer" (ngSubmit)="submit()">
+  <div class="container pt-2">
+    <mat-chip-list class="mt-2" aria-label="header">
+      <mat-chip color="primary" selected>
+        <h3 class="m-0 text-white p-1">
+          Register Officer
+        </h3>
+      </mat-chip>
+    </mat-chip-list>
+    <div class="row mt-2">
+      <div class="col-lg-6">
+        <mat-form-field appearance="">
+          <mat-label>User Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field appearance="">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password">
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field>
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="role">
+            <mat-option value="admin">Admin</mat-option>
+            <mat-option value="officer">Officer</mat-option>
+            <!-- <mat-option value="mercedes">Senior</mat-option> -->
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <mat-form-field>
+          <mat-label>City</mat-label>
+          <mat-select formControlName="cityCode">
+            <mat-option value="newyork">New York</mat-option>
+            <mat-option value="guaynabo">Guaynabo</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-12">
+        <button mat-raised-button color="primary" type="submit">Register</button>
+      </div>
+    </div>
+  </div>
+</form>

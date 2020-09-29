@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SearchComponent } from './search.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PrintErrorModule } from '../../shared/print-error/print-error.module';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PopupModalModule } from '../../shared/popup-modal/popup-modal.module';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MaterialModule } from 'src/app/material.module';
@@ -11,6 +11,7 @@ import { RegisterVictimComponent } from './register-victim/register-victim.compo
 import { SearchVictimComponent } from './search-victim/search-victim.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LocalizationModule } from '../../shared/localization/localization.module';
+import { Interceptor } from 'src/app/core/guards/interceptor';
 // import { FormaterPipe } from 'src/app/core/pipes/formater.pipe';
 
 const routes: Routes = [
@@ -71,5 +72,12 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     LocalizationModule,
   ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    }
+  ]
 })
 export class SearchModule { }

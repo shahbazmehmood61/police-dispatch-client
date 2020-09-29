@@ -2,13 +2,13 @@
   "login": {
     "title": "Login",
     "placeholders": {
-      "username": "Nombre de Usuario",
+      "username": "Email",
       "password": "Contraseña",
       "rememberme": "Recuérdame",
       "forgotpassword": "Olvidó contraseña?",
       "Email Address": "Dirección de correo electrónico"
     },
-    "Sign In": "Registrarse",
+    "Sign In": "Iniciar Sesion",
     "validation": {
       "username": {
         "required": "*Nombre de Usuario es requerido"
@@ -223,7 +223,7 @@
     "kids": "Niños",
     "pets": "Mascotas",
     "ANNIVERSARY": "ANIVERSARIO",
-    "STATUS": "ESTADO",
+    "STATUS": "Estado",
     "subsciption status": "Estado de suscripción",
     "vip status": "Estado vip",
     "membership": "Afiliación",
@@ -635,7 +635,7 @@
     }
   },
   "button": {
-    "Close": "Cerrado",
+    "Close": "Cerrar",
     "Assign": "Asignar",
     "Open": "Abierto",
     "Close Report": "Cerrar Informe",
@@ -670,10 +670,10 @@
   "Driver licence image": "Imagen de la licencia de conducir",
   "Actions": "Acción",
   "Close Chat": "Cerrar chat",
-  "Init Date": "Fecha de Inicialización",
+  "Init Date": "Fecha",
   "Create new group": "Crear nuevo grupo",
   "Add Members": "Añadir Miembros",
   "Group Name": "Nombre del grupo",
-  "Search with email": "Buscar con correo electrónico",
-  "Create Group": "Crea un Grupo"
+  "Search with email": "Buscar con email",
+  "Create Group": "Crear Grupo"
 }

@@ -120,7 +120,7 @@
         <print-error [control]="RegisterVictimForm.get('address')"></print-error>
       </div>
       <div class="inputs mt-1">
-        <mat-form-field>
+        <mat-form-field *ngIf="node == 'mobilevictim'">
           <input matInput formControlName="locationMap" type="text" placeholder="{{'location map' | translate}}" />
         </mat-form-field>
         <print-error [control]="RegisterVictimForm.get('locationMap')"></print-error>

@@ -11,7 +11,7 @@ import { IncidentCloseModelComponent } from '../../dashboard/shared/incident-rep
 // =============== import ngx-translate and the http loader
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // import ngx-translate-messageformat-compiler
 import { TranslatorService } from 'src/app/core/services/translator.service';
@@ -19,6 +19,7 @@ import { FormaterPipe } from 'src/app/core/pipes/formater.pipe';
 import { MaterialModule } from 'src/app/material.module';
 import { IncidentAssignModelComponent } from '../../dashboard/shared/incident-report/incident-assign-model/incident-assign-model.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { Interceptor } from 'src/app/core/guards/interceptor';
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -41,7 +42,14 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  providers: [TranslatorService],
+  providers: [
+    TranslatorService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    }
+  ],
   exports: [
     TranslateModule,
     FormaterPipe,

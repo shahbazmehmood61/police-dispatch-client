@@ -17,13 +17,15 @@ export class HeaderComponent implements OnInit {
     public authService: AuthService,
     public translator: TranslatorService,
     public darkmode: DarkmodeService
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (this.authService.isLoggedIn()) {
       this.authService.userInfo = JSON.parse(
         this.authService.isLoggedIn()
       ).user;
+
+      console.log(this.authService.userInfo, "con")
     }
   }
 

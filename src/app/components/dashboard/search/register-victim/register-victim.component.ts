@@ -19,6 +19,7 @@ export class RegisterVictimComponent implements OnInit {
   RegisterVictimForm: FormGroup;
   editVictim;
   edit = false;
+  node;
   constructor(
     private registerUserForm: RegisterVictimForm,
     public searchService: SearchService,
@@ -36,6 +37,8 @@ export class RegisterVictimComponent implements OnInit {
     if (this.searchService.editVictimDetail) {
       this.searchService.editVictimDetail.subscribe((res) => {
         if (res) {
+          console.log(res);
+          this.node = res['node'];
           this.editVictim = res;
           this.edit = res['id'] ? true : false;
           this.RegisterVictimForm.patchValue(res);

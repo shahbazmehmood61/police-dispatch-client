@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MaterialModule } from "src/app/material.module";
 import { ShortenModule } from "src/app/core/pipes/shorten/shorten.module";
 import { LocalizationModule } from "src/app/components/shared/localization/localization.module";
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from 'src/app/core/guards/interceptor';
 
 const routes: Routes = [{ path: "", component: ChatComponent }];
 
@@ -20,5 +22,12 @@ const routes: Routes = [{ path: "", component: ChatComponent }];
     MaterialModule,
     ShortenModule,
   ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: Interceptor,
+      multi: true
+    }
+  ]
 })
-export class ChatModule {}
+export class ChatModule { }

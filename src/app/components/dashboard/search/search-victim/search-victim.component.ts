@@ -26,8 +26,8 @@ export class SearchVictimComponent implements OnInit {
     'eyeColor',
     'weight',
     'address',
-    'locationMap',
-    'drivingLicense',
+    // 'locationMap',
+    // 'drivingLicense',
     'driverLicenseNumber',
     'email',
   ];
