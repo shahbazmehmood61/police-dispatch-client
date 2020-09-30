@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { PopupModalModule } from "../../shared/popup-modal/popup-modal.module";
+// import { GoogleMapsModule } from '@angular/google-maps';
 
 // ======================== Services, Guards And Forms
 import { AlertService } from "src/app/core/services/alert.service";
@@ -41,6 +42,7 @@ import { Interceptor } from 'src/app/core/guards/interceptor';
     DashboardRoutingModule,
     LocalizationModule,
     MaterialModule,
+    // GoogleMapsModule
   ],
   providers: [
     AlertService,

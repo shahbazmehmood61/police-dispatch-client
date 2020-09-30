@@ -33,7 +33,7 @@ export class SosSidebarComponent implements OnInit {
   users: Array<IVictims[]> = [];
 
   constructor(
-    private sosService: SosService,
+    public sosService: SosService,
     private router: Router,
     public searchService: SearchService,
     private cookieService: CookieService,

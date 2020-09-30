@@ -7,23 +7,23 @@ import { Component, OnInit } from "@angular/core";
 })
 export class LocationComponent implements OnInit {
   center = { lat: 24, lng: 12 };
-  markerPositions: google.maps.LatLngLiteral[] = [];
+  // markerPositions: google.maps.LatLngLiteral[] = [];
   zoom = 4;
-  display?: google.maps.LatLngLiteral;
+  // display?: google.maps.LatLngLiteral;
 
   constructor() {}
 
   ngOnInit() {}
 
-  addMarker(event: google.maps.MouseEvent) {
-    this.markerPositions.push(event.latLng.toJSON());
-  }
+  // addMarker(event: google.maps.MouseEvent) {
+  //   this.markerPositions.push(event.latLng.toJSON());
+  // }
 
-  move(event: google.maps.MouseEvent) {
-    this.display = event.latLng.toJSON();
-  }
+  // move(event: google.maps.MouseEvent) {
+  //   this.display = event.latLng.toJSON();
+  // }
 
-  removeLastMarker() {
-    this.markerPositions.pop();
-  }
+  // removeLastMarker() {
+  //   this.markerPositions.pop();
+  // }
 }

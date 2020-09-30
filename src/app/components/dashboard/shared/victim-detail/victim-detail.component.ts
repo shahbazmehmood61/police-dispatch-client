@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from 'src/app/core/services/search.service';
 import { TranslatorService } from 'src/app/core/services/translator.service';
-import { MapInfoWindow } from '@angular/google-maps';
+// import { MapInfoWindow } from '@angular/google-maps';
 import { Router } from '@angular/router';
 import { RegisterVictimForm } from 'src/app/core/forms/dashboard/register-victim-form';
 
@@ -11,7 +11,7 @@ import { RegisterVictimForm } from 'src/app/core/forms/dashboard/register-victim
   styleUrls: ['./victim-detail.component.css'],
 })
 export class VictimDetailComponent implements OnInit {
-  @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow;
+  // @ViewChild(MapInfoWindow, { static: false }) infoWindow: MapInfoWindow;
   // center;
   // markerPositions = [];
   victimDetail;
@@ -135,7 +135,7 @@ export class VictimDetailComponent implements OnInit {
     }
   }
 
-  mapClick(event: google.maps.MouseEvent) {
-    // console.log(event);
-  }
+  // mapClick(event: google.maps.MouseEvent) {
+  //   // console.log(event);
+  // }
 }

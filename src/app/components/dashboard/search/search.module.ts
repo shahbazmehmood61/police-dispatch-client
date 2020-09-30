@@ -5,7 +5,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PrintErrorModule } from '../../shared/print-error/print-error.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PopupModalModule } from '../../shared/popup-modal/popup-modal.module';
-import { GoogleMapsModule } from '@angular/google-maps';
 import { MaterialModule } from 'src/app/material.module';
 import { RegisterVictimComponent } from './register-victim/register-victim.component';
 import { SearchVictimComponent } from './search-victim/search-victim.component';
@@ -64,7 +63,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     MaterialModule,
-    GoogleMapsModule,
     PopupModalModule,
     HttpClientModule,
     PrintErrorModule,

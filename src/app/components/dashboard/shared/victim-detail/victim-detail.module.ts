@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Routes, RouterModule } from "@angular/router";
 import { VictimDetailComponent } from "./victim-detail.component";
-import { GoogleMapsModule } from "@angular/google-maps";
+// import { GoogleMapsModule } from "@angular/google-maps";
 import { MaterialModule } from "src/app/material.module";
 import { LocalizationModule } from "src/app/components/shared/localization/localization.module";
 
@@ -16,7 +16,7 @@ const routes: Routes = [{ path: "", component: VictimDetailComponent }];
   declarations: [VictimDetailComponent],
   imports: [
     CommonModule,
-    GoogleMapsModule,
+    // GoogleMapsModule,
     LocalizationModule,
     MaterialModule,
     RouterModule.forChild(routes),

@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IncidentReportService } from "src/app/core/services/incident-report.service";
 import { SearchService } from "src/app/core/services/search.service";
 import { AuthService } from "src/app/core/services/auth.service";

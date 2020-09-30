@@ -4,7 +4,6 @@ import { DashboardComponent } from "../dashboard.component";
 import { LocationComponent } from "../location/location.component";
 import { SettingComponent } from "../setting/setting.component";
 import { IncidentDetailViewComponent } from "../shared/incident-report/incident-detail-view/incident-detail-view.component";
-import { MaterialModule } from "src/app/material.module";
 import { OfficerReportViewComponent } from "../search/officer-registered-incident/officer-report-view/officer-report-view.component";
 
 const authRouting: Routes = [

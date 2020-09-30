@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/core/services/auth.service";
 import { IncidentReportService } from "src/app/core/services/incident-report.service";
 import { SearchService } from "src/app/core/services/search.service";
 import { TranslatorService } from "src/app/core/services/translator.service";
-import { Route } from "@angular/compiler/src/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { MatTableDataSource } from '@angular/material/table';
 import { reportTypes } from '../../../../core/constants/report-types';
