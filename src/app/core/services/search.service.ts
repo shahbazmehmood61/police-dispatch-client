@@ -64,6 +64,7 @@ export class SearchService {
   }
 
   getSosCallSingleVictim(id: string, node: string, call) {
+    this.removeSOSCall(call)
     this.viewVictimDetail = undefined;
     this.victimID = id;
     this.sosCallId = call.key;
@@ -88,5 +89,11 @@ export class SearchService {
         this.alertService.successAlert(resp.msg, '');
         this.incidentReportService.getIncidentDetails(this.victimID);
       });
+  }
+
+  removeSOSCall(call: any) {
+    const { cityCode, key } = call;
+    this.http.get(APIs.removeSosCall + cityCode + '/' + key)
+      .subscribe(() => { });
   }
 }
