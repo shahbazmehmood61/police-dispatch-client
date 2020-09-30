@@ -1,10 +1,8 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SearchService } from 'src/app/core/services/search.service';
 import { TranslatorService } from 'src/app/core/services/translator.service';
-import { TranslateService } from '@ngx-translate/core';
-import { MapInfoWindow, MapMarker } from '@angular/google-maps';
+import { MapInfoWindow } from '@angular/google-maps';
 import { Router } from '@angular/router';
-import { RegisterIncidentReportForm } from 'src/app/core/forms/dashboard/register-incident-report-form';
 import { RegisterVictimForm } from 'src/app/core/forms/dashboard/register-victim-form';
 
 @Component({

@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { TranslateService } from "@ngx-translate/core";
 import { TranslatorService } from "src/app/core/services/translator.service";
 
 @Component({

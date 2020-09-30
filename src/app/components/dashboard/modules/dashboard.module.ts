@@ -1,12 +1,8 @@
 // ======================== Modules
 import { CommonModule } from "@angular/common";
-import { GoogleMapsModule } from "@angular/google-maps";
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { DashboardRoutingModule } from "./dashboard-routing.module";
-import { PrintErrorModule } from "../../shared/print-error/print-error.module";
 import { PopupModalModule } from "../../shared/popup-modal/popup-modal.module";
-import { ShortenModule } from "src/app/core/pipes/shorten/shorten.module";
 
 // ======================== Services, Guards And Forms
 import { AlertService } from "src/app/core/services/alert.service";

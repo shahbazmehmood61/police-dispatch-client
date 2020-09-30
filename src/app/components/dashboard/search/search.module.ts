@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SearchComponent } from './search.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PrintErrorModule } from '../../shared/print-error/print-error.module';
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PopupModalModule } from '../../shared/popup-modal/popup-modal.module';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MaterialModule } from 'src/app/material.module';
