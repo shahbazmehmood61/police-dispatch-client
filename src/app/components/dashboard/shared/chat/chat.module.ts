@@ -8,6 +8,7 @@ import { ShortenModule } from "src/app/core/pipes/shorten/shorten.module";
 import { LocalizationModule } from "src/app/components/shared/localization/localization.module";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from 'src/app/core/guards/interceptor';
+import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
 
 const routes: Routes = [{ path: "", component: ChatComponent }];
 
@@ -26,6 +27,11 @@ const routes: Routes = [{ path: "", component: ChatComponent }];
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
       multi: true
     }
   ]

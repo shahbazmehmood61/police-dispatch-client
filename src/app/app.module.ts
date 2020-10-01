@@ -41,6 +41,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
+import { LoaderInterceptor } from './core/guards/loader.interceptor';
 export function translateHttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -95,6 +96,11 @@ firebase.initializeApp(firebaseConfig);
       useClass: Interceptor,
       multi: true,
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
 })

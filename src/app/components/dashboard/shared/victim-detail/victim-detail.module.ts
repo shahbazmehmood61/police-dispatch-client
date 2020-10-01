@@ -9,6 +9,7 @@ import { LocalizationModule } from "src/app/components/shared/localization/local
 import { AgmCoreModule } from "@agm/core";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from 'src/app/core/guards/interceptor';
+import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
 
 const routes: Routes = [{ path: "", component: VictimDetailComponent }];
 
@@ -21,13 +22,20 @@ const routes: Routes = [{ path: "", component: VictimDetailComponent }];
     MaterialModule,
     RouterModule.forChild(routes),
     AgmCoreModule.forRoot({
-      apiKey: "AIzaSyAFyXq1Y2l7l8wsVUQyAAgFAgxkw2le_FA",
+      apiKey: "AIzaSyBMUlm_C5ZGtcOr5FPqA8WszQebnJGolOA",
+      // AIzaSyBMUlm_C5ZGtcOr5FPqA8WszQebnJGolOA next
+      // AIzaSyAFyXq1Y2l7l8wsVUQyAAgFAgxkw2le_FA previous
     }),
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
       multi: true
     }
   ]

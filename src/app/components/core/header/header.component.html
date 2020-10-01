@@ -32,7 +32,7 @@
           <mat-label>{{ "header-tab.Language" | translate }}</mat-label>
           <mat-select (selectionChange)="translator.useLanguage(language)" [(ngModel)]="language">
             <mat-option [value]="'en'">English</mat-option>
-            <mat-option [value]="'es'" selected>Spanish</mat-option>
+            <mat-option [value]="'es'" selected>{{"Spanish" | translate}}</mat-option>
           </mat-select>
         </mat-form-field>
 
@@ -52,8 +52,8 @@
           <i class="fas fa-user-circle"></i>
           <!-- {{authService.userInfo | json}} -->
           {{
-            authService.userInfo.displayName
-              ? authService.userInfo.displayName
+            userName
+              ? userName
               : authService.userInfo.email
           }}
         </a>

@@ -10,6 +10,7 @@ import { RegisterIncidentReportForm } from 'src/app/core/forms/dashboard/registe
 import { LocalizationModule } from '../../shared/localization/localization.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from 'src/app/core/guards/interceptor';
+import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
 
 const routes: Routes = [
   {
@@ -58,6 +59,11 @@ const routes: Routes = [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
       multi: true
     }
   ],

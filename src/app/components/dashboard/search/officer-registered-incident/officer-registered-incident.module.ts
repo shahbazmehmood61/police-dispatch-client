@@ -7,6 +7,7 @@ import { LocalizationModule } from "src/app/components/shared/localization/local
 import { NgxPrintModule } from "ngx-print";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from 'src/app/core/guards/interceptor';
+import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
 
 const routes: Routes = [
   { path: "", component: OfficerRegisteredIncidentComponent },
@@ -25,6 +26,11 @@ const routes: Routes = [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
       multi: true
     }
   ]

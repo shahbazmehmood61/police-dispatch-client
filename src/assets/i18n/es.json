@@ -675,5 +675,13 @@
   "Add Members": "Añadir Miembros",
   "Group Name": "Nombre del grupo",
   "Search with email": "Buscar con email",
-  "Create Group": "Crear Grupo"
+  "Create Group": "Crear Grupo",
+  "Spanish": "Espanol",
+  "Female": "Femenino",
+  "Male": "Masculino",
+  "License": "Licencia",
+  "All": "Todos",
+  "FilterClose": "Cerrado",
+  "Hit And Run": "Pega y corre",
+  "Required": "Este campo es requerido"
 }

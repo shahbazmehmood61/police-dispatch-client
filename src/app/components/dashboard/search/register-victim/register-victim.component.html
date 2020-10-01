@@ -104,8 +104,8 @@
             <mat-form-field>
               <mat-label>{{ "register-victim.Gender" | translate }}</mat-label>
               <mat-select formControlName="gender">
-                <mat-option value="male">Male</mat-option>
-                <mat-option value="female">Female</mat-option>
+                <mat-option value="male">{{"Male" | translate}}</mat-option>
+                <mat-option value="female">{{"Female" | translate}}</mat-option>
               </mat-select>
             </mat-form-field>
             <print-error [control]="RegisterVictimForm.get('gender')"></print-error>
@@ -160,12 +160,12 @@
           </div>
         </div>
       </div>
-      <div class="inputs mt-1">
+      <!-- <div class="inputs mt-1">
         <mat-form-field>
           <input matInput formControlName="drivingLicense" type="text" placeholder="Driver License Image" />
         </mat-form-field>
         <print-error [control]="RegisterVictimForm.get('drivingLicense')"></print-error>
-      </div>
+      </div> -->
       <div class="inputs mt-1">
         <mat-form-field>
           <input matInput formControlName="driverLicenseNumber" type="text" placeholder="{{

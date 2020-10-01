@@ -11,7 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class AuthService {
-
+  userName
   userInfo;
   constructor(
     private alertMessages: AlertService,
@@ -44,11 +44,12 @@ export class AuthService {
   }
 
   logout(check?: string) {
-    this.http.get(APIs.logout).subscribe(() => {
+    this.http.get(APIs.logout).subscribe((res) => {
+      console.log(res)
       localStorage.clear();
       this.cookieService.deleteAll();
       console.log('logout');
-      this.router.navigate(['signin']);
+      this.router.navigate(['/signin']);
       if (check === 'expire') {
         this.alertMessages.warningAlert(this.alertMessages.logout.Title, this.alertMessages.logout.expireMsg);
       } else {
@@ -59,5 +60,10 @@ export class AuthService {
 
   createOfficer(form: Object) {
     return this.http.post(APIs.registerOfficer, form);
+  }
+
+  getRole() {
+    const role = JSON.parse(this.cookieService.get('userMeta')).userInfo.role
+    return role;
   }
 }

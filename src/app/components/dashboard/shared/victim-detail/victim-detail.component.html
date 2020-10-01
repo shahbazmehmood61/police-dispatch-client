@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-3 text-center">
       <!-- <img class="profile-img" src="../../../../assets/images/user.png" alt="" width="150px" /> -->
-      <h4>License # {{ (searchService.victimDetails.driverLicenseNumber) }}</h4>
+      <h4>{{"License" | translate}} # {{ (searchService.victimDetails.driverLicenseNumber) }}</h4>
       <img [src]="searchService.victimDetails.drivingLicense" alt="" width="200px" />
     </div>
     <div class="col-md-4">
@@ -22,7 +22,7 @@
       <h5>{{ checkFields(searchService.victimDetails.address) }}</h5>
       <br />
       <br />
-      <p class="section-title">{{ "victim-detail.PERSONAL" | translate }}</p>
+      <!-- <p class="section-title">{{ "victim-detail.PERSONAL" | translate }}</p> -->
       <table class="w-100">
         <tr>
           <td class="cell-title">{{ "victim-detail.Title" | translate }}</td>
@@ -125,15 +125,15 @@
         </agm-map>
       </div>
 
-      <p class="section-title">
+      <!-- <p class="section-title">
         {{ "victim-detail.STATUS" | translate }}<span>(1)</span>
-      </p>
+      </p> -->
       <table class="w-100">
         <tr>
           <td class="cell-title">{{ "register-victim.Email" | translate }}</td>
           <td>
             {{ checkFields(searchService.victimDetails.email) }}
-            <i class="fas fa-pen"></i>
+            <!-- <i class="fas fa-pen"></i> -->
           </td>
         </tr>
         <tr>

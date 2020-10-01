@@ -3,18 +3,21 @@ import {
   FormBuilder,
   Validators,
 } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from '../../services/auth.service';
 import { SearchService } from '../../services/search.service';
 
 export class RegisterIncidentReportForm {
   officerID;
-
+  userName: string
   constructor(
     private fb: FormBuilder,
     public authService: AuthService,
-    public searchService: SearchService
+    public searchService: SearchService,
+    public cookieService: CookieService
   ) {
     this.officerID = this.authService.userInfo.uid;
+    this.userName = JSON.parse(this.cookieService.get('userMeta')).userInfo.name
   }
 
   registerIncidentReportForm: FormGroup;
@@ -37,7 +40,7 @@ export class RegisterIncidentReportForm {
       incidentTime: null,
       locationOfIncident: null,
       levelsOfAggressiveness: null,
-      officerReceivingCall: null,
+      officerReceivingCall: [{ value: this.userName, disabled: true }],
       patrolDispatchTime: null,
       dispatchedPatrol: null,
 

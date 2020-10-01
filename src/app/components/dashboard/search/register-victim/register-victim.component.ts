@@ -28,7 +28,9 @@ export class RegisterVictimComponent implements OnInit {
     private formater: FormaterPipe,
     private cookieService: CookieService,
     private router: Router
-  ) { }
+  ) {
+
+  }
 
   ngOnInit() {
     delete this.fakeFeets[0];

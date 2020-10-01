@@ -27,7 +27,7 @@ export class Interceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.loaderService.show();
     let token = null;
-    if (this.cookieService.get('accessToken')) {
+    if (this.cookieService.check('accessToken')) {
       token = JSON.parse(this.cookieService.get('accessToken'));
     }
 

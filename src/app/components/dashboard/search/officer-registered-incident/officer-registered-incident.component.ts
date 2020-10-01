@@ -58,10 +58,10 @@ export class OfficerRegisteredIncidentComponent implements OnInit {
       if (data) {
         // data.reverse();
         // console.log(data);
-        // this.incidentReports = _underscore.sortBy(data, 'incidentDate')
+        this.incidentReports = _underscore.sortBy(data, 'incidentDate').reverse()
         this.filterReports = _underscore.sortBy(data, 'incidentDate').reverse()
         this.dataSource = new MatTableDataSource(this.incidentReports)
-        this.statusFilter("open");
+        this.statusFilter("all");
         this.incidentTypeFilter('none');
       }
     });
@@ -69,31 +69,46 @@ export class OfficerRegisteredIncidentComponent implements OnInit {
 
   statusFilter(value: any) {
     this.status = value;
-    if (this.selectReportType !== 'none' && this.selectReportType !== undefined) {
+    if (this.selectReportType !== 'none' && this.selectReportType !== undefined && this.status !== 'all') {
       this.incidentReports = this.filterReports.filter(
         (data: any) => data.status === value && data.typeOfReport === this.selectReportType
       );
       this.dataSource = new MatTableDataSource(this.incidentReports)
-    } else {
+    } else if (this.status !== 'all' && this.selectReportType === "none") {
       this.incidentReports = this.filterReports.filter(
         (data: any) => data.status === value
       );
       this.dataSource = new MatTableDataSource(this.incidentReports)
+    } else if (this.status == 'all' && this.selectReportType !== "none") {
+      this.incidentReports = this.filterReports.filter(
+        (data: any) => data.typeOfReport === this.selectReportType
+      );
+      this.dataSource = new MatTableDataSource(this.incidentReports)
+      // this.dataSource = new MatTableDataSource(this.filterReports)
+    } else {
+      this.dataSource = new MatTableDataSource(this.filterReports)
     }
   }
 
   incidentTypeFilter(value) {
     this.selectReportType = value;
-    if (this.selectReportType !== "none" && this.selectReportType != undefined) {
+    if (this.selectReportType !== "none" && this.selectReportType != undefined && this.status !== 'all') {
       this.incidentReports = this.filterReports.filter(
         (data: any) => data.typeOfReport === this.selectReportType && data.status === this.status
       );
       this.dataSource = new MatTableDataSource(this.incidentReports)
-    } else {
+    } else if (this.status === 'all' && this.selectReportType !== "none") {
+      this.incidentReports = this.filterReports.filter(
+        (data: any) => data.typeOfReport === this.selectReportType
+      );
+      this.dataSource = new MatTableDataSource(this.incidentReports);
+    } else if (this.status !== 'all' && this.selectReportType == "none") {
       this.incidentReports = this.filterReports.filter(
         (data: any) => data.status === this.status
       );
       this.dataSource = new MatTableDataSource(this.incidentReports);
+    } else {
+      this.dataSource = new MatTableDataSource(this.filterReports);
     }
   }
 

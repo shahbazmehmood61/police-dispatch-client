@@ -8,6 +8,7 @@ import { LocalizationModule } from 'src/app/components/shared/localization/local
 import { ReactiveFormsModule } from '@angular/forms';
 import { Interceptor } from 'src/app/core/guards/interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
 
 const routes: Routes = [{ path: '', component: IncidentReportComponent }];
 
@@ -27,6 +28,11 @@ const routes: Routes = [{ path: '', component: IncidentReportComponent }];
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
       multi: true
     }
   ]

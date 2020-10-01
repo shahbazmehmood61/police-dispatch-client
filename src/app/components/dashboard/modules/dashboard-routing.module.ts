@@ -5,11 +5,13 @@ import { LocationComponent } from "../location/location.component";
 import { SettingComponent } from "../setting/setting.component";
 import { IncidentDetailViewComponent } from "../shared/incident-report/incident-detail-view/incident-detail-view.component";
 import { OfficerReportViewComponent } from "../search/officer-registered-incident/officer-report-view/officer-report-view.component";
+import { CheckRoleGuard } from 'src/app/core/guards/check-role.guard';
 
 const authRouting: Routes = [
   { path: "", redirectTo: "/" + "search", pathMatch: "full" },
   {
     path: "",
+    canActivate: [],
     component: DashboardComponent,
     children: [
       {
@@ -38,11 +40,6 @@ const authRouting: Routes = [
         component: OfficerReportViewComponent,
       },
     ],
-  },
-  {
-    path: 'admin',
-    loadChildren: () => import('../admin/admin.module')
-      .then((m) => m.AdminModule)
   }
 ];
 

@@ -32,17 +32,28 @@ export class SigninComponent implements OnInit {
     if (this.SigninForm.valid) {
       this.authService.signin(this.SigninForm)
         .subscribe((data: any) => {
+          // console.log(data, "data");
           this.cookieService.set('userMeta', JSON.stringify(data), null, null, null, false, 'Strict');
           this.authService.userInfo = data.user;
           const token = data.user.stsTokenManager;
+          // this.authService.userName = data.userInfo.name
           this.cookieService.set('accessToken', JSON.stringify(token.accessToken), null, null, null, false, 'Strict');
 
           this.SigninForm.reset();
-          this.router.navigate(['search']);
+          this.navigation(data);
           this.alertMessages.successAlert(this.alertMessages.loginAuth.success200, '');
         });
     } else {
       this.alertMessages.warningAlert(this.alertMessages.formErrors.invalidFormTitle, this.alertMessages.formErrors.invalidFormMsg);
+    }
+  }
+
+  navigation(data: any) {
+    const { role } = data.userInfo
+    if (role === "admin") {
+      this.router.navigate(['admin']);
+    } else {
+      this.router.navigate(['search']);
     }
   }
 }

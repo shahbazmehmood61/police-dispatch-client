@@ -6,6 +6,8 @@ import { RegisterOfficerComponent } from './register-officer/register-officer.co
 import { AdminNavigatorComponent } from './admin-navigator/admin-navigator.component';
 import { MaterialModule } from '../../../material.module';;
 import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AdminRouterModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: []
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+    }
+  ]
 })
 export class AdminModule { }

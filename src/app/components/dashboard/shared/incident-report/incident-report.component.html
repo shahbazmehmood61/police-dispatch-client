@@ -3,7 +3,8 @@
     <div class="col-md-12 shadow pb-0 pt-3 mb-3" *ngIf="reports">
       <mat-form-field appearance="outline" class="w-auto top-field">
         <mat-label>{{"Report Status" | translate}}</mat-label>
-        <mat-select (selectionChange)="statusFilter(status.value)" #status [value]="'open'">
+        <mat-select (selectionChange)="statusFilter(status.value)" #status [value]="'all'">
+          <mat-option value="all">{{ "All" | translate  }}</mat-option>
           <mat-option value="open">{{ "button.Open" | translate }}</mat-option>
           <mat-option value="assign">{{ "button.Assign" | translate }}</mat-option>
           <mat-option value="close">{{ "button.Close" | translate }}</mat-option>
@@ -15,7 +16,7 @@
         <mat-select (selectionChange)="incidentTypeFilter(type.value)" #type [value]="'none'">
           <mat-option *ngFor="let type of reportType;let i=index" [value]="type.typeValue">{{ type.type | translate }}
           </mat-option>
-          <mat-option value="none">None</mat-option>
+          <mat-option value="none">{{"All" | translate }}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>

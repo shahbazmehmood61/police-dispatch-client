@@ -11,6 +11,7 @@ import { SearchVictimComponent } from './search-victim/search-victim.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LocalizationModule } from '../../shared/localization/localization.module';
 import { Interceptor } from 'src/app/core/guards/interceptor';
+import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
 // import { FormaterPipe } from 'src/app/core/pipes/formater.pipe';
 
 const routes: Routes = [
@@ -74,6 +75,11 @@ const routes: Routes = [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
       multi: true
     }
   ]

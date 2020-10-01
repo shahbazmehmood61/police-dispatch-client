@@ -5,6 +5,7 @@ import { AuthBeforeLoginGuard } from "./core/guards/auth-before-login.guard";
 import { AuthAfterLoginGuard } from "./core/guards/auth-after-login.guard";
 import { SigninComponent } from "./components/auth/signin/signin.component";
 import { PdfTableComponent } from "./components/dashboard/close-report-pdf/pdf-table.component";
+import { CheckRoleGuard } from './core/guards/check-role.guard';
 
 const routes: Routes = [
   {
@@ -22,6 +23,12 @@ const routes: Routes = [
         (m) => m.DashboardModule
       ),
     canActivate: [AuthAfterLoginGuard],
+  },
+  {
+    path: 'admin',
+    canActivate: [CheckRoleGuard],
+    loadChildren: () => import('./components/dashboard/admin/admin.module')
+      .then((m) => m.AdminModule)
   },
   { path: "close-report/:id", component: PdfTableComponent },
   { path: "**", component: Page404Component },

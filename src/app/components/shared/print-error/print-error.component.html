@@ -1,4 +1,4 @@
 <div class="text-danger" *ngIf="control && control.errors && (control.dirty || control.touched)">
-  <div class="error" *ngIf="control.errors.required">This field is required</div>
+  <div class="error" *ngIf="control.errors.required">{{"Required" | translate}}</div>
   <div class="error" *ngIf="control.errors.pattern">{{patternMsg}}</div>
 </div>
