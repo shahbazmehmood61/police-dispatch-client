@@ -31,8 +31,8 @@
         <mat-form-field appearance="outline">
           <mat-label>{{ "header-tab.Language" | translate }}</mat-label>
           <mat-select (selectionChange)="translator.useLanguage(language)" [(ngModel)]="language">
+            <mat-option [value]="'es'">Español</mat-option>
             <mat-option [value]="'en'">English</mat-option>
-            <mat-option [value]="'es'" selected>{{"Spanish" | translate}}</mat-option>
           </mat-select>
         </mat-form-field>
 

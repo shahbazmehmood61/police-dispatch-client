@@ -8,7 +8,7 @@
       "forgotpassword": "Olvidó contraseña?",
       "Email Address": "Dirección de correo electrónico"
     },
-    "Sign In": "Iniciar Sesion",
+    "Sign In": "Iniciar sesión",
     "validation": {
       "username": {
         "required": "*Nombre de Usuario es requerido"
@@ -29,7 +29,7 @@
       "firstName": "Nombre",
       "lastName": "Apellido",
       "username": "Nombre de Usuario",
-      "email": "Email ",
+      "email": "Correo electrónico",
       "password": "Contraseña",
       "confirm": "Confirmar Contraseña",
       "doctor": "Doctor",
@@ -55,15 +55,15 @@
         "alreadyexist": "Nombre de Usuario ya existe!"
       },
       "email": {
-        "required": "Email es requerido"
+        "required": "Correo electrónico es requerido"
       }
     }
   },
   "forgotpassword": {
     "title": "Olvidó contraseña?",
-    "message": "Entre su email para reiniciar su contraseña. Es posible que deba verificar su carpeta de correo spam o desbloquear noreply@monarchss.com.",
+    "message": "Entre su correo electrónico para reiniciar su contraseña. Es posible que deba verificar su carpeta de correo spam o desbloquear noreply@monarchss.com.",
     "placeholders": {
-      "email": "Email",
+      "email": "Correo electrónico",
       "Submit": "Someter"
     }
   },
@@ -674,9 +674,8 @@
   "Create new group": "Crear nuevo grupo",
   "Add Members": "Añadir Miembros",
   "Group Name": "Nombre del grupo",
-  "Search with email": "Buscar con email",
+  "Search with email": "Buscar con correo electrónico",
   "Create Group": "Crear Grupo",
-  "Spanish": "Espanol",
   "Female": "Femenino",
   "Male": "Masculino",
   "License": "Licencia",
