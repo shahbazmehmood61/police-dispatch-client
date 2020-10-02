@@ -89,7 +89,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     MatFormFieldModule,
   ],
 })
-export class MaterialModule {}
+export class MaterialModule { }
 
 /**  Copyright 2019 Google Inc. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that

@@ -20,6 +20,7 @@ import { MaterialModule } from 'src/app/material.module';
 import { IncidentAssignModelComponent } from '../../dashboard/shared/incident-report/incident-assign-model/incident-assign-model.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { Interceptor } from 'src/app/core/guards/interceptor';
+import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -43,10 +44,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
   ],
   providers: [
-    TranslatorService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: Interceptor,
+      useClass: LoaderInterceptor,
       multi: true
     }
   ],

@@ -10,11 +10,6 @@ import { Interceptor } from 'src/app/core/guards/interceptor';
   imports: [CommonModule, MaterialModule],
   exports: [PopupModalComponent],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: Interceptor,
-      multi: true
-    }
   ]
 })
 export class PopupModalModule { }

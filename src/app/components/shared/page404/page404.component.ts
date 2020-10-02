@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./page404.component.css"],
 })
 export class Page404Component implements OnInit {
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     window.scroll(0, 0);

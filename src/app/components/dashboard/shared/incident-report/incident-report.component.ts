@@ -122,7 +122,13 @@ export class IncidentReportComponent implements OnInit {
   }
 
   check(value) {
-    return value ? value : "N/A";
+    if (value && value.type) {
+      return value.type
+    } else if (value && !value.type) {
+      return value
+    } else {
+      return 'N/A'
+    }
   }
 
   // updateStatus(victimId, id, value) {

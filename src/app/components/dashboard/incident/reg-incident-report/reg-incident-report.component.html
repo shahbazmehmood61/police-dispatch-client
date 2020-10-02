@@ -48,7 +48,7 @@
           <mat-form-field>
             <mat-label>{{ "Types of incident" | translate }}</mat-label>
             <mat-select formControlName="typeOfReport" (selectionChange)="selectType($event)">
-              <mat-option *ngFor="let type of reportType;let i=index" [value]="type.typeValue">{{ type.type | translate}}
+              <mat-option *ngFor="let type of reportType;let i=index" [value]="type">{{ type.type | translate}}
               </mat-option>
             </mat-select>
           </mat-form-field>

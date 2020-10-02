@@ -682,5 +682,10 @@
   "All": "All",
   "FilterClose": "Close",
   "Hit And Run": "Hit And Run",
-  "Required": "This field is required"
+  "Required": "This field is required",
+  "Invalid email": "Invalid email",
+  "close": "close",
+  "assign": "assign",
+  "open": "open",
+  "N/A": "N/A"
 }

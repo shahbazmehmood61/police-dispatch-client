@@ -25,6 +25,7 @@ import { OfficerReportViewComponent } from "../search/officer-registered-inciden
 import { MaterialModule } from "src/app/material.module";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from 'src/app/core/guards/interceptor';
+import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -54,8 +55,13 @@ import { Interceptor } from 'src/app/core/guards/interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,
-      multi: true
-    }
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    },
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

@@ -2,7 +2,7 @@
   "login": {
     "title": "Login",
     "placeholders": {
-      "username": "Email",
+      "username": "Correo electrónico",
       "password": "Contraseña",
       "rememberme": "Recuérdame",
       "forgotpassword": "Olvidó contraseña?",
@@ -38,7 +38,7 @@
       "or": "O",
       "checkforAlready": "Ya tiene una cuenta?",
       "sign": "Signin",
-      "checkemail": " Email ya está registrado"
+      "checkemail": " Correo electrónico ya está registrado"
     },
     "validation": {
       "password": {
@@ -199,7 +199,7 @@
     "Gender": "Sexo",
     "Address": "Dirección",
     "Driver License Number": "Número de licencia de conducir",
-    "Email": "Email",
+    "Email": "Correo electrónico",
     "Register": "Registrar"
   },
   "search-victim": {
@@ -682,5 +682,10 @@
   "All": "Todos",
   "FilterClose": "Cerrado",
   "Hit And Run": "Pega y corre",
-  "Required": "Este campo es requerido"
+  "Required": "Este campo es requerido",
+  "Invalid email": "Inválido correo electrónico",
+  "close": "cerrar",
+  "assign": "asignar",
+  "open": "abierto",
+  "N/A": "N/A"
 }
