@@ -50,7 +50,6 @@ export class ChatService {
         return this.messaging.getToken();
       })
       .then((permissionToken) => {
-        console.log(permissionToken);
         this.updateFcmTokenNode(permissionToken);
       })
       .catch((error) => { });
@@ -63,7 +62,6 @@ export class ChatService {
 
   reciveMessages() {
     this.messaging.onMessage((payload) => {
-      console.log(payload);
 
       const data = payload.data;
       if (data.notification === 'groupchat') {
@@ -98,12 +96,10 @@ export class ChatService {
 
   getChatRoomIDs() {
     this.chatRoomIDs = [];
-    // console.log(this.userMeta.uid, 'data');
     return this.http
       .get<Array<ISingleChatRoomIDs>>(
         APIs.getChatRoomIDs + '/' + this.userMeta.uid
       ).subscribe((resp) => {
-        // console.log(resp, "receved")
         this.chatRoomIDs = resp.reverse();
       });
   }
@@ -118,8 +114,6 @@ export class ChatService {
         const chatRoom = [];
         // const resp = messages.chat;
         const messagesKeys = Object.keys(messages);
-        // console.log(resp, "sender");
-        // console.log(resp[messagesKeys[0]].senderID, "sender");
         this.chatRoomReceiverID = messages[messagesKeys[0]].senderID;
         for (const key of messagesKeys) {
           chatRoom.push({
@@ -169,13 +163,11 @@ export class ChatService {
   }
 
   getGroupsMessages(chat: any) {
-    // console.log(chat);
     this.selectChatGID = chat.GID;
     this.db.object('/groupMessage/' + this.selectChatGID).valueChanges()
       .subscribe(
         (resp: any) => {
           if (resp) {
-            // console.log(resp, 'data');
             const groupChatRoomMsgs = [];
             // const response = resp.messages;
             const keys = Object.keys(resp);

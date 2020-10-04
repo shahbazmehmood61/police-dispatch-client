@@ -33,7 +33,6 @@ export class IncidentCloseModelComponent implements OnInit {
     this.searchService.report.subscribe((report) => {
       this.report = report;
       this.setValues();
-      // console.log(this.closeReportForm)
     });
   }
 
@@ -42,7 +41,6 @@ export class IncidentCloseModelComponent implements OnInit {
     setTimeout(() => {
       stepper.next();
     }, 500)
-    // console.log(this.closeReportForm)
   }
 
   removeGroup(group, stepper: MatStepper) {
@@ -50,7 +48,6 @@ export class IncidentCloseModelComponent implements OnInit {
     setTimeout(() => {
       this.closeReportForm.removeControl(group);
     }, 500)
-    // console.log(this.closeReportForm)
   }
 
   check(value) {
@@ -62,11 +59,6 @@ export class IncidentCloseModelComponent implements OnInit {
   }
 
   transform(field) {
-    // console.log(
-    //   this.closeReportForm.controls['crime'].get('homeTelephone').value
-    // );
-    // console.log(field);
-    // console.log(field.value);
     // const name = field.ngControl.name;
     // const value = field.value;
     // if (value.length >= 10) {
@@ -76,7 +68,6 @@ export class IncidentCloseModelComponent implements OnInit {
   }
 
   updateStatus(form, id, key, Status) {
-    // console.log(form.getRawValue())
     // this.closeReportForm = this.incidentReportClose.initForm();
 
     const formValues = form.getRawValue();
@@ -96,7 +87,6 @@ export class IncidentCloseModelComponent implements OnInit {
     // this.closeReportForm.removeControl('secondPage');
     // this.closeReportForm.removeControl('thirdPage');
     // setTimeout(() => {
-    // console.log(this.closeReportForm.getRawValue())
     // this.closeReportForm.reset();
 
 

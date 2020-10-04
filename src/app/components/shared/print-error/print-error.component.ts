@@ -14,7 +14,6 @@ export class PrintErrorComponent implements OnInit {
   constructor(public translate: TranslatorService) { }
 
   ngOnInit() {
-    // console.log(this.control);
   }
 
 

@@ -57,7 +57,6 @@ export class OfficerRegisteredIncidentComponent implements OnInit {
     this.incidentReport.getOfficerRegisteredReports(id).subscribe((data) => {
       if (data) {
         // data.reverse();
-        // console.log(data);
         this.incidentReports = _underscore.sortBy(data, 'incidentDate').reverse()
         this.filterReports = _underscore.sortBy(data, 'incidentDate').reverse()
         this.dataSource = new MatTableDataSource(this.incidentReports)
@@ -133,21 +132,17 @@ export class OfficerRegisteredIncidentComponent implements OnInit {
 
   public closedReport(key: String): void {
     // this.incidentReport.getClosedReport(key).subscribe((rep) => {
-    //   console.log(rep);
     //   this.router.navigate(["pdf-table"], { relativeTo: this.route });
     // });
   }
 
   generatePDF(pdf, key) {
-    // console.log(pdf, key);
     // this.searchService.pdfReport.next(key);
     // this.incidentReport.getClosedReport(key).subscribe((rep) => {
     //   this.report = rep;
-    //   console.log(rep);
     // if (rep) {
     //   pdf.saveAs("shah.pdf");
     // }
-    // console.log(rep);
     // this.router.navigate(["/pdf-table"], { relativeTo: this.route });
     // });
     // pdf.saveAs("shah.pdf");

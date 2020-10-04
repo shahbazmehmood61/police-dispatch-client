@@ -19,7 +19,6 @@ export class IncidentReportService {
       sosCallId: sosCall,
       city: "Guaynabo"
     };
-    // console.log(data)
     return this.http.post(APIs.registerIncident, data);
   }
 

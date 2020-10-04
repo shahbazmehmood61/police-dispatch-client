@@ -63,7 +63,6 @@ export class ChatComponent implements OnInit, OnDestroy {
       senderID: this.chatService.userMeta.uid,
       reciverID: this.chatService.selectedSingleChat,
     };
-    console.log(body);
     this.chatService.sendMessages(body).subscribe((res: IChatRoom) => {
       this.chatService.chatRoom.push({ ...res, timeStamp: Date.now() });
     });
@@ -161,9 +160,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   }
 
   // getMessages(chatRoom: ISingleChatRoomIDs) {
-  // console.log('getting');
   // this.selectedSingleChat = chatRoom;
-  // console.log(chatRoom);
   // this.chatService.getMessages(chatRoom.chatID);
   // // const chatID = request.params.chatID;
 
@@ -181,7 +178,6 @@ export class ChatComponent implements OnInit, OnDestroy {
 
   closeChat(chatRoom: ISingleChatRoomIDs) {
     if (confirm("Are you sure to close?")) {
-      console.log(chatRoom);
       this.chatService
         .closeChat(chatRoom.chatID, chatRoom.reciverID, chatRoom.chatNodeID)
         .subscribe((data) => {

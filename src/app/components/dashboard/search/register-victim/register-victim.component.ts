@@ -39,7 +39,6 @@ export class RegisterVictimComponent implements OnInit {
     if (this.searchService.editVictimDetail) {
       this.searchService.editVictimDetail.subscribe((res) => {
         if (res) {
-          console.log(res);
           this.node = res['node'];
           this.editVictim = res;
           this.edit = res['id'] ? true : false;
@@ -63,9 +62,7 @@ export class RegisterVictimComponent implements OnInit {
     // };
     // geocoder.geocode({ location: latlng }, (results) => {
     //   if (results[0]) {
-    //     // console.log(results[0].formatted_address);
     //   } else {
-    //     // console.log("No results found");
     //   }
     // });
   }
@@ -88,7 +85,6 @@ export class RegisterVictimComponent implements OnInit {
         .registerUser(data)
         .subscribe((res) => {
           if (res) {
-            console.log(res);
             this.alertService.successAlert(
               this.alertService.registeredVictim.title,
               this.alertService.registeredVictim.msg
@@ -114,7 +110,6 @@ export class RegisterVictimComponent implements OnInit {
         id: this.editVictim.id,
         node: this.editVictim.node
       };
-      // console.log(data);
       this.searchService.registerUser(data).subscribe((res) => {
         if (res) {
           this.alertService.successAlert(this.alertService.registeredVictim.title,

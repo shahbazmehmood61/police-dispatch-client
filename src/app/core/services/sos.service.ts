@@ -27,7 +27,6 @@ export class SosService {
           for (let key of keys) {
             calls.push({ key, ...res[key] })
           }
-          console.log(calls)
           this.sosCalls.next(calls);
         }
       }
@@ -45,7 +44,6 @@ export class SosService {
           for (let key of keys) {
             chats.push({ key, ...res[key] })
           }
-          console.log(chats)
           this.sosChats.next(chats);
         }
       });

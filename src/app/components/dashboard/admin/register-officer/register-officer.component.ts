@@ -25,7 +25,6 @@ export class RegisterOfficerComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.registerOfficer.value);
     if (this.registerOfficer.valid) {
       const form = {
         ...this.registerOfficer.value,
@@ -48,7 +47,6 @@ export class RegisterOfficerComponent implements OnInit {
           const { latitude, longitude } = position.coords;
           this.lat = latitude;
           this.lng = longitude;
-          console.log(this.lat, this.lng)
         }
       })
     }

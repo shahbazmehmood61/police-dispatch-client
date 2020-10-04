@@ -65,7 +65,6 @@ export class IncidentReportComponent implements OnInit {
   }
 
   statusFilter(value: any) {
-    console.log(value);
     this.status = value;
     if (this.selectReportType != 'none' && this.selectReportType != undefined && this.status !== "all") {
       this.reports = this.filterReports.filter(
@@ -137,7 +136,6 @@ export class IncidentReportComponent implements OnInit {
   //     id: id,
   //     status: value,
   //   };
-  //   // console.log(data);
   //   this.incidentReportService.updateIncidentReport(data);
   // }
 

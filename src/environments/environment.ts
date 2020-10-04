@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // baseURL: 'https://us-central1-police-dispatch-2ede5.cloudfunctions.net/',
-  baseURL: "http://localhost:5000/police-dispatch-2ede5/us-central1/",
+  baseURL: 'https://us-central1-police-dispatch-2ede5.cloudfunctions.net/',
+  // baseURL: "http://localhost:5000/police-dispatch-2ede5/us-central1/",
   firebase: {
     apiKey: "AIzaSyBMUlm_C5ZGtcOr5FPqA8WszQebnJGolOA",
     authDomain: "police-dispatch-2ede5.firebaseapp.com",

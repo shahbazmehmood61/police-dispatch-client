@@ -32,7 +32,6 @@ export class SigninComponent implements OnInit {
     if (this.SigninForm.valid) {
       this.authService.signin(this.SigninForm)
         .subscribe((data: any) => {
-          // console.log(data, "data");
           this.cookieService.set('userMeta', JSON.stringify(data), null, null, null, false, 'Strict');
           this.authService.userInfo = data.user;
           const token = data.user.stsTokenManager;

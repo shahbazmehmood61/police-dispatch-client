@@ -47,8 +47,6 @@ export class RegIncidentReportComponent implements OnInit {
   }
 
   register() {
-    // console.log(this.incidentReportForm.getRawValue())
-    // console.log(this.searchService.victimID, this.searchService.sosCallId)
     this.incidentReportService
       .registerIncident(
         this.incidentReportForm.getRawValue(),
@@ -56,7 +54,6 @@ export class RegIncidentReportComponent implements OnInit {
         this.searchService.sosCallId
       ).subscribe((res) => {
         this.resetForm();
-        // console.log(res);
         // if (res != null) {
         // this.sosService.sosCall.next(res)
         // }
@@ -87,6 +84,5 @@ export class RegIncidentReportComponent implements OnInit {
   }
 
   selectType(event) {
-    // console.log(event.value)
   }
 }

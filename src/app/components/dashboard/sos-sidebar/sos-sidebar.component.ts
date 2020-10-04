@@ -93,8 +93,6 @@ export class SosSidebarComponent implements OnInit {
   // }
 
   chatClicked(chat) {
-    console.log(chat);
-    // console.log('callerID', chat.callerID,
     //   'receiverID', this.chatService.userMeta.uid,
     //   'callerName', chat.callerName)
     this.searchEmail = undefined;
