@@ -40,7 +40,8 @@ export class ChatService {
     public db: AngularFireDatabase,
     public fireAuth: AngularFireAuth
   ) {
-    this.userMeta = JSON.parse(this.cookieService.get('userMeta')).user;
+    // this.userMeta = JSON.parse(this.cookieService.get('userMeta')).user;
+    this.userMeta = JSON.parse(localStorage.getItem('userMeta')).user;
   }
 
   getPermissions() {

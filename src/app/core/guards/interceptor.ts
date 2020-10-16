@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { AlertService } from '../services/alert.service';
 import { LoaderService } from '../services/loader.service';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class Interceptor implements HttpInterceptor {
@@ -14,7 +15,8 @@ export class Interceptor implements HttpInterceptor {
   constructor(
     private alertService: AlertService,
     private cookieService: CookieService,
-    public loaderService: LoaderService
+    public loaderService: LoaderService,
+    public authService: AuthService
   ) { }
 
   addToken(req: HttpRequest<any>, token): HttpRequest<any> {
@@ -27,8 +29,11 @@ export class Interceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.loaderService.show();
     let token = null;
-    if (this.cookieService.check('accessToken')) {
-      token = JSON.parse(this.cookieService.get('accessToken'));
+    // if (this.cookieService.check('accessToken')) {
+    //   token = JSON.parse(this.cookieService.get('accessToken'));
+    // }
+    if (localStorage.getItem('accessToken')) {
+      token = JSON.parse(localStorage.getItem('accessToken'));
     }
 
     return next.handle(this.addToken(request, token)).pipe(
@@ -40,6 +45,8 @@ export class Interceptor implements HttpInterceptor {
               return this.handle400Error(error);
             case 500:
               return this.handle500Error(error);
+            case 401:
+              return this.handle401Error(error);
             default:
               return this.validationFailed(error);
           }
@@ -57,6 +64,12 @@ export class Interceptor implements HttpInterceptor {
 
   handle500Error(error) {
     this.alertService.errorAlert('Internal Server Error', 'Server under maintenance, sorry for inconvenience.');
+    return observableThrowError(error);
+  }
+
+  handle401Error(error) {
+    this.alertService.errorAlert('Internal Server Error', error.error.err);
+    this.authService.logout();
     return observableThrowError(error);
   }
 

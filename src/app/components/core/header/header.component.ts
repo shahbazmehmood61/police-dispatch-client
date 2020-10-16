@@ -20,13 +20,24 @@ export class HeaderComponent implements OnInit {
     public darkmode: DarkmodeService,
     public cookieService: CookieService
   ) {
-    if (this.cookieService.check('userMeta')) {
-      this.userName = JSON.parse(this.cookieService.get('userMeta')).userInfo.name
+    // console.log(this.cookieService.get('userMeta'));
+    // if (this.cookieService.check('userMeta')) {
+    //   if (JSON.parse(this.cookieService.get('userMeta')).userInfo) {
+    //     this.userName = JSON.parse(this.cookieService.get('userMeta')).userInfo.name
+    //   }
+    // }
+    if (localStorage.getItem('userMeta')) {
+      if (JSON.parse(localStorage.getItem('userMeta')).userInfo) {
+        this.userName = JSON.parse(localStorage.getItem('userMeta')).userInfo.name
+      }
     }
 
   }
 
   ngOnInit() {
+
+    this.cookieService.set('token', "");
+    this.cookieService.set('accessToken', "");
     if (this.authService.isLoggedIn()) {
       this.authService.userInfo = JSON.parse(
         this.authService.isLoggedIn()

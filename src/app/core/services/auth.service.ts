@@ -40,13 +40,15 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return this.cookieService.get('userMeta');
+    // return this.cookieService.get('userMeta');
+    return localStorage.getItem('userMeta');
   }
 
   logout(check?: string) {
     this.http.get(APIs.logout).subscribe((res) => {
       localStorage.clear();
-      this.cookieService.deleteAll();
+      // this.cookieService.deleteAll();
+      // this.cookieService.deleteAll();
       this.router.navigate(['/signin']);
       if (check === 'expire') {
         this.alertMessages.warningAlert(this.alertMessages.logout.Title, this.alertMessages.logout.expireMsg);

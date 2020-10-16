@@ -40,7 +40,8 @@ export class SosSidebarComponent implements OnInit {
     private chatService: ChatService,
     public translator: TranslatorService
   ) {
-    this.officerInfo = JSON.parse(this.cookieService.get('userMeta')).userInfo;
+    // this.officerInfo = JSON.parse(this.cookieService.get('userMeta')).userInfo;
+    this.officerInfo = JSON.parse(localStorage.getItem('userMeta')).userInfo;
 
   }
 
