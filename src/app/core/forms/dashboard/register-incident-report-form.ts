@@ -17,7 +17,8 @@ export class RegisterIncidentReportForm {
     public cookieService: CookieService
   ) {
     this.officerID = this.authService.userInfo.uid;
-    this.userName = JSON.parse(this.cookieService.get('userMeta')).userInfo.name
+    // this.userName = JSON.parse(this.cookieService.get('userMeta')).userInfo.name
+    this.userName = JSON.parse(localStorage.getItem('userMeta')).userInfo.name
   }
 
   registerIncidentReportForm: FormGroup;

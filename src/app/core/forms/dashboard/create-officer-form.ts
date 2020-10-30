@@ -15,7 +15,8 @@ export class CreateOfficerForm {
       email: [null, Validators.required],
       password: [null, Validators.required],
       cityCode: [null, Validators.required],
-      // city: [null, Validators.required],
+      phoneNumber: [null, Validators.required],
+      cityName: [null, Validators.required],
       role: [null, Validators.required],
       // lat: [null, Validators.required],
       // lng: [null, Validators.required]

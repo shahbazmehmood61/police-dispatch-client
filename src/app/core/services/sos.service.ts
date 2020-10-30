@@ -28,6 +28,8 @@ export class SosService {
             calls.push({ key, ...res[key] })
           }
           this.sosCalls.next(calls);
+        } else {
+          this.sosCalls.next([]);
         }
       }
     );

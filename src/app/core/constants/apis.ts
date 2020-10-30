@@ -48,4 +48,8 @@ export const APIs = {
   getSosChat: environment.baseURL + "dashboard/getSosChat/",
   removeSosChat: environment.baseURL + "dashboard/removeSosChat/",
   removeSosCall: environment.baseURL + "dashboard/removeSosCall/",
+
+  //=============== cities
+  // registerCity: environment.baseURL + 'dashboard/city'
+  city: environment.baseURL + 'dashboard/city'
 };

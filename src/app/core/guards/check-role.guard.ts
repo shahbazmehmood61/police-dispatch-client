@@ -11,7 +11,7 @@ export class CheckRoleGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.authService.getRole() === "admin") {
+    if (this.authService.getRole() === "chief") {
       return true
     }
 

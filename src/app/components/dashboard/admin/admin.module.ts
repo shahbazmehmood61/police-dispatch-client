@@ -8,12 +8,17 @@ import { MaterialModule } from '../../../material.module';;
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
+import { RegisterCitiesComponent } from './register-cities/register-cities.component';
+import { CitiesComponent } from './cities/cities.component';
+import { LocalizationModule } from '../../shared/localization/localization.module';
 
 @NgModule({
   declarations: [
     LayoutComponent,
     RegisterOfficerComponent,
-    AdminNavigatorComponent
+    AdminNavigatorComponent,
+    RegisterCitiesComponent,
+    CitiesComponent
   ],
   exports: [],
   imports: [
@@ -21,6 +26,7 @@ import { LoaderInterceptor } from 'src/app/core/guards/loader.interceptor';
     AdminRouterModule,
     MaterialModule,
     ReactiveFormsModule,
+    LocalizationModule
   ],
   providers: [
     {

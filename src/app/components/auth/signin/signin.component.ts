@@ -51,7 +51,8 @@ export class SigninComponent implements OnInit {
 
   navigation(data: any) {
     const { role } = data.userInfo
-    if (role === "admin") {
+    if (role === "chief") {
+      console.log('admin')
       this.router.navigate(['admin']);
     } else {
       this.router.navigate(['search']);

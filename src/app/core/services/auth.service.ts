@@ -63,7 +63,8 @@ export class AuthService {
   }
 
   getRole() {
-    const role = JSON.parse(this.cookieService.get('userMeta')).userInfo.role
+    // const role = JSON.parse(this.cookieService.get('userMeta')).userInfo.role
+    const role = JSON.parse(localStorage.getItem('userMeta')).userInfo.role
     return role;
   }
 }

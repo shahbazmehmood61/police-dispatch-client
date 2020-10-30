@@ -29,11 +29,14 @@ export class Interceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.loaderService.show();
     let token = null;
+    // let uid = null;
     // if (this.cookieService.check('accessToken')) {
     //   token = JSON.parse(this.cookieService.get('accessToken'));
     // }
     if (localStorage.getItem('accessToken')) {
       token = JSON.parse(localStorage.getItem('accessToken'));
+      // uid = JSON.parse(localStorage.getItem('userMeta')).user['uid'];
+      // console.log(uid)
     }
 
     return next.handle(this.addToken(request, token)).pipe(
