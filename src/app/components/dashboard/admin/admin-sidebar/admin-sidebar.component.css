@@ -1,4 +1,4 @@
-/* .nav-link {
+.nav-link {
   margin: 10px 0;
   width: 50px;
   font-size: 25px;
@@ -16,6 +16,22 @@
   background-color: #fff;
   color: #000;
 }
-.admin-navigator{
+
+.dashboard-main {
+  background-color: #fff;
+  min-height: 100vh;
+  border-radius: 10px;
+}
+
+.dashboard-container {
   width: 100%;
-} */
+  overflow-x: hidden;
+}
+
+.notification {
+  min-width: 200px;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  position: fixed;
+}

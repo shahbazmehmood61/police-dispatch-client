@@ -67,4 +67,8 @@ export class AuthService {
     const role = JSON.parse(localStorage.getItem('userMeta')).userInfo.role
     return role;
   }
+
+  getOfficers() {
+    return this.http.get(APIs.getOfficers)
+  }
 }

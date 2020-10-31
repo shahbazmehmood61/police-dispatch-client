@@ -5,6 +5,7 @@ import { City } from 'src/app/core/models/city.model';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { CityService } from 'src/app/core/services/city.service';
+import { TranslatorService } from 'src/app/core/services/translator.service';
 
 @Component({
   selector: 'app-register-officer',
@@ -20,7 +21,8 @@ export class RegisterOfficerComponent implements OnInit {
     public createRegisterForm: CreateOfficerForm,
     public authService: AuthService,
     public alert: AlertService,
-    public cityService: CityService
+    public cityService: CityService,
+    public translate: TranslatorService
   ) { }
 
   ngOnInit() {
@@ -40,6 +42,7 @@ export class RegisterOfficerComponent implements OnInit {
         lat: this.lat,
         lng: this.lng
       }
+      console.log(form)
       this.authService.createOfficer(form).subscribe((res) => {
         if (res) {
           this.registerOfficer.reset();
@@ -69,5 +72,7 @@ export class RegisterOfficerComponent implements OnInit {
     }
   }
 
-
+  reset() {
+    this.registerOfficer.reset()
+  }
 }

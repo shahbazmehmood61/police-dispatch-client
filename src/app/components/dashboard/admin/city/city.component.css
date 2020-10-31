@@ -1,4 +1,4 @@
-.dashboard-container{
+.dashboard-container {
   background-color: #fff;
   /* min-height: 100vh; */
   border-radius: 10px;
@@ -17,6 +17,6 @@
   position: fixed;
 }
 
-.container{
+.container {
   border-radius: 10px;
 }

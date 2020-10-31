@@ -1,34 +1,34 @@
 <form [formGroup]="registerOfficer" (ngSubmit)="submit()">
-  <div class="container pt-2">
+  <div class="container-fluid pt-2">
     <mat-chip-list class="mt-2" aria-label="header">
       <mat-chip color="primary" selected>
         <h3 class="m-0 text-white p-1">
-          Register Officer
+          {{"Register Officer" | translate}}
         </h3>
       </mat-chip>
     </mat-chip-list>
     <div class="row mt-2">
       <div class="col-lg-6">
         <mat-form-field appearance="">
-          <mat-label>User Name</mat-label>
+          <mat-label>{{"User Name" | translate}}</mat-label>
           <input matInput formControlName="name">
         </mat-form-field>
       </div>
       <div class="col-lg-6">
         <mat-form-field appearance="">
-          <mat-label>Email</mat-label>
+          <mat-label>{{"register-victim.Email" | translate}}</mat-label>
           <input matInput formControlName="email">
         </mat-form-field>
       </div>
       <div class="col-lg-6">
         <mat-form-field appearance="">
-          <mat-label>Password</mat-label>
+          <mat-label>{{"login.placeholders.password" | translate}}</mat-label>
           <input matInput formControlName="password">
         </mat-form-field>
       </div>
       <div class="col-lg-6">
         <mat-form-field>
-          <mat-label>Role</mat-label>
+          <mat-label>{{"Role" | translate}}</mat-label>
           <mat-select formControlName="role">
             <mat-option value="chief">Chief</mat-option>
             <mat-option value="supervisor">Supervisor</mat-option>
@@ -39,7 +39,7 @@
       </div>
       <div class="col-lg-6">
         <mat-form-field>
-          <mat-label>City</mat-label>
+          <mat-label>{{"City" | translate}}</mat-label>
           <mat-select (selectionChange)="cityChange($event)">
             <!-- <mat-option value="newyork">New York</mat-option> -->
             <mat-option *ngFor="let city of cities" [value]="city">{{city.cityName}}</mat-option>
@@ -48,12 +48,13 @@
       </div>
       <div class="col-lg-6">
         <mat-form-field appearance="">
-          <mat-label>Phone Number</mat-label>
+          <mat-label>{{"Phone Number" | translate}}</mat-label>
           <input matInput formControlName="phoneNumber">
         </mat-form-field>
       </div>
       <div class="col-lg-12">
-        <button mat-raised-button color="primary" type="submit">Register</button>
+        <button mat-raised-button color="primary" type="submit">{{"SignUp.placeholders.Register"| translate}}</button>
+        <button mat-raised-button class="ml-2" (click)="reset()" color="primary">{{"resetPassword.reset" | translate}}</button>
       </div>
     </div>
   </div>

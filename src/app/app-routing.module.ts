@@ -25,7 +25,7 @@ const routes: Routes = [
     canActivate: [AuthAfterLoginGuard],
   },
   {
-    path: 'admin',
+    path: '',
     canActivate: [CheckRoleGuard],
     loadChildren: () => import('./components/dashboard/admin/admin.module')
       .then((m) => m.AdminModule)

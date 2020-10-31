@@ -643,7 +643,8 @@
     "Back": "Atrás",
     "Export PDF": "Exportar PDF",
     "Update": "Actualizar",
-    "Edit": "Editar"
+    "Edit": "Editar",
+    "Delete":"Eliminar"
   },
   "Types of incident": "Típos de incidente",
   "Robbery": "Robo",
@@ -687,5 +688,19 @@
   "close": "cerrar",
   "assign": "asignar",
   "open": "abierto",
-  "N/A": "N/A"
+  "N/A": "N/A",
+  "Cities": "Ciudades",
+  "Bulk Cities":"Ciudades a granel",
+  "Register City":"Registrar Ciudad",
+  "City Name":"Nombre de la ciudad",
+  "City Code":"Código de ciudad",
+  "Phone Number":"Número de teléfono",
+  "Upload Excel": "Subir Excel",
+  "Download": "Descargar",
+  "Role":"Papel",
+  "Register Officer":"Oficial de Registro",
+  "Officers List": "Lista de oficiales",
+  "User Name": "Nombre de usuario",
+  "City":"Ciudad",
+  "Name": "Nombre"
 }

@@ -1,0 +1,26 @@
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.main-table {
+  overflow: auto;
+  width: 100%;
+}
+
+.container-fluid {
+  width: 1190px;
+}
+
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+  padding: 5px;
+  white-space: nowrap;
+}
+
+th.mat-header-cell {
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #9cbbf5;
+}

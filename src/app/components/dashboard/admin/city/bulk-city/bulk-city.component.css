@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+.container-fluid {
+  width: 1190px;
+}
+
 td.mat-cell,
 td.mat-footer-cell,
 th.mat-header-cell {
