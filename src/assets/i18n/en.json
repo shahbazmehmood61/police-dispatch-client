@@ -299,9 +299,9 @@
     "row-four": {
       "PLACE OF THE INCIDENT": "PLACE OF THE INCIDENT",
       "Exact Direction": "Exact Direction ",
-      "CRIME": "CRIME",
+      "Crime": "Crime",
       "Check if you were motivated out of prejudice": "Check if you were motivated out of prejudice",
-      "OFFENDER": "OFFENDER"
+      "Offender": "Offender"
     },
     "row-five": {
       "CRIME CODE UCR": "CRIME CODE UCR",
@@ -326,7 +326,7 @@
       "ANTI-CATHOLIC": "ANTI-CATHOLIC",
       "ANTI-PROTESTANT": "ANTI-PROTESTANT",
       "ANTI-ISLAMIC / MUSLIM": "ANTI-ISLAMIC / MUSLIM",
-      "ANTI-OTHER RELIGION": "ANTI-OTHER RELITION",
+      "ANTI-OTHER RELITION": "ANTI-OTHER RELITION",
       "MULTI-RELIGIOUS ANTI-GROUP": "MULTI-RELIGIOUS ANTI-GROUP",
       "ANTI-ATHEISM / AGNOSTICISM": "ANTI-ATHEISM / AGNOSTICISM",
       "SEXUAL": "SEXUAL",
@@ -593,7 +593,7 @@
       "DOES NOT APPLY": "DOES NOT APPLY"
     },
     "row-twentynine": {
-      "heading": "THE DETAINEE WAS ARMED WITH: (Check up to two) (Enter A in box if automatic)",
+      "heading": "THE DETAINEE WAS ARMED WITH: (Check up to two)",
       "NOT ASSEMBLED": "NOT ASSEMBLED",
       "FIREARM (Unidentified type)": "FIREARM (Unidentified type)",
       "PISTOL": "PISTOL",
@@ -702,5 +702,19 @@
   "Officers List": "Officers List",
   "User Name": "User Name",
   "City": "City",
-  "Name": "Name"
+  "Name": "Name",
+  "Officer Email":"Officer Email",
+  "Telephone No":"Telephone No",
+  "Date of Call":"Date of Call",
+  "Time Of Call":"Time Of Call",
+  "First Name":"First Name",
+  "Last Name": "Last Name",
+  "Middle Name": "Middle Name",
+  "Second Last Name": "Second Last Name",
+  "Dispatched Patrol": "Dispatched Patrol",
+  "Incident Narrative": "Incident Narrative",
+  "Location of Incident": "Location of Incident",
+  "Level of Aggressiveness": "Level of Aggressiveness",
+  "Necessary Resources": "Necessary Resources",
+  "People Involved": "People Involved"
 }

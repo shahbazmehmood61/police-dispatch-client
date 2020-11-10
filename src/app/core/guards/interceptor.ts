@@ -50,6 +50,8 @@ export class Interceptor implements HttpInterceptor {
               return this.handle500Error(error);
             case 401:
               return this.handle401Error(error);
+            case 404:
+              return this.handle404Error(error);
             default:
               return this.validationFailed(error);
           }
@@ -72,7 +74,7 @@ export class Interceptor implements HttpInterceptor {
 
   handle401Error(error) {
     this.alertService.errorAlert('Internal Server Error', error.error.err);
-    this.authService.logout();
+    // this.authService.logout();
     return observableThrowError(error);
   }
 
@@ -81,6 +83,12 @@ export class Interceptor implements HttpInterceptor {
       this.alertService.errorAlert('Sorry', 'Something went wrong');
       return observableThrowError(error);
     }
+    return observableThrowError(null);
+  }
+
+  handle404Error(error) {
+    console.log('refresh')
+    this.authService.refreshToken();
     return observableThrowError(null);
   }
 

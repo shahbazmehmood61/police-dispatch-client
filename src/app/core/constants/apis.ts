@@ -5,6 +5,7 @@ export const APIs = {
   signin: environment.baseURL + "auth/signin",
   loginCheck: environment.baseURL + "auth/checkUserLogin",
   logout: environment.baseURL + "auth/logout",
+  refreshToken: environment.baseURL + "auth/refreshToken",
   registerOfficer: environment.baseURL + 'auth/registerOfficer',
   getOfficers: environment.baseURL + 'dashboard/getOfficers',
 

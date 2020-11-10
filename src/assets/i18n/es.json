@@ -298,10 +298,10 @@
     },
     "row-four": {
       "PLACE OF THE INCIDENT": "LUGAR DEL INCIDENTE",
-      "Exact Direction ": "Dirección Exacta",
-      "CRIME": "DELITO",
+      "Exact Direction": "Dirección Exacta",
+      "Crime": "Delito",
       "Check if you were motivated out of prejudice": "Marcar si fue motivado por prejuicio",
-      "OFFENDER": "DELINCUENTE"
+      "Offender": "Delincuente"
     },
     "row-five": {
       "CRIME CODE UCR": "CODIGO DE DELITO UCR",
@@ -314,7 +314,7 @@
       "RACIAL": " RACIAL",
       "ANTI-WHITE": " ANTI-BLANCO",
       "ANTI-BLACK": " ANTI-NEGRO",
-      "ANTI-AMERICAN INDIAN / ALASKA NATIVE ": "ANTI-INDIO AMERICANO/NATIVO DE ALASKA",
+      "ANTI-AMERICAN INDIAN / ALASKA NATIVE": "ANTI-INDIO AMERICANO/NATIVO DE ALASKA",
       "ANTI-ASIATIC / PACIFIC ISLAND": " ANTI-ASIATICO/ISLEÑO DEL PACIFICO",
       "ANTI-MULTIRACIAL GROUP": " ANTI-GRUPO MULTIRACIAL",
       "ETHNIC GROUP / NATIONAL ORIGIN": " GRUPO ETNICO/ORIGEN NACIONAL",
@@ -326,14 +326,14 @@
       "ANTI-CATHOLIC": " ANTI-CATOLICO",
       "ANTI-PROTESTANT": " ANTI-PROTESTANTE",
       "ANTI-ISLAMIC / MUSLIM": " ANTI-ISLAMICO/MUSULMAN",
-      "ANTI-OTHER RELIGION": " ANTI-OTRA RELICION",
+      "ANTI-OTHER RELITION": " ANTI-OTRA RELICION",
       "MULTI-RELIGIOUS ANTI-GROUP": " ANTI-GRUPO MULTIRELIGIOSO",
       "ANTI-ATHEISM / AGNOSTICISM": " ANTI-ATEISMO/AGNOSTICISMO",
       "SEXUAL": "SEXUAL",
       "HOMOSEXUAL ANTI-MAN": " ANTI-HOMBRE HOMOSEXUAL",
       "HOMOSEXUAL ANTI-WOMAN": "ANTI-MUJER HOMOSEXUAL",
       "ANTI-HOMOSEXUAL (Men and Women)": " ANTI-HOMOSEXUAL(Hombres y Mujeres)",
-      "ANTI-HETEROSEXUAL ": "ANTI-HETEROSEXUAL",
+      "ANTI-HETEROSEXUAL": "ANTI-HETEROSEXUAL",
       "ANTI-BISEXUAL": "ANTI-BISEXUAL",
       "INDICATE THE MOTIVATION CODE IF IT IS DIFFERENT FROM CRIME": "INDICAR EL CODIGO DE MOTIVACION SI ES DISTINTO A DELITO"
     },
@@ -361,7 +361,7 @@
       "CHURCH / SYNAGOGUE / TEMPLE": " IGLESIA/SINAGOGA/TEMPLO",
       "COMMERCIAL / OFFICE BUILDING": " EDIFICIO COMERCIAL/DE OFICINA",
       "CONSTRUCTION SITE": " SITIO DE CONSTRUCCION",
-      " HARDWARE STORE": "FERRETERIA",
+      "HARDWARE STORE": "FERRETERIA",
       "DEPARTMENT / DISCOUNT STORE": " TIENDA POR DEPARTAMENTO/DE DESCUENTO",
       "PHARMACY / DOCTOR'S OFFICE / HOSPITAL": " FARMACIA/CONSULTORIO DE MEDICO/HOSPITAL",
       "FIELD / FOREST": " CAMPO/BOSQUE",
@@ -382,23 +382,23 @@
       "OTHER / UNKNOWN": "OTRO/DESCONOCIDO"
     },
     "row-ten": {
-      "TYPE OF CRIMINAL ACTIVITY (Mark up to three) ": "TIPO DE ACTIVIDAD CRIMINAL (Marca hasta tres)",
-      "BUY / RECEIVE ": "COMPRA/RECIBIR",
-      "CULTIVATE / MANUFACTURE / PUBLISH ": "CULTIVAR/FABRICAR/PUBLICAR",
-      "DISTRIBUTE / SELL ": "DISTRIBUIR/VENDER",
-      "EXPLOIT CHILDREN ": "EXPLOTAR ANIÑOS",
-      "PROTEST, PROMOTE / ASSIST ": "OPESAR,PROMOVER/ASISTIR",
-      "OWN / HIDE ": "POSEER/OCULTAR",
-      "TRANSPORT / TRANSMIT / IMPORT ": "TRANSPORTAR/TRANSMITIR/IMPORTAR",
-      "USE / CONSUME ": "USAR/CONSUMIR"
+      "TYPE OF CRIMINAL ACTIVITY (Mark up to three)": "TIPO DE ACTIVIDAD CRIMINAL (Marca hasta tres)",
+      "BUY / RECEIVE": "COMPRA / RECIBIR",
+      "CULTIVATE / MANUFACTURE / PUBLISH": "CULTIVAR / FABRICAR/PUBLICAR",
+      "DISTRIBUTE / SELL": "DISTRIBUIR / VENDER",
+      "EXPLOIT CHILDREN": "EXPLOTAR ANIÑOS",
+      "PROTEST, PROMOTE / ASSIST": "OPESAR, PROMOVER / ASISTIR",
+      "OWN / HIDE": "POSEER/OCULTAR",
+      "TRANSPORT / TRANSMIT / IMPORT": "TRANSPORTAR / TRANSMITIR / IMPORTAR",
+      "USE / CONSUME": "USAR / CONSUMIR"
     },
     "row-eleven": {
-      "TYPE OF WEAPON / FORCE INVOLVED ": "TIPO DE ARMA/FUERZA INVOLUCRADA",
+      "TYPE OF WEAPON / FORCE INVOLVED": "TIPO DE ARMA/FUERZA INVOLUCRADA",
       "(Check up to three)": "(Marcar hasta tres)",
-      "FIREARM (Unidentified type) ": "ARMA DE FUEGO (Tipo no identificado)",
-      "GUN ": "PISTOLA",
-      "RIFLE ": "RIFLE",
-      "SHOTGUN ": "ESCOPETA",
+      "FIREARM (Unidentified type)": "ARMA DE FUEGO (Tipo no identificado)",
+      "GUN": "PISTOLA",
+      "RIFLE": "RIFLE",
+      "SHOTGUN": "ESCOPETA",
       "ANOTHER FIREARM": " OTRA ARMA DE FUEGO",
       "KNIFE / CUTTING INSTRUMENT": " CUCHILLO/INSTRUMENTO CORTANTE",
       "SHARPENED OBJECT": " OBJETO DESAFILADO",
@@ -408,10 +408,10 @@
       "EXPLOSIVES": " EXPLOSIVOS",
       "FIRE / FIRE": " FUEGO/INCENDIARIO",
       "NARCOTICS / DRUGS": " NARCOTICOS/DROGA",
-      "SUFFOCATION ": "ASFIXIA",
-      "OTHER ": "OTRA",
-      "Unknown ": "DESCONOCIDA",
-      "NONE ": "NINGUNA"
+      "SUFFOCATION": "ASFIXIA",
+      "OTHER": "OTRA",
+      "Unknown": "DESCONOCIDA",
+      "NONE": "NINGUNA"
     },
     "row-twelve": {
       "VICTIM (Last name, First name, Middle name)": " VICTIMA (Apellidos, Nombre, Segundo nombre)",
@@ -467,9 +467,9 @@
       "BONES": "HUESOS",
       "POSSIBLE INJURIES INTERNAL": " POSIBLES LESIONES INTERNAS",
       "RIP SEVERE": " DESGARRADURA SEVERA",
-      "LESION MENOR": " LESION MENOR",
+      "MINOR INJURY": " LESION MENOR",
       "MAJOR INJURY": "LESION MAYOR",
-      "WASTE OF TEETH ": "PERDIDA DE DIENTES",
+      "WASTE OF TEETH": "PERDIDA DE DIENTES",
       "WASTE OF KNOWLEDGE": " PERDIDA DE CONOCIMIENTO",
       "VICTIM RELATED TO NUM. OF CRIME STATED ABOVE": " VICTIMA RELACIONADA CON NUM. DE DELITO INDICADO MAS ARRIBA"
     },
@@ -503,11 +503,11 @@
       "UNKNOWN RELATIONSHIP": "RELACION DESCONOCIDA"
     },
     "row-seventeen": {
-      "TYPE OF LOSS OF ASSETS / ETC.": "TIPO DE PERDIDA DE BIENES/ETC.",
+      "TYPE OF LOSS OF ASSETS / ETC": "TIPO DE PERDIDA DE BIENES/ETC.",
       "CODE": "CODIGO",
       "QUANTITY": "CANTIDAD",
       "PROPERTY DESCRIPTION": "DESCRIPCION DE BIENES",
-      "included": "(Incluir marca, modelo, tamaño, tipo, num. de serie, color, etc.)",
+      "Included": "(Incluir marca, modelo, tamaño, tipo, num. de serie, color, etc.)",
       "VALUE": "VALOR",
       "DATE ON WHICH THEY RECOVERED": "FECHA EN QUE SE RECUPERARON",
       "NONE": "NINGUNA",
@@ -593,7 +593,7 @@
       "DOES NOT APPLY": "NO SE APLICA"
     },
     "row-twentynine": {
-      "heading": "EL DETENIDO ESTABA ARMADO CON: (Marcar hasta dos) (Ingresar A en casilla si es automatica)",
+      "heading": "EL DETENIDO ESTABA ARMADO CON: (Marcar hasta dos)",
       "NOT ASSEMBLED": "NO ARMADO",
       "FIREARM (Unidentified type)": "ARMA DE FUEGO (Tipo no identificado)",
       "PISTOL": "PISTOLA",
@@ -702,5 +702,19 @@
   "Officers List": "Lista de oficiales",
   "User Name": "Nombre de usuario",
   "City":"Ciudad",
-  "Name": "Nombre"
+  "Name": "Nombre",
+  "Officer Email":"Email del Oficial",
+  "Telephone No":"Numero de Telefono",
+  "Date of Call":"Fecha de la Llamada",
+  "Time Of Call":"Hora de la llamada",
+  "First Name":"Nombre",
+  "Last Name": "Segundo Nombre",
+  "Middle Name": "Apellido",
+  "Second Last Name": "Segundo Apellido",
+  "Dispatched Patrol": "Patrulla Despachada",
+  "Incident Narrative": "Narrativa del Incidente",
+  "Location of Incident": "Direccion del Incidente",
+  "Level of Aggressiveness": "Nivel de Agresividad",
+  "Necessary Resources": "Recursos Necesarios",
+  "People Involved": "Personas"
 }
