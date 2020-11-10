@@ -4,12 +4,19 @@ td {
   border: 2px solid black;
   border-collapse: collapse;
 }
+
+tr {
+  max-width: 1062.4 !important;
+}
+
 table {
   min-width: 100%;
 }
+
 .pdf-section {
   padding: 20px 80px 20px 80px !important;
 }
+
 td {
   padding: 5px;
 }
@@ -18,17 +25,21 @@ td {
   font-size: 20px;
   transform: rotate(-90deg);
 }
+
 .incidnet-report {
   margin-left: -58px !important;
   margin-top: -50px !important;
   margin-right: -56px !important;
 }
+
 .goods {
   margin-left: -6px !important;
 }
+
 .victim {
   margin-left: 2px !important;
 }
+
 .form-control {
   background-color: transparent;
   margin-right: 2px;
@@ -46,7 +57,7 @@ td {
   margin-right: -21px !important;
 }
 
-.offenders-address{
+.offenders-address {
   max-width: 350px !important;
   margin-bottom: 20px !important;
   overflow-wrap: break-word;
@@ -56,6 +67,7 @@ td {
   margin-left: -11.4px !important;
   margin-right: -11.4px !important;
 }
+
 .story {
   margin-top: -0px !important;
   margin-left: -0px !important;
@@ -86,50 +98,64 @@ td {
 .closeModel ::ng-deep .modal-lg {
   max-width: 1300px !important;
 }
+
 .story-description {
   max-width: 950px !important;
   overflow-wrap: break-word;
 }
+
 .crime {
   margin-left: 2px !important;
   margin-right: 2px !important;
 }
+
 .firms {
-  margin-left: 6px !important;
+  margin-left: -30px !important;
+  margin-right: -25px !important;
 }
+
 .form-check-input {
   width: 20px !important;
   height: 20px !important;
   margin-right: 4px !important;
 }
+
 kendo-pdf-export {
   font-family: "DejaVu Sans", "Arial", sans-serif;
   font-size: 16px !important;
   background-color: white;
 }
+
 .back-btn {
   text-decoration: none;
   color: #585858;
 }
+
 .incidentNarrative {
   max-width: 294px !important;
 }
-.goods-description{
+
+.goods-description {
   max-width: 300px !important;
   overflow-wrap: break-word;
 }
-.description{
+
+.description {
   max-width: 70px !important;
 }
-input[type=checkbox]{
+
+input[type=checkbox] {
   pointer-events: none;
 }
-.incident-narrative{
+
+.incident-narrative {
   max-width: 400px !important;
 }
-.necessery-resources{
+
+.necessery-resources {
   max-width: 400px !important;
 }
+
 /* table,
 tr,
 td {

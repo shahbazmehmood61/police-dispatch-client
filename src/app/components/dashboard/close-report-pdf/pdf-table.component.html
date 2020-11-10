@@ -1,4 +1,4 @@
-<div class="pdf-section">
+<div class="pdf-section" *ngIf="report">
   <div class="px-4 py-3 mat-elevation-z8 bg-white">
     <div class="d-flex flex-row mb-2">
       <button mat-raised-button (click)="pdf.saveAs(report.firstName + report.lastName)">
@@ -20,7 +20,7 @@
                 </div>
               </div>
             </td>
-            <td colspan="2">
+            <td colspan="2">  
               <div class="form-group m-0">
                 <label class="m-0">{{ "close-incident.row-one.THE ORI" | translate }}#
                 </label>
@@ -173,25 +173,25 @@
             </td>
             <td colspan="2">
               <div class="d-flex flex-column">
-                <p class="mb-0">Officer Email</p>
+                <p class="mb-0">{{ "Officer Email" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.email }}</p>
               </div>
             </td>
             <td colspan="2">
               <div class="d-flex flex-column">
-                <p class="mb-0">Telephone No</p>
-                <p class="mb-0">{{ report.firstPage.telephoneNo }}</p>
+                <p class="mb-0">{{ "Telephone No" | translate }}</p>
+                <p class="mb-0">{{ check(report.firstPage.telephoneNo | formater) }}</p>
               </div>
             </td>
             <td colspan="2">
               <div class="d-flex flex-column">
-                <p class="mb-0">Date of Call</p>
+                <p class="mb-0">{{ "Date of Call" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.dateOfCall[0] }}</p>
               </div>
             </td>
             <td colspan="3">
               <div class="d-flex flex-column">
-                <p class="mb-0">Time Of Call</p>
+                <p class="mb-0">{{ "Time Of Call" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.timeOfCall[0] }}</p>
               </div>
             </td>
@@ -199,25 +199,25 @@
           <tr>
             <td colspan="2">
               <div class="d-flex flex-column">
-                <p class="mb-0">First Name</p>
+                <p class="mb-0">{{ "First Name" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.firstName }}</p>
               </div>
             </td>
             <td colspan="2">
               <div class="d-flex flex-column">
-                <p class="mb-0">Last Name</p>
+                <p class="mb-0">{{ "Last Name" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.lastName }}</p>
               </div>
             </td>
             <td colspan="2">
               <div class="d-flex flex-column">
-                <p class="mb-0">Middle Name</p>
+                <p class="mb-0">{{ "Middle Name" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.middleInitial }}</p>
               </div>
             </td>
             <td colspan="3">
               <div class="d-flex flex-column">
-                <p class="mb-0">Second Last Name</p>
+                <p class="mb-0">{{ "Second Last Name" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.secondLastName }}</p>
               </div>
             </td>
@@ -225,19 +225,19 @@
           <tr>
             <td colspan="3">
               <div class="d-flex flex-column">
-                <p class="mb-0">Dispatched Patrol</p>
+                <p class="mb-0">{{ "Dispatched Patrol" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.dispatchedPatrol }}</p>
               </div>
             </td>
             <td colspan="3">
               <div class="d-flex flex-column">
-                <p class="mb-0">Incident Narrative</p>
+                <p class="mb-0">{{ "Incident Narrative" | translate }}</p>
                 <p class="mb-0 incident-narrative">{{ report.firstPage.incidentNarrative }}</p>
               </div>
             </td>
             <td colspan="3">
               <div class="d-flex flex-column">
-                <p class="mb-0">Location of Incident</p>
+                <p class="mb-0">{{ "Location of Incident" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.locationOfIncident }}</p>
               </div>
             </td>
@@ -245,19 +245,19 @@
           <tr>
             <td colspan="3">
               <div class="d-flex flex-column">
-                <p class="mb-0">Level of Aggressiveness</p>
+                <p class="mb-0">{{ "Level of Aggressiveness" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.levelsOfAggressiveness }}</p>
               </div>
             </td>
             <td colspan="3">
               <div class="d-flex flex-column">
-                <p class="mb-0">Necessary Resources</p>
+                <p class="mb-0">{{ "Necessary Resources" | translate }}</p>
                 <p class="mb-0 necessery-resources">{{ report.firstPage.necessaryResources }}</p>
               </div>
             </td>
             <td colspan="3">
               <div class="d-flex flex-column">
-                <p class="mb-0">People Involved</p>
+                <p class="mb-0">{{ "People Involved" | translate }}</p>
                 <p class="mb-0">{{ report.firstPage.peopleInvolved }}</p>
               </div>
             </td>
@@ -284,11 +284,11 @@
                 </p>
                 <div class="d-flex felx-row m-0">
                   <p class="mb-0">
-                    {{ check(report.secondPage.crime.complainantSurName) }}
+                    {{ check(report.secondPage.crime.complainantSurName) }}&nbsp;
                   </p>
-                  <p class="mb-0">{{ check(report.secondPage.crime.complainantName) }}</p>
+                  <p class="mb-0">{{ check(report.secondPage.crime.complainantName) }}&nbsp;</p>
                   <p class="mb-0">
-                    {{ check(report.secondPage.crime.complainantmiddleName) }}
+                    {{ check(report.secondPage.crime.complainantmiddleName) }}&nbsp;
                   </p>
                 </div>
               </div>
@@ -315,7 +315,7 @@
                   </p>
                 </div>
                 <div>
-                  <p class="mb-0">{{ check(report.secondPage.crime.homeTelephone) }}</p>
+                  <p class="mb-0">{{ check(report.secondPage.crime.homeTelephone | formater) }}</p>
                 </div>
               </div>
             </td>
@@ -343,7 +343,7 @@
                   </p>
                 </div>
                 <div>
-                  <p class="mb-0">{{ check(report.secondPage.crime.jobTelephone) }}</p>
+                  <p class="mb-0">{{ check(report.secondPage.crime.jobTelephone | formater) }}</p>
                 </div>
               </div>
             </td>
@@ -368,10 +368,10 @@
             </td>
             <td colspan="3" rowspan="2">
               <div class="d-flex flex-column">
-                <div class="d-flex flex-row">
+                <div class="d-flex flex-row justify-content-between">
                   <div>
                     <p>
-                      {{ "close-incident.row-four.CRIME" | translate }}
+                      {{ "close-incident.row-four.Crime" | translate }}
                     </p>
                   </div>
                   <div>
@@ -384,20 +384,20 @@
                   </div>
                   <div>
                     <p>
-                      {{ "close-incident.row-four.OFFENDER" | translate }}
+                      {{ "close-incident.row-four.Offender" | translate }}
                     </p>
                   </div>
                 </div>
-                <div class="d-flex  justify-content-around" *ngFor="let motivated of report.secondPage.crime.ifMotivatedOfPrejudice">
-                  <div>
-                    <p class="mb-0">{{ check(motivated.crimeName) }}</p>
+                <div class="d-flex justify-content-between" *ngFor="let motivated of report.secondPage.crime.ifMotivatedOfPrejudice">
+                  <div class="">
+                    <p class="mb-0 float-left">{{ check(motivated.crimeName) }}</p>
                   </div>
                   <div>
                     <p class="mb-0">
                       {{ check(motivated.oneMotivatedOfPrejudice) }}
                     </p>
                   </div>
-                  <div>
+                  <div class="float-right">
                     <p class="mb-0">{{ check(motivated.offenderName) }}</p>
                   </div>
                 </div>
@@ -1020,10 +1020,11 @@
                     {{
                       "close-incident.row-eleven.TYPE OF WEAPON / FORCE INVOLVED"
                         | translate
-                    }}({{
-                      "close-incident.row-eleven.(Check up to three) (Enter A in box if automatic)"
+                    }}{{
+                      "close-incident.row-eleven.(Check up to three)"
                         | translate
-                    }})
+                    }}
+                    <!-- (Enter A in box if automatic) -->
                   </p>
                 </div>
                 <div class="d-flex flex-row">
@@ -2467,7 +2468,7 @@
                   let offenders of report.thirdPage.offender.offendersRecord;
                   let i = index
                 ">
-                <div class="d-flex flex-row justify-content-between">
+                <div class="d-flex flex-row justify-content-between mb-4">
                   <div class="d-flex flex-column">
                     <label class="ml-1">
                       {{ i + 1 }}
@@ -2523,14 +2524,15 @@
                         {{ "close-incident.row-twentyone.RACE" | translate }}
                       </p>
                     </div>
+                  </div>
+                  <div class="d-flex flex-column">
+                    
                     <div>
                       <input type="checkbox" class="form-check-input ml-1" [checked]="offenders.white" />
                       <label class="form-check-label ml-4">
                         {{ "close-incident.row-twentyone.WHITE" | translate }}
                       </label>
                     </div>
-                  </div>
-                  <div class="d-flex flex-column">
                     <div>
                       <input type="checkbox" class="form-check-input ml-1" [checked]="offenders.black" />
                       <label class="form-check-label ml-4">
@@ -2566,14 +2568,15 @@
                         {{ "close-incident.row-twentyone.UNKNOWN" | translate }}
                       </label>
                     </div>
-                    <div>
-                      <label class="m-0 ml-1">
-                        {{ "close-incident.row-twentyone.AGE" | translate }}
-                      </label>
-                      <p class="mb-0">{{ check(offenders.age) }}</p>
-                    </div>
                   </div>
                   <div class="d-flex flex-column">
+                    
+                    <!-- <div> -->
+                      <p class="m-0">
+                        {{ "close-incident.row-twentyone.AGE" | translate }}
+                      </p>
+                      <p class="mb-0">{{ check(offenders.age) }}</p>
+                    <!-- </div> -->
                     <p class="m-0">
                       {{
                         "close-incident.row-twentyone.DATE / PLACE OF BIRTH"
@@ -2741,6 +2744,8 @@
                       {{ "close-incident.row-twentyone.UNKNOWN" | translate }}
                     </label>
                   </div>
+                </div>
+                <div class="d-flex flex-column">
                   <div class="m-0 mt-1">
                     <p class="m-0 mt-1">
                       {{ "close-incident.row-twentyone.RACE" | translate }}
@@ -2752,8 +2757,6 @@
                       {{ "close-incident.row-twentyone.WHITE" | translate }}
                     </label>
                   </div>
-                </div>
-                <div class="d-flex flex-column">
                   <div>
                     <input type="checkbox" [checked]="report.thirdPage.arrested.black" class="form-check-input ml-1" />
                     <label class="form-check-label ml-4">
@@ -3119,11 +3122,11 @@
             </td>
             <td colspan="2">
               <p class="mb-0">
-                {{ check(report.thirdPage.witness.residentialTelephone) }}
+                {{ check(report.thirdPage.witness.residentialTelephone | formater) }}
               </p>
             </td>
             <td colspan="2">
-              <p class="mb-0">{{ check(report.thirdPage.witness.workTelephone) }}</p>
+              <p class="mb-0">{{ check(report.thirdPage.witness.workTelephone | formater)}}</p>
             </td>
           </tr>
         </tbody>
