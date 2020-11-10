@@ -92,8 +92,10 @@
         {{"Actions" | translate}}
       </th>
       <td mat-cell *matCellDef="let element">
-        <button mat-raised-button (click)="editCity(element)">Edit</button>
-        <button mat-raised-button class="ml-2" (click)="deleteCity(element.key)">Delete</button>
+        <!-- (click)="editCity(element)" -->
+        <button mat-raised-button >Edit</button>
+        <!-- (click)="deleteCity(element.key)" -->
+        <button mat-raised-button class="ml-2">Delete</button>
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { City } from 'src/app/core/models/city.model';
 import { AlertService } from 'src/app/core/services/alert.service';
 import { CityService } from 'src/app/core/services/city.service';
 import { TranslatorService } from 'src/app/core/services/translator.service';
+import { environment } from 'src/environments/environment';
 import * as XLSX from 'xlsx';
 
 @Component({
@@ -18,9 +18,10 @@ export class BulkCityComponent implements OnInit {
     "cityName",
     "cityCode",
     "phoneNumber",
-    // "actions"
-  ]
+  ];
   cities = [];
+  downloadTemplate: string;
+
   constructor(
     public cityService: CityService,
     public alert: AlertService,
@@ -28,6 +29,7 @@ export class BulkCityComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.downloadTemplate = environment.downloadTemplate;
   }
 
   uploadExcel(e) {
@@ -76,6 +78,4 @@ export class BulkCityComponent implements OnInit {
       this.alert.warningAlert('Police Dispatch', 'Please select file')
     }
   }
-
-
 }
